@@ -36,14 +36,7 @@ The evaluation phase involved assessing the effectiveness of our approach using 
 - ROUGE Scores: ROUGE (Recall-Oriented Understudy for Gisting Evaluation) scores were used to quantify overlap between generated and ground truth summaries, providing insights into summarization quality across unigrams, bigrams, and overall gist.
 
 **Example and Analysis**
-
-An illustrative example demonstrates the model's strengths and limitations:
-
-- Given Review Text: "The Fender CD-60S Dreadnought Acoustic Guitar is great for beginners but has tuning stability issues."
-
-- Given Summary: "Good for beginners but has tuning stability issues."
-
-- Generated Summary: "The Fender CD-60S Acoustic Guitar is suitable for beginners, but there are reported tuning stability issues."
+example is demonstrate in the Docx file
 
 **ROUGE Scores and Interpretation**
 
