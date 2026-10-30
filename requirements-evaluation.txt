@@ -1,0 +1,6 @@
+# Direct versions used for the published CPU pilot; platform-specific torch builds may vary.
+torch==2.14.1
+transformers==5.18.0
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1

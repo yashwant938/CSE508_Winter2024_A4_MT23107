@@ -1,96 +1,42 @@
 # GPT-2 Review Summarization
 
-A notebook experiment in fine-tuning GPT-2 to generate short summaries of Amazon Fine Food Reviews using PyTorch and Hugging Face Transformers.
+A CSE508 coursework experiment exploring GPT-2 summarization for Amazon Fine Food Reviews. The original notebook is preserved as an experiment record; the new evaluator provides a separate, reproducible review-only generation and scoring path.
 
-**Status:** the repository contains training and inference code, plus an evaluation implementation that needs correction. Historical ROUGE output is not presented as a reliable held-out benchmark because test inputs can include reference summaries and the batch evaluation scores only one item per batch.
+## What changed
 
-## Why this project exists
+The notebook's historical evaluation is unreliable: its generation inputs can contain the reference summary, and one loop scores only the first item in each batch. `evaluate.py` keeps reference summaries out of generation inputs, decodes only new tokens, and scores every example, including a partial final batch. It compares a 16-word lead baseline with a selected GPT-2 model using per-example ROUGE-1 and ROUGE-L F1. The metric implementation uses lowercase alphanumeric tokens without stemming.
 
-Long reviews make it difficult to scan product feedback. This experiment explores adapting a pretrained causal language model to a review-to-summary task, covering text preparation, training, checkpoint saving and generation.
+**The original fine-tuned `model.pt` is not included.** The published [pilot results](results/REPORT.md) therefore evaluate the public pretrained GPT-2 model, not the coursework fine-tuned model. The original notebook still contains legacy imports, Kaggle paths, and training-loss/padding issues; it is not a clean end-to-end reproduction. Historical notebook scores should not be used as evidence of model quality.
 
-Originally developed for the CSE508 information retrieval coursework at IIIT Delhi.
+## Reproduce the pilot
 
-## Architecture
-
-```mermaid
-flowchart LR
-    A[Amazon review CSV] --> B[Text preprocessing]
-    B --> C[Train/test split]
-    C --> D[Review + TL;DR + summary sequences]
-    D --> E[GPT-2 fine-tuning]
-    E --> F[Local model checkpoint]
-    F --> G[Prompt-based generation]
-    C --> H[Evaluation code: correction required]
-    F --> H
-```
-
-This is a summarization experiment, without document retrieval, a vector index or a RAG pipeline.
-
-## Engineering highlights
-
-- Uses pretrained `GPT2LMHeadModel` and `GPT2Tokenizer` with a custom PyTorch dataset and data loaders.
-- Preprocesses review text with HTML removal, lowercasing, tokenization and stopword removal.
-- Implements an explicit training loop with AdamW, a linear learning-rate scheduler and CPU/CUDA selection.
-- Saves model weights and includes prompt-based generation examples.
-- Includes ROUGE evaluation code and a separate single-example BLEU calculation, with limitations documented below.
-
-## Tech stack
-
-| Area | Libraries |
-| --- | --- |
-| Model and training | PyTorch, Hugging Face Transformers |
-| Data preparation | pandas, scikit-learn, Beautiful Soup, NLTK |
-| Evaluation code | Hugging Face datasets, rouge-score, NLTK |
-| Experiment environment | Jupyter notebook with Kaggle-specific paths |
-
-## How it works
-
-1. Read up to 40,000 reviews from the Amazon Fine Food Reviews CSV.
-2. Prepare the review text and split rows into 75% training and 25% test data.
-3. Tokenize `review TL;DR summary` sequences, padded/truncated to 70 tokens.
-4. Train GPT-2 with next-token prediction using a configured batch size of 45, learning rate of `5e-5` and 10 epochs.
-5. Save a local state dictionary and use a review followed by `TL;DR` as a generation prompt.
-
-These are notebook configuration values, not performance or quality claims.
-
-## Setup
+Use Python 3.12 on a supported platform. The model is downloaded from Hugging Face on the first run (several hundred MB). CPU inference works but takes time. The direct dependency versions used for the pilot are listed in `requirements-evaluation.txt`; this is not a complete transitive lockfile and availability of PyTorch builds varies by platform.
 
 ```bash
-git clone https://github.com/yashwant938/CSE508_Winter2024_A4_MT23107.git
-cd CSE508_Winter2024_A4_MT23107
+python -m venv .venv
+# Activate the virtual environment using your platform's instructions.
+python -m pip install -r requirements-evaluation.txt
+python -m unittest discover -s tests -v
+python evaluate.py --model openai-community/gpt2 \
+  --revision 607a30d783dfa663caf39e06633721c8d4cfcd7e \
+  --sample-size 513 --batch-size 4 --input-tokens 128 --output-tokens 24
 ```
 
-Open `CSE508_Winter2024_A4_MT23107..ipynb` in Jupyter or a notebook environment and review the following prerequisites before running cells:
+The evaluator uses the repository's `preprocessed_data.pkl`, the first 513 entries of the notebook's seeded 25% test split (`random_state=42`), and deterministic greedy decoding. The file's exact SHA-256 is checked and its pickle globals are restricted before loading. Pickle is executable data: never load arbitrary or untrusted pickle files. Results include the source hash, model revision, settings, dependency versions, per-example outcomes and measured generation time. The public checkpoint is a pretrained baseline, not a replacement for the missing fine-tuned checkpoint.
 
-- Obtain the Amazon Fine Food Reviews `Reviews.csv` dataset and update the `/kaggle/input/...` paths to its location. The generated dataset-import cell contains expired signed URLs; replace that cell with your environment's data-loading setup.
-- Prepare the libraries listed above and the NLTK tokenizer/stopword resources. The notebook uses legacy `transformers.AdamW` and `datasets.load_metric` APIs; package versions or these imports need updating before a clean reproduction.
-- Set the checkpoint save/load paths consistently. A trained `model.pt` checkpoint is not included in this repository.
-- Correct evaluation before reporting metrics. A dependency lockfile and verified end-to-end run are still needed.
+If the original trusted notebook state dictionary becomes available, add `--state-dict /path/to/model.pt` while using the corresponding base model and revision. The evaluator loads only weights (`weights_only=True`), checks architecture keys strictly, and records a SHA-256. This path cannot establish whether a supplied checkpoint was actually trained on the notebook split. Obtain model artifacts only from sources you trust.
 
-The repository is currently an experiment record, not a packaged training or inference service.
+## Scope and limitations
 
-## Example
+- The dataset contains preprocessed reviews and short user-written titles; automatic token-overlap scores are limited proxies for usefulness and factuality.
+- The 513-review sample is a deterministic subset, not an independently annotated or deduplicated test set. The notebook's random split may contain duplicates, and no confidence interval or human evaluation is reported.
+- The lead baseline returns the first 16 review words; GPT-2 generates up to 24 new tokens. The public base model has not been fine-tuned for this task.
+- Prompts preserve the notebook's ` TL;DR` separator. Reference summaries are passed only to the scorer, and all generated batch elements are evaluated.
+- The original training notebook needs modern dependency updates, corrected loss masking for padding, and verified model artifacts before its fine-tuning results can be reproduced.
 
-The notebook includes this generation prompt:
+## Repository map
 
-```text
-you can buy the best things TL;DR
-```
-
-The generation cell tokenizes the prompt, loads the fine-tuned checkpoint, generates text and extracts the portion after `TL;DR`. No expected summary is asserted here; output depends on the trained checkpoint and generation settings.
-
-## Engineering challenges
-
-- **Evaluation leakage:** the test dataset encodes both review and reference summary. Generation must receive only the review and separator, while reference summaries stay separate for scoring.
-- **Batch coverage:** the current loop decodes `outputs[0]` and scores `labels[0]` only. Every held-out example must be evaluated.
-- **Loss and context handling:** training labels include padded tokens, and 70-token truncation can remove review context or the target summary. Padding masks and task-aware sequence construction need attention.
-- **Reproducibility:** a later evaluation cell expects fields not returned by the dataset, and several paths and dependencies are environment-specific.
-
-## Future improvements
-
-- Separate training sequences, inference prompts and evaluation references.
-- Mask padding in the training loss and review prompt/target token budgeting.
-- Replace the broken evaluation paths with one consistent full-test-set evaluator.
-- Add a summarization baseline and report metrics only after a reproducible evaluation run.
-- Package configuration, dependencies, checkpoint metadata and inference into scripts with small tests.
-
+- `CSE508_Winter2024_A4_MT23107..ipynb` — historical training and generation notebook.
+- `preprocessed_data.pkl` — original preprocessed dataset artifact.
+- `evaluate.py`, `tests/` — corrected evaluator and focused regression checks.
+- `results/` — pilot metrics and examples, including limitations.
