@@ -1,0 +1,5 @@
+# Install the platform-appropriate torch wheel first (see REPRODUCING.md).
+torch==2.11.0
+transformers==4.57.3
+numpy==2.3.5
+pandas==2.3.3

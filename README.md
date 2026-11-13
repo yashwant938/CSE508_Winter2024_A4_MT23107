@@ -1,42 +1,84 @@
 # GPT-2 Review Summarization
 
-A CSE508 coursework experiment exploring GPT-2 summarization for Amazon Fine Food Reviews. The original notebook is preserved as an experiment record; the new evaluator provides a separate, reproducible review-only generation and scoring path.
+A reproducible fine-tuning and evaluation experiment for short summaries of
+Amazon Fine Food Reviews, extending the original CSE508 assignment.
 
-## What changed
+The supported workflow trains a fresh, pinned GPT-2 model with summary-only
+loss, saves a reloadable checkpoint and tokenizer, and compares it with
+pretrained GPT-2 and a 16-word extractive baseline on the same untouched test
+partition. It records configuration, split IDs, dependency versions, checkpoint
+hashes, per-example predictions and bootstrap intervals.
 
-The notebook's historical evaluation is unreliable: its generation inputs can contain the reference summary, and one loop scores only the first item in each batch. `evaluate.py` keeps reference summaries out of generation inputs, decodes only new tokens, and scores every example, including a partial final batch. It compares a 16-word lead baseline with a selected GPT-2 model using per-example ROUGE-1 and ROUGE-L F1. The metric implementation uses lowercase alphanumeric tokens without stemming.
+[Reproduce training and evaluation](REPRODUCING.md) ·
+[Fixed experiment configuration](configs/pilot.json) ·
+[Tests](tests/test_training.py)
 
-**The original fine-tuned `model.pt` is not included.** The published [pilot results](results/REPORT.md) therefore evaluate the public pretrained GPT-2 model, not the coursework fine-tuned model. The original notebook still contains legacy imports, Kaggle paths, and training-loss/padding issues; it is not a clean end-to-end reproduction. Historical notebook scores should not be used as evidence of model quality.
+## Corrected training and evaluation
 
-## Reproduce the pilot
+- **Target-only loss:** prompt and padding labels are `-100`; the true summary
+  end-of-sequence token stays supervised even though padding uses the same ID.
+- **Separate token budgets:** a long review cannot truncate away its summary.
+  Training uses right padding; generation uses left-padded review-only prompts.
+- **Split isolation:** normalized duplicate reviews and identical truncated model
+  inputs are removed before deterministic hashed train/validation/test splits.
+- **Validation-only selection:** the best epoch is selected by target-token
+  validation loss. Test references do not select the checkpoint or decoding settings.
+- **Saved artifacts:** actual fine-tuned `model.safetensors`, tokenizer, model and
+  run configurations, training history, source/code/checkpoint hashes and row IDs.
+- **Comparable held-out scores:** the fine-tuned and pretrained models receive
+  the same prompts and greedy generation budget. Every test example is scored
+  against its full reference, alongside the deterministic lead-16 baseline.
 
-Use Python 3.12 on a supported platform. The model is downloaded from Hugging Face on the first run (several hundred MB). CPU inference works but takes time. The direct dependency versions used for the pilot are listed in `requirements-evaluation.txt`; this is not a complete transitive lockfile and availability of PyTorch builds varies by platform.
+## Run
+
+Use Python 3.12 and the [platform-specific setup instructions](REPRODUCING.md).
 
 ```bash
-python -m venv .venv
-# Activate the virtual environment using your platform's instructions.
-python -m pip install -r requirements-evaluation.txt
 python -m unittest discover -s tests -v
-python evaluate.py --model openai-community/gpt2 \
-  --revision 607a30d783dfa663caf39e06633721c8d4cfcd7e \
-  --sample-size 513 --batch-size 4 --input-tokens 128 --output-tokens 24
+python train.py --config configs/pilot.json --output runs/pilot --device cuda
+python evaluate_checkpoint.py --run runs/pilot --output results/reproducible-pilot/evaluation.json --device cuda --local-files-only
 ```
 
-The evaluator uses the repository's `preprocessed_data.pkl`, the first 513 entries of the notebook's seeded 25% test split (`random_state=42`), and deterministic greedy decoding. The file's exact SHA-256 is checked and its pickle globals are restricted before loading. Pickle is executable data: never load arbitrary or untrusted pickle files. Results include the source hash, model revision, settings, dependency versions, per-example outcomes and measured generation time. The public checkpoint is a pretrained baseline, not a replacement for the missing fine-tuned checkpoint.
+The fixed pilot uses 6,000 training, 512 validation and 512 test examples, two
+epochs, a 192-token prompt budget and 32 target tokens including EOS. CUDA
+training uses BF16 autocast and float32 parameters; CPU training is available
+with `--device cpu`. The first training run downloads the pinned public GPT-2
+base weights. No paid API is used.
 
-If the original trusted notebook state dictionary becomes available, add `--state-dict /path/to/model.pt` while using the corresponding base model and revision. The evaluator loads only weights (`weights_only=True`), checks architecture keys strictly, and records a SHA-256. This path cannot establish whether a supplied checkpoint was actually trained on the notebook split. Obtain model artifacts only from sources you trust.
+Checkpoint binaries and local model caches are excluded from Git history. The
+training command creates the complete checkpoint under `runs/pilot/checkpoint`;
+the evaluation command reloads and verifies it before scoring. A saved inference
+checkpoint does not include optimizer state for mid-epoch resume.
 
-## Scope and limitations
+## Evidence and limits
 
-- The dataset contains preprocessed reviews and short user-written titles; automatic token-overlap scores are limited proxies for usefulness and factuality.
-- The 513-review sample is a deterministic subset, not an independently annotated or deduplicated test set. The notebook's random split may contain duplicates, and no confidence interval or human evaluation is reported.
-- The lead baseline returns the first 16 review words; GPT-2 generates up to 24 new tokens. The public base model has not been fine-tuned for this task.
-- Prompts preserve the notebook's ` TL;DR` separator. Reference summaries are passed only to the scorer, and all generated batch elements are evaluated.
-- The original training notebook needs modern dependency updates, corrected loss masking for padding, and verified model artifacts before its fine-tuning results can be reproduced.
+This is a single-seed, small-data experiment on review titles as reference
+summaries, not a production summarization system. ROUGE-1/L F1 uses lowercase
+alphanumeric tokens without stemming and measures lexical overlap, not
+factuality. Bootstrap intervals quantify test-sample variation, not variability
+across training runs. Semantic near-duplicates and base-model pretraining
+contamination are not ruled out.
+
+The original fine-tuned assignment `model.pt` was never included. The new
+experiment retrains from the pinned public base model; it does not reconstruct
+or claim to recover that missing historical checkpoint. The
+[older pretrained-only pilot](results/REPORT.md) uses a different, non-deduplicated
+split and should not be compared numerically with the new experiment.
+
+The historical notebook retains its original coursework code, including Kaggle
+paths and flawed training/evaluation cells, with a prominent warning. Use the
+Python scripts for corrected work and do not cite historical notebook scores as
+model-quality evidence.
 
 ## Repository map
 
-- `CSE508_Winter2024_A4_MT23107..ipynb` — historical training and generation notebook.
-- `preprocessed_data.pkl` — original preprocessed dataset artifact.
-- `evaluate.py`, `tests/` — corrected evaluator and focused regression checks.
-- `results/` — pilot metrics and examples, including limitations.
+| File | Purpose |
+| --- | --- |
+| `train.py`, `training_data.py` | Target masking, token-weighted training and reproducible splits |
+| `evaluate_checkpoint.py` | Verified checkpoint reload, baselines and paired held-out evaluation |
+| `configs/pilot.json` | Frozen training, split and generation protocol |
+| `tests/` | Loss, padding/EOS, split leakage, data loading, generation and metric checks |
+| `preprocessed_data.pkl` | Hash-checked original 39,999-row review/summary artifact |
+| `evaluate.py` | Shared scoring and review-only generation; older pilot CLI |
+| `REPRODUCING.md` | Environment, commands, artifacts and limitations |
+| `CSE508_Winter2024_A4_MT23107..ipynb` | Historical assignment notebook |
