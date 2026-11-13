@@ -1,0 +1,23 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "torch": "2.11.0+cu128",
+  "transformers": "4.57.3",
+  "numpy": "2.3.5",
+  "pandas": "2.3.3",
+  "cuda": "12.8",
+  "device": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "git_commit": "3e978b499b64fb4ceea1e57757aadde2d49af3e6",
+  "code_sha256": {
+    "train.py": "b65d1a3944ba74d60e8441ecf171b4936a814eeaed3bf74326b1239b69e3e341",
+    "training_data.py": "e35dd762c6537bce42b3917a485fcd3f929fdf7c5464bf9fd89032608b893022",
+    "evaluate_checkpoint.py": "4e4f712ad285e5aaa3c2a48bc9d2ed15b92c638f98e0708bb7fec3715133780b",
+    "evaluate.py": "6b89f4aed3988d12e61441bd7973478fa44128a6163c15bf547bce1ac729da18"
+  },
+  "data_sha256": "7221e36e72c6d817dc8bc9ea30e8f274998dbb702fc82d8cc0fc6514ee76235c",
+  "config_sha256": "eff4ad137c0c6d9574e239fb5169052aa9785ba4998054cfac812bbff77ffc05",
+  "split_manifest_sha256": "e253a156d4013e2556193c28509aba0894de32c41b6c139415b684c49ba89035",
+  "device_requested": "cuda",
+  "precision": "bfloat16 autocast, float32 parameters",
+  "selection": "minimum validation target-token NLL at epoch boundaries; test is excluded"
+}

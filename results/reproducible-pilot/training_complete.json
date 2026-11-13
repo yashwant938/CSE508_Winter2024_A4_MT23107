@@ -1,0 +1,6 @@
+{
+  "optimizer_steps": 750,
+  "selected_epoch": 2,
+  "elapsed_seconds": 1056.63,
+  "peak_cuda_memory_allocated_bytes": 2589115392
+}

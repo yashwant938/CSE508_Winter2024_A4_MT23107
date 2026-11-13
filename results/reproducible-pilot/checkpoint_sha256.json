@@ -1,0 +1,10 @@
+{
+  "config.json": "aa4121d7b6d4f6686c836b61fd73ca0a960da6a2ea7972f5acb3233b2277e40b",
+  "generation_config.json": "50bc1b33d76f6e75cebe2baec5f2c86d77a95062413f5be409e3dbb5555072c6",
+  "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+  "model.safetensors": "93b2f77bbc74748ea4d1abeec25df312baf50be97c7c9e79a4907b37abdac65b",
+  "special_tokens_map.json": "27b2f8d519a2a06d346ac97e373ab0baca69205ab9c2026aafffa9c70fbea5d5",
+  "tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+  "tokenizer_config.json": "b80f0b3058dcbeee90cefb5dc40445cd4e74f97738bd278c2278a1dc9ad7d816",
+  "vocab.json": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"
+}

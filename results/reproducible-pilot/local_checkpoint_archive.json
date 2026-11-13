@@ -1,0 +1,8 @@
+{
+  "filename": "Yashwant_GPT2_Reproducible_Checkpoint_2026-11-13.zip",
+  "bytes": 466033899,
+  "sha256": "67afda62c03c932340f9dafd046df410e73b1cd91959472970a5bec553c58540",
+  "selected_epoch": 2,
+  "weights_sha256": "93b2f77bbc74748ea4d1abeec25df312baf50be97c7c9e79a4907b37abdac65b",
+  "distribution": "Saved locally with the delivered workspace artifacts; checkpoint binary is not committed or publicly hosted."
+}
