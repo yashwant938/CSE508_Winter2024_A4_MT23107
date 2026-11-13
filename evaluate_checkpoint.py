@@ -98,7 +98,7 @@ def main():
               "checkpoint_files_sha256": hashes, "run_config": config, "environment": runtime_info(),
               "generation": "greedy; review-only left-padded prompts; float32 inference; same budgets for both models",
               "metric": "mean per-example ROUGE-1/L F1; lowercase alphanumeric tokens; no stemming; complete reference",
-              "uncertainty": "paired percentile bootstrap, 2000 resamples of the fixed test sample; does not measure training-seed variability",
+              "uncertainty": f"paired percentile bootstrap, {config['bootstrap_samples']} resamples of the fixed test sample; does not measure training-seed variability",
               "limitations": ["Small, single-seed fine-tuning experiment; no claim about production quality.",
                               "Exact normalized-review and exact token-prompt duplicates removed; semantic near-duplicates may remain.",
                               "ROUGE measures lexical overlap, not factuality, usefulness, or safety.",

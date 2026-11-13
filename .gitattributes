@@ -1,0 +1,2 @@
+# Keep recorded hashes portable: these artifacts are checksummed as raw bytes.
+results/reproducible-pilot/*.json -text

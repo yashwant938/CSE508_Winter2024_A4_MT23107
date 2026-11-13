@@ -1,0 +1,12 @@
+{
+  "train": {
+    "examples": 6000,
+    "supervised_tokens_including_eos": 39676,
+    "truncated_targets": 1
+  },
+  "validation": {
+    "examples": 512,
+    "supervised_tokens_including_eos": 3313,
+    "truncated_targets": 0
+  }
+}

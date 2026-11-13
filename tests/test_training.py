@@ -1,5 +1,9 @@
 import copy
+import json
+from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 from training_data import collate, make_manifest, training_example, validate_manifest
 
@@ -66,6 +70,22 @@ class TrainingTests(unittest.TestCase):
         with torch.no_grad():
             individual = [float(model(**collate([row], 0)).loss) for row in (a, b)]
         self.assertAlmostEqual(float(output.loss), sum(x * n for x, n in zip(individual, count)) / sum(count), places=5)
+
+    def test_evaluation_rejects_config_or_split_changes_before_loading_model(self):
+        from evaluate_checkpoint import main
+        from train import sha256_file
+        with tempfile.TemporaryDirectory() as temporary:
+            run = Path(temporary)
+            for changed in ('run_config.json', 'split_manifest.json'):
+                for name in ('run_config.json', 'split_manifest.json', 'training_complete.json'):
+                    (run / name).write_text('{}', encoding='utf-8')
+                environment = {'config_sha256': sha256_file(run / 'run_config.json'),
+                               'split_manifest_sha256': sha256_file(run / 'split_manifest.json')}
+                (run / 'environment.json').write_text(json.dumps(environment), encoding='utf-8')
+                (run / changed).write_text('{"changed": true}', encoding='utf-8')
+                with patch('sys.argv', ['evaluate_checkpoint.py', '--run', str(run), '--output', str(run / 'evaluation.json')]):
+                    with self.assertRaisesRegex(ValueError, 'modified after training'):
+                        main()
 
 
 if __name__ == '__main__':

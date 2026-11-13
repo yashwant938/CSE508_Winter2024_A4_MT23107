@@ -13,6 +13,15 @@ hashes, per-example predictions and bootstrap intervals.
 [Fixed experiment configuration](configs/pilot.json) ·
 [Tests](tests/test_training.py)
 
+## Measured pilot result
+
+On 512 untouched test reviews, fine-tuned GPT-2 achieved **ROUGE-L F1
+0.1364**, compared with
+**0.0947** for the first-16-words baseline
+and **0.0421** for the pinned pretrained model.
+This is a single-seed experiment on 6,000 training reviews, not a production
+accuracy claim. [Results, raw predictions and limitations](results/reproducible-pilot/REPORT.md).
+
 ## Corrected training and evaluation
 
 - **Target-only loss:** prompt and padding labels are `-100`; the true summary
