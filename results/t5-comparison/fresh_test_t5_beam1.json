@@ -1,0 +1,3661 @@
+{
+  "identity": {
+    "phase": "test",
+    "protocol": {
+      "config_sha256": "bd094e3ee29a368e5d013bf9d4771c71622430deb4e6bceb0d3ef44d004f28fa",
+      "manifest_sha256": "e5eedddb0e24618903b65dd87ff1a03a9142ef0be0b11358d15f684d472a3432",
+      "gpt2_checkpoint_sha256": {
+        "config.json": "aa4121d7b6d4f6686c836b61fd73ca0a960da6a2ea7972f5acb3233b2277e40b",
+        "generation_config.json": "50bc1b33d76f6e75cebe2baec5f2c86d77a95062413f5be409e3dbb5555072c6",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "model.safetensors": "93b2f77bbc74748ea4d1abeec25df312baf50be97c7c9e79a4907b37abdac65b",
+        "special_tokens_map.json": "27b2f8d519a2a06d346ac97e373ab0baca69205ab9c2026aafffa9c70fbea5d5",
+        "tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+        "tokenizer_config.json": "b80f0b3058dcbeee90cefb5dc40445cd4e74f97738bd278c2278a1dc9ad7d816",
+        "vocab.json": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"
+      },
+      "preparation_source_sha256": {
+        "comparison_data.py": "153d9de30d5dd148e9b49b7c68fe885a12eddaddb975caf177d3887370746840",
+        "evaluate.py": "d4da59d5034fe87e32bbdf7c5bae5d9c9553263cbb0c6b57d7f976f73d35c9ca",
+        "training_data.py": "e35dd762c6537bce42b3917a485fcd3f929fdf7c5464bf9fd89032608b893022"
+      },
+      "selection": "T5 epoch: lowest validation target-token NLL; decoding: highest validation ROUGE-L, tie -> fewer beams. GPT-2 unchanged.",
+      "fresh_test": "512 new corrected-experiment rows; exclude all prior train/validation/test and legacy pilot; exact and 5-word Jaccard >=0.8 exclusions on visible text",
+      "detail_review": "24 hash-selected fresh-test rows, two source-supported product facts each labeled before predictions; agent-authored, not independent human evaluation",
+      "limitations": [
+        "Only Text/Summary retained: no product IDs or product-disjoint guarantee.",
+        "Original coursework data use and base-model pretraining contamination cannot be ruled out.",
+        "Lexical near-duplicate filter does not guarantee semantic independence.",
+        "Same input text and training examples/epochs, not identical tokenizers or compute."
+      ]
+    },
+    "checkpoints": {
+      "gpt2": {
+        "config.json": "aa4121d7b6d4f6686c836b61fd73ca0a960da6a2ea7972f5acb3233b2277e40b",
+        "generation_config.json": "50bc1b33d76f6e75cebe2baec5f2c86d77a95062413f5be409e3dbb5555072c6",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "model.safetensors": "93b2f77bbc74748ea4d1abeec25df312baf50be97c7c9e79a4907b37abdac65b",
+        "special_tokens_map.json": "27b2f8d519a2a06d346ac97e373ab0baca69205ab9c2026aafffa9c70fbea5d5",
+        "tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+        "tokenizer_config.json": "b80f0b3058dcbeee90cefb5dc40445cd4e74f97738bd278c2278a1dc9ad7d816",
+        "vocab.json": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"
+      },
+      "t5": {
+        "config.json": "f12d4146cc9995a218ec1842a7f64fdaf908dade03eedc48cfd0a9ca4a642dac",
+        "generation_config.json": "b11865270fbffca0ff39067c2546f83ccc7b2d51266a4d3af117b5fa4aed0953",
+        "model.safetensors": "7b70f51e8d219f2e2fa1245ef4d52769c48a158cdaabfea6f071c40f46b8bfa9",
+        "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+        "tokenizer.json": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1",
+        "tokenizer_config.json": "536712172825145ed949ec41033d3b91683eca709bf575b3d03d7763ba47f2f9"
+      }
+    },
+    "source_sha256": {
+      "compare_summarizers.py": "105d3b4a34916778973841ee649a95bec554d0d7912f21a968e51750e8956631",
+      "comparison_data.py": "153d9de30d5dd148e9b49b7c68fe885a12eddaddb975caf177d3887370746840",
+      "evaluate.py": "d4da59d5034fe87e32bbdf7c5bae5d9c9553263cbb0c6b57d7f976f73d35c9ca",
+      "evaluate_checkpoint.py": "0ab329d7a7a8a63e79c7d0dda6bd6a788557aa75e3ddefb9497cd6cd8e47136b",
+      "train.py": "b65d1a3944ba74d60e8441ecf171b4936a814eeaed3bf74326b1239b69e3e341",
+      "training_data.py": "e35dd762c6537bce42b3917a485fcd3f929fdf7c5464bf9fd89032608b893022"
+    },
+    "device": "cuda",
+    "environment": {
+      "python": "3.12.10",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "torch": "2.11.0+cu128",
+      "transformers": "4.57.3",
+      "numpy": "2.3.5",
+      "pandas": "2.3.3",
+      "cuda": "12.8",
+      "device": "NVIDIA GeForce RTX 4050 Laptop GPU"
+    },
+    "facts_sha256": "b7bbfdc3327fcd57e348d3482c7d9432d18e91230192bc72b87da6ff5777f017",
+    "selection_sha256": "11d50ddb810faae5d549bfe0757cbe7cecc0bda2f1f82ef3ab55cad9d9176b04",
+    "system": "t5_beam1"
+  },
+  "examples": [
+    {
+      "source_row": 28933,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.1136052000001655,
+      "batch_size": 4,
+      "batch_start": 0
+    },
+    {
+      "source_row": 36119,
+      "prediction": "Great crispy chocolate",
+      "batch_seconds": 0.1136052000001655,
+      "batch_size": 4,
+      "batch_start": 0
+    },
+    {
+      "source_row": 4877,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.1136052000001655,
+      "batch_size": 4,
+      "batch_start": 0
+    },
+    {
+      "source_row": 35317,
+      "prediction": "Great tea",
+      "batch_seconds": 0.1136052000001655,
+      "batch_size": 4,
+      "batch_start": 0
+    },
+    {
+      "source_row": 5773,
+      "prediction": "Good flavor",
+      "batch_seconds": 0.11388690000057977,
+      "batch_size": 4,
+      "batch_start": 4
+    },
+    {
+      "source_row": 9381,
+      "prediction": "YUMMY!",
+      "batch_seconds": 0.11388690000057977,
+      "batch_size": 4,
+      "batch_start": 4
+    },
+    {
+      "source_row": 9524,
+      "prediction": "Strong and strong",
+      "batch_seconds": 0.11388690000057977,
+      "batch_size": 4,
+      "batch_start": 4
+    },
+    {
+      "source_row": 21485,
+      "prediction": "Great deal!",
+      "batch_seconds": 0.11388690000057977,
+      "batch_size": 4,
+      "batch_start": 4
+    },
+    {
+      "source_row": 20198,
+      "prediction": "stale tea",
+      "batch_seconds": 0.13090419999934966,
+      "batch_size": 4,
+      "batch_start": 8
+    },
+    {
+      "source_row": 15241,
+      "prediction": "Great for gluten intolerant",
+      "batch_seconds": 0.13090419999934966,
+      "batch_size": 4,
+      "batch_start": 8
+    },
+    {
+      "source_row": 21318,
+      "prediction": "Amber loves greenies",
+      "batch_seconds": 0.13090419999934966,
+      "batch_size": 4,
+      "batch_start": 8
+    },
+    {
+      "source_row": 31666,
+      "prediction": "Great quality food",
+      "batch_seconds": 0.13090419999934966,
+      "batch_size": 4,
+      "batch_start": 8
+    },
+    {
+      "source_row": 7619,
+      "prediction": "Great service!",
+      "batch_seconds": 0.12477200000103039,
+      "batch_size": 4,
+      "batch_start": 12
+    },
+    {
+      "source_row": 13786,
+      "prediction": "Good for a small vegetarian meal",
+      "batch_seconds": 0.12477200000103039,
+      "batch_size": 4,
+      "batch_start": 12
+    },
+    {
+      "source_row": 15802,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.12477200000103039,
+      "batch_size": 4,
+      "batch_start": 12
+    },
+    {
+      "source_row": 31159,
+      "prediction": "Love these chips",
+      "batch_seconds": 0.12477200000103039,
+      "batch_size": 4,
+      "batch_start": 12
+    },
+    {
+      "source_row": 27457,
+      "prediction": "Great product",
+      "batch_seconds": 0.15698199999860663,
+      "batch_size": 4,
+      "batch_start": 16
+    },
+    {
+      "source_row": 5140,
+      "prediction": "Not a cookie monster",
+      "batch_seconds": 0.15698199999860663,
+      "batch_size": 4,
+      "batch_start": 16
+    },
+    {
+      "source_row": 8542,
+      "prediction": "Good flavor, but not too heavy",
+      "batch_seconds": 0.15698199999860663,
+      "batch_size": 4,
+      "batch_start": 16
+    },
+    {
+      "source_row": 30823,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.15698199999860663,
+      "batch_size": 4,
+      "batch_start": 16
+    },
+    {
+      "source_row": 6352,
+      "prediction": "Great product",
+      "batch_seconds": 0.10920940000141854,
+      "batch_size": 4,
+      "batch_start": 20
+    },
+    {
+      "source_row": 2254,
+      "prediction": "Great product",
+      "batch_seconds": 0.10920940000141854,
+      "batch_size": 4,
+      "batch_start": 20
+    },
+    {
+      "source_row": 1181,
+      "prediction": "I'm impressed",
+      "batch_seconds": 0.10920940000141854,
+      "batch_size": 4,
+      "batch_start": 20
+    },
+    {
+      "source_row": 34249,
+      "prediction": "Great for your dog",
+      "batch_seconds": 0.10920940000141854,
+      "batch_size": 4,
+      "batch_start": 20
+    },
+    {
+      "source_row": 11924,
+      "prediction": "Great Taste",
+      "batch_seconds": 0.05928180000046268,
+      "batch_size": 4,
+      "batch_start": 24
+    },
+    {
+      "source_row": 34799,
+      "prediction": "Best green tea ever",
+      "batch_seconds": 0.05928180000046268,
+      "batch_size": 4,
+      "batch_start": 24
+    },
+    {
+      "source_row": 3403,
+      "prediction": "Better than expected",
+      "batch_seconds": 0.05928180000046268,
+      "batch_size": 4,
+      "batch_start": 24
+    },
+    {
+      "source_row": 1750,
+      "prediction": "Great Popchips",
+      "batch_seconds": 0.05928180000046268,
+      "batch_size": 4,
+      "batch_start": 24
+    },
+    {
+      "source_row": 24626,
+      "prediction": "Great food!",
+      "batch_seconds": 0.11931339999864576,
+      "batch_size": 4,
+      "batch_start": 28
+    },
+    {
+      "source_row": 5582,
+      "prediction": "Best coffee ever",
+      "batch_seconds": 0.11931339999864576,
+      "batch_size": 4,
+      "batch_start": 28
+    },
+    {
+      "source_row": 4709,
+      "prediction": "Great product",
+      "batch_seconds": 0.11931339999864576,
+      "batch_size": 4,
+      "batch_start": 28
+    },
+    {
+      "source_row": 13262,
+      "prediction": "Best K-Cup Coffee",
+      "batch_seconds": 0.11931339999864576,
+      "batch_size": 4,
+      "batch_start": 28
+    },
+    {
+      "source_row": 34740,
+      "prediction": "Great price!",
+      "batch_seconds": 0.08918509999966773,
+      "batch_size": 4,
+      "batch_start": 32
+    },
+    {
+      "source_row": 33574,
+      "prediction": "bold coffee...",
+      "batch_seconds": 0.08918509999966773,
+      "batch_size": 4,
+      "batch_start": 32
+    },
+    {
+      "source_row": 18126,
+      "prediction": "Great choice",
+      "batch_seconds": 0.08918509999966773,
+      "batch_size": 4,
+      "batch_start": 32
+    },
+    {
+      "source_row": 20128,
+      "prediction": "Delicious!",
+      "batch_seconds": 0.08918509999966773,
+      "batch_size": 4,
+      "batch_start": 32
+    },
+    {
+      "source_row": 37402,
+      "prediction": "Delicious",
+      "batch_seconds": 0.08574179999959597,
+      "batch_size": 4,
+      "batch_start": 36
+    },
+    {
+      "source_row": 36302,
+      "prediction": "Great product",
+      "batch_seconds": 0.08574179999959597,
+      "batch_size": 4,
+      "batch_start": 36
+    },
+    {
+      "source_row": 7191,
+      "prediction": "Great",
+      "batch_seconds": 0.08574179999959597,
+      "batch_size": 4,
+      "batch_start": 36
+    },
+    {
+      "source_row": 16756,
+      "prediction": "Great taste",
+      "batch_seconds": 0.08574179999959597,
+      "batch_size": 4,
+      "batch_start": 36
+    },
+    {
+      "source_row": 19409,
+      "prediction": "Great noodles!",
+      "batch_seconds": 0.10413530000005267,
+      "batch_size": 4,
+      "batch_start": 40
+    },
+    {
+      "source_row": 29393,
+      "prediction": "Great popcorn",
+      "batch_seconds": 0.10413530000005267,
+      "batch_size": 4,
+      "batch_start": 40
+    },
+    {
+      "source_row": 5416,
+      "prediction": "My son loves it",
+      "batch_seconds": 0.10413530000005267,
+      "batch_size": 4,
+      "batch_start": 40
+    },
+    {
+      "source_row": 28710,
+      "prediction": "Great taste",
+      "batch_seconds": 0.10413530000005267,
+      "batch_size": 4,
+      "batch_start": 40
+    },
+    {
+      "source_row": 18801,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.08844170000156737,
+      "batch_size": 4,
+      "batch_start": 44
+    },
+    {
+      "source_row": 15825,
+      "prediction": "Great tasting coffee",
+      "batch_seconds": 0.08844170000156737,
+      "batch_size": 4,
+      "batch_start": 44
+    },
+    {
+      "source_row": 23361,
+      "prediction": "Great product",
+      "batch_seconds": 0.08844170000156737,
+      "batch_size": 4,
+      "batch_start": 44
+    },
+    {
+      "source_row": 4990,
+      "prediction": "Great snack",
+      "batch_seconds": 0.08844170000156737,
+      "batch_size": 4,
+      "batch_start": 44
+    },
+    {
+      "source_row": 8993,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.12060240000027989,
+      "batch_size": 4,
+      "batch_start": 48
+    },
+    {
+      "source_row": 20629,
+      "prediction": "Great dog food",
+      "batch_seconds": 0.12060240000027989,
+      "batch_size": 4,
+      "batch_start": 48
+    },
+    {
+      "source_row": 21184,
+      "prediction": "My dog loves these treats!",
+      "batch_seconds": 0.12060240000027989,
+      "batch_size": 4,
+      "batch_start": 48
+    },
+    {
+      "source_row": 33557,
+      "prediction": "Great aroma",
+      "batch_seconds": 0.12060240000027989,
+      "batch_size": 4,
+      "batch_start": 48
+    },
+    {
+      "source_row": 19682,
+      "prediction": "Great food!",
+      "batch_seconds": 0.08118590000049153,
+      "batch_size": 4,
+      "batch_start": 52
+    },
+    {
+      "source_row": 356,
+      "prediction": "Good Strawberry flavor",
+      "batch_seconds": 0.08118590000049153,
+      "batch_size": 4,
+      "batch_start": 52
+    },
+    {
+      "source_row": 17388,
+      "prediction": "Not a good mat",
+      "batch_seconds": 0.08118590000049153,
+      "batch_size": 4,
+      "batch_start": 52
+    },
+    {
+      "source_row": 19843,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.08118590000049153,
+      "batch_size": 4,
+      "batch_start": 52
+    },
+    {
+      "source_row": 26110,
+      "prediction": "I love this kettle",
+      "batch_seconds": 0.13912470000104804,
+      "batch_size": 4,
+      "batch_start": 56
+    },
+    {
+      "source_row": 21497,
+      "prediction": "Great product!",
+      "batch_seconds": 0.13912470000104804,
+      "batch_size": 4,
+      "batch_start": 56
+    },
+    {
+      "source_row": 25089,
+      "prediction": "Great gift!",
+      "batch_seconds": 0.13912470000104804,
+      "batch_size": 4,
+      "batch_start": 56
+    },
+    {
+      "source_row": 17675,
+      "prediction": "Great for a little duck!",
+      "batch_seconds": 0.13912470000104804,
+      "batch_size": 4,
+      "batch_start": 56
+    },
+    {
+      "source_row": 31409,
+      "prediction": "Not a good product",
+      "batch_seconds": 0.09509210000032908,
+      "batch_size": 4,
+      "batch_start": 60
+    },
+    {
+      "source_row": 9832,
+      "prediction": "Great product",
+      "batch_seconds": 0.09509210000032908,
+      "batch_size": 4,
+      "batch_start": 60
+    },
+    {
+      "source_row": 12415,
+      "prediction": "Rich, dark chocolate",
+      "batch_seconds": 0.09509210000032908,
+      "batch_size": 4,
+      "batch_start": 60
+    },
+    {
+      "source_row": 7071,
+      "prediction": "Great product",
+      "batch_seconds": 0.09509210000032908,
+      "batch_size": 4,
+      "batch_start": 60
+    },
+    {
+      "source_row": 24650,
+      "prediction": "Not fresh",
+      "batch_seconds": 0.09083079999982147,
+      "batch_size": 4,
+      "batch_start": 64
+    },
+    {
+      "source_row": 7810,
+      "prediction": "Great for a vegetarian",
+      "batch_seconds": 0.09083079999982147,
+      "batch_size": 4,
+      "batch_start": 64
+    },
+    {
+      "source_row": 29560,
+      "prediction": "Great taste",
+      "batch_seconds": 0.09083079999982147,
+      "batch_size": 4,
+      "batch_start": 64
+    },
+    {
+      "source_row": 14565,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.09083079999982147,
+      "batch_size": 4,
+      "batch_start": 64
+    },
+    {
+      "source_row": 29111,
+      "prediction": "My favorite spice",
+      "batch_seconds": 0.11065500000040629,
+      "batch_size": 4,
+      "batch_start": 68
+    },
+    {
+      "source_row": 19568,
+      "prediction": "Dogs are ill!",
+      "batch_seconds": 0.11065500000040629,
+      "batch_size": 4,
+      "batch_start": 68
+    },
+    {
+      "source_row": 25121,
+      "prediction": "Great for dogs",
+      "batch_seconds": 0.11065500000040629,
+      "batch_size": 4,
+      "batch_start": 68
+    },
+    {
+      "source_row": 10229,
+      "prediction": "Great treat",
+      "batch_seconds": 0.11065500000040629,
+      "batch_size": 4,
+      "batch_start": 68
+    },
+    {
+      "source_row": 38556,
+      "prediction": "Great syrup",
+      "batch_seconds": 0.07613169999967795,
+      "batch_size": 4,
+      "batch_start": 72
+    },
+    {
+      "source_row": 784,
+      "prediction": "Not easy",
+      "batch_seconds": 0.07613169999967795,
+      "batch_size": 4,
+      "batch_start": 72
+    },
+    {
+      "source_row": 6592,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.07613169999967795,
+      "batch_size": 4,
+      "batch_start": 72
+    },
+    {
+      "source_row": 9970,
+      "prediction": "Great product",
+      "batch_seconds": 0.07613169999967795,
+      "batch_size": 4,
+      "batch_start": 72
+    },
+    {
+      "source_row": 18494,
+      "prediction": "I love these wafers",
+      "batch_seconds": 0.10109779999947932,
+      "batch_size": 4,
+      "batch_start": 76
+    },
+    {
+      "source_row": 10341,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.10109779999947932,
+      "batch_size": 4,
+      "batch_start": 76
+    },
+    {
+      "source_row": 23317,
+      "prediction": "Not good",
+      "batch_seconds": 0.10109779999947932,
+      "batch_size": 4,
+      "batch_start": 76
+    },
+    {
+      "source_row": 21650,
+      "prediction": "$27.00",
+      "batch_seconds": 0.10109779999947932,
+      "batch_size": 4,
+      "batch_start": 76
+    },
+    {
+      "source_row": 2062,
+      "prediction": "Great pancake mix",
+      "batch_seconds": 0.1707869000001665,
+      "batch_size": 4,
+      "batch_start": 80
+    },
+    {
+      "source_row": 37158,
+      "prediction": "Great Taste!",
+      "batch_seconds": 0.1707869000001665,
+      "batch_size": 4,
+      "batch_start": 80
+    },
+    {
+      "source_row": 5410,
+      "prediction": "My 8-month-old son loves them",
+      "batch_seconds": 0.1707869000001665,
+      "batch_size": 4,
+      "batch_start": 80
+    },
+    {
+      "source_row": 35566,
+      "prediction": "Great product",
+      "batch_seconds": 0.1707869000001665,
+      "batch_size": 4,
+      "batch_start": 80
+    },
+    {
+      "source_row": 39808,
+      "prediction": "Best Pet Garden",
+      "batch_seconds": 0.11071819999961008,
+      "batch_size": 4,
+      "batch_start": 84
+    },
+    {
+      "source_row": 29357,
+      "prediction": "Great popcorn",
+      "batch_seconds": 0.11071819999961008,
+      "batch_size": 4,
+      "batch_start": 84
+    },
+    {
+      "source_row": 21126,
+      "prediction": "Great product!",
+      "batch_seconds": 0.11071819999961008,
+      "batch_size": 4,
+      "batch_start": 84
+    },
+    {
+      "source_row": 7688,
+      "prediction": "Good for the kids",
+      "batch_seconds": 0.11071819999961008,
+      "batch_size": 4,
+      "batch_start": 84
+    },
+    {
+      "source_row": 87,
+      "prediction": "Great product!",
+      "batch_seconds": 0.23402050000004238,
+      "batch_size": 4,
+      "batch_start": 88
+    },
+    {
+      "source_row": 9025,
+      "prediction": "A little more flavored than a sips",
+      "batch_seconds": 0.23402050000004238,
+      "batch_size": 4,
+      "batch_start": 88
+    },
+    {
+      "source_row": 12491,
+      "prediction": "Great seasoning!",
+      "batch_seconds": 0.23402050000004238,
+      "batch_size": 4,
+      "batch_start": 88
+    },
+    {
+      "source_row": 13735,
+      "prediction": "OK",
+      "batch_seconds": 0.23402050000004238,
+      "batch_size": 4,
+      "batch_start": 88
+    },
+    {
+      "source_row": 19272,
+      "prediction": "Great taste",
+      "batch_seconds": 0.10510699999940698,
+      "batch_size": 4,
+      "batch_start": 92
+    },
+    {
+      "source_row": 1521,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.10510699999940698,
+      "batch_size": 4,
+      "batch_start": 92
+    },
+    {
+      "source_row": 37919,
+      "prediction": "Delicious, spicy tea",
+      "batch_seconds": 0.10510699999940698,
+      "batch_size": 4,
+      "batch_start": 92
+    },
+    {
+      "source_row": 33973,
+      "prediction": "My husband loves it",
+      "batch_seconds": 0.10510699999940698,
+      "batch_size": 4,
+      "batch_start": 92
+    },
+    {
+      "source_row": 36419,
+      "prediction": "I love this",
+      "batch_seconds": 0.14546880000125384,
+      "batch_size": 4,
+      "batch_start": 96
+    },
+    {
+      "source_row": 30778,
+      "prediction": "Delicious, but not overpowering",
+      "batch_seconds": 0.14546880000125384,
+      "batch_size": 4,
+      "batch_start": 96
+    },
+    {
+      "source_row": 6843,
+      "prediction": "Very tasty",
+      "batch_seconds": 0.14546880000125384,
+      "batch_size": 4,
+      "batch_start": 96
+    },
+    {
+      "source_row": 24092,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.14546880000125384,
+      "batch_size": 4,
+      "batch_start": 96
+    },
+    {
+      "source_row": 31620,
+      "prediction": "Vegan chocoholic",
+      "batch_seconds": 0.22472580000066955,
+      "batch_size": 4,
+      "batch_start": 100
+    },
+    {
+      "source_row": 33096,
+      "prediction": "Great for meaty beef stews",
+      "batch_seconds": 0.22472580000066955,
+      "batch_size": 4,
+      "batch_start": 100
+    },
+    {
+      "source_row": 30926,
+      "prediction": "Very unique",
+      "batch_seconds": 0.22472580000066955,
+      "batch_size": 4,
+      "batch_start": 100
+    },
+    {
+      "source_row": 23179,
+      "prediction": "Good coffee, but not as good as the old ones",
+      "batch_seconds": 0.22472580000066955,
+      "batch_size": 4,
+      "batch_start": 100
+    },
+    {
+      "source_row": 36330,
+      "prediction": "Great taste",
+      "batch_seconds": 0.18190289999984088,
+      "batch_size": 4,
+      "batch_start": 104
+    },
+    {
+      "source_row": 21627,
+      "prediction": "Good source of information, but not the truth",
+      "batch_seconds": 0.18190289999984088,
+      "batch_size": 4,
+      "batch_start": 104
+    },
+    {
+      "source_row": 27187,
+      "prediction": "Great product",
+      "batch_seconds": 0.18190289999984088,
+      "batch_size": 4,
+      "batch_start": 104
+    },
+    {
+      "source_row": 20585,
+      "prediction": "Great refill",
+      "batch_seconds": 0.18190289999984088,
+      "batch_size": 4,
+      "batch_start": 104
+    },
+    {
+      "source_row": 39221,
+      "prediction": "Great kadoya sesame oil",
+      "batch_seconds": 0.22891549999985727,
+      "batch_size": 4,
+      "batch_start": 108
+    },
+    {
+      "source_row": 28316,
+      "prediction": "Great value",
+      "batch_seconds": 0.22891549999985727,
+      "batch_size": 4,
+      "batch_start": 108
+    },
+    {
+      "source_row": 12965,
+      "prediction": "Great Cracker!",
+      "batch_seconds": 0.22891549999985727,
+      "batch_size": 4,
+      "batch_start": 108
+    },
+    {
+      "source_row": 18679,
+      "prediction": "My dogs love these treats!",
+      "batch_seconds": 0.22891549999985727,
+      "batch_size": 4,
+      "batch_start": 108
+    },
+    {
+      "source_row": 2503,
+      "prediction": "Delicious",
+      "batch_seconds": 0.11956329999884474,
+      "batch_size": 4,
+      "batch_start": 112
+    },
+    {
+      "source_row": 1734,
+      "prediction": "Great snack",
+      "batch_seconds": 0.11956329999884474,
+      "batch_size": 4,
+      "batch_start": 112
+    },
+    {
+      "source_row": 6457,
+      "prediction": "Great for diabetics",
+      "batch_seconds": 0.11956329999884474,
+      "batch_size": 4,
+      "batch_start": 112
+    },
+    {
+      "source_row": 31254,
+      "prediction": "Delicious",
+      "batch_seconds": 0.11956329999884474,
+      "batch_size": 4,
+      "batch_start": 112
+    },
+    {
+      "source_row": 8049,
+      "prediction": "Great for a healthy cat",
+      "batch_seconds": 0.16841300000123738,
+      "batch_size": 4,
+      "batch_start": 116
+    },
+    {
+      "source_row": 15940,
+      "prediction": "Great product, but not the best!",
+      "batch_seconds": 0.16841300000123738,
+      "batch_size": 4,
+      "batch_start": 116
+    },
+    {
+      "source_row": 4641,
+      "prediction": "Great deal",
+      "batch_seconds": 0.16841300000123738,
+      "batch_size": 4,
+      "batch_start": 116
+    },
+    {
+      "source_row": 25848,
+      "prediction": "Great",
+      "batch_seconds": 0.16841300000123738,
+      "batch_size": 4,
+      "batch_start": 116
+    },
+    {
+      "source_row": 8191,
+      "prediction": "Great tofu",
+      "batch_seconds": 0.0685739000000467,
+      "batch_size": 4,
+      "batch_start": 120
+    },
+    {
+      "source_row": 30169,
+      "prediction": "Great bread",
+      "batch_seconds": 0.0685739000000467,
+      "batch_size": 4,
+      "batch_start": 120
+    },
+    {
+      "source_row": 2068,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.0685739000000467,
+      "batch_size": 4,
+      "batch_start": 120
+    },
+    {
+      "source_row": 13617,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.0685739000000467,
+      "batch_size": 4,
+      "batch_start": 120
+    },
+    {
+      "source_row": 2128,
+      "prediction": "Great quality, good taste, good quality",
+      "batch_seconds": 0.17288430000007793,
+      "batch_size": 4,
+      "batch_start": 124
+    },
+    {
+      "source_row": 14960,
+      "prediction": "molded chestnuts",
+      "batch_seconds": 0.17288430000007793,
+      "batch_size": 4,
+      "batch_start": 124
+    },
+    {
+      "source_row": 17569,
+      "prediction": "Not a good tea",
+      "batch_seconds": 0.17288430000007793,
+      "batch_size": 4,
+      "batch_start": 124
+    },
+    {
+      "source_row": 16164,
+      "prediction": "Great product!",
+      "batch_seconds": 0.17288430000007793,
+      "batch_size": 4,
+      "batch_start": 124
+    },
+    {
+      "source_row": 3437,
+      "prediction": "Great drink",
+      "batch_seconds": 0.1734814000010374,
+      "batch_size": 4,
+      "batch_start": 128
+    },
+    {
+      "source_row": 21152,
+      "prediction": "Great product!",
+      "batch_seconds": 0.1734814000010374,
+      "batch_size": 4,
+      "batch_start": 128
+    },
+    {
+      "source_row": 16352,
+      "prediction": "Best Coffee Ever",
+      "batch_seconds": 0.1734814000010374,
+      "batch_size": 4,
+      "batch_start": 128
+    },
+    {
+      "source_row": 25026,
+      "prediction": "k-cup van houtte",
+      "batch_seconds": 0.1734814000010374,
+      "batch_size": 4,
+      "batch_start": 128
+    },
+    {
+      "source_row": 20202,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.08668390000093495,
+      "batch_size": 4,
+      "batch_start": 132
+    },
+    {
+      "source_row": 7105,
+      "prediction": "Not satisfied",
+      "batch_seconds": 0.08668390000093495,
+      "batch_size": 4,
+      "batch_start": 132
+    },
+    {
+      "source_row": 23955,
+      "prediction": "Best Popchips ever",
+      "batch_seconds": 0.08668390000093495,
+      "batch_size": 4,
+      "batch_start": 132
+    },
+    {
+      "source_row": 14327,
+      "prediction": "Great product",
+      "batch_seconds": 0.08668390000093495,
+      "batch_size": 4,
+      "batch_start": 132
+    },
+    {
+      "source_row": 24016,
+      "prediction": "Best chips ever",
+      "batch_seconds": 0.10654890000114392,
+      "batch_size": 4,
+      "batch_start": 136
+    },
+    {
+      "source_row": 9157,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.10654890000114392,
+      "batch_size": 4,
+      "batch_start": 136
+    },
+    {
+      "source_row": 39004,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.10654890000114392,
+      "batch_size": 4,
+      "batch_start": 136
+    },
+    {
+      "source_row": 25476,
+      "prediction": "Great price!",
+      "batch_seconds": 0.10654890000114392,
+      "batch_size": 4,
+      "batch_start": 136
+    },
+    {
+      "source_row": 5422,
+      "prediction": "Great for baby food",
+      "batch_seconds": 0.12727530000120169,
+      "batch_size": 4,
+      "batch_start": 140
+    },
+    {
+      "source_row": 6407,
+      "prediction": "Great product",
+      "batch_seconds": 0.12727530000120169,
+      "batch_size": 4,
+      "batch_start": 140
+    },
+    {
+      "source_row": 7320,
+      "prediction": "Good vinegar",
+      "batch_seconds": 0.12727530000120169,
+      "batch_size": 4,
+      "batch_start": 140
+    },
+    {
+      "source_row": 36230,
+      "prediction": "Great cereal!",
+      "batch_seconds": 0.12727530000120169,
+      "batch_size": 4,
+      "batch_start": 140
+    },
+    {
+      "source_row": 38391,
+      "prediction": "Great product",
+      "batch_seconds": 0.20083920000070066,
+      "batch_size": 4,
+      "batch_start": 144
+    },
+    {
+      "source_row": 34622,
+      "prediction": "Best chips ever",
+      "batch_seconds": 0.20083920000070066,
+      "batch_size": 4,
+      "batch_start": 144
+    },
+    {
+      "source_row": 29081,
+      "prediction": "Not the same as the blackberry juice!",
+      "batch_seconds": 0.20083920000070066,
+      "batch_size": 4,
+      "batch_start": 144
+    },
+    {
+      "source_row": 5544,
+      "prediction": "gerber may mix apricots",
+      "batch_seconds": 0.20083920000070066,
+      "batch_size": 4,
+      "batch_start": 144
+    },
+    {
+      "source_row": 29322,
+      "prediction": "Great popcorn",
+      "batch_seconds": 0.14438239999981306,
+      "batch_size": 4,
+      "batch_start": 148
+    },
+    {
+      "source_row": 11514,
+      "prediction": "Great snack!",
+      "batch_seconds": 0.14438239999981306,
+      "batch_size": 4,
+      "batch_start": 148
+    },
+    {
+      "source_row": 11825,
+      "prediction": "Great for a good coffee",
+      "batch_seconds": 0.14438239999981306,
+      "batch_size": 4,
+      "batch_start": 148
+    },
+    {
+      "source_row": 9885,
+      "prediction": "Great price",
+      "batch_seconds": 0.14438239999981306,
+      "batch_size": 4,
+      "batch_start": 148
+    },
+    {
+      "source_row": 15308,
+      "prediction": "Not a big deal",
+      "batch_seconds": 0.11490830000002461,
+      "batch_size": 4,
+      "batch_start": 152
+    },
+    {
+      "source_row": 19325,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.11490830000002461,
+      "batch_size": 4,
+      "batch_start": 152
+    },
+    {
+      "source_row": 38093,
+      "prediction": "Great rice noodles",
+      "batch_seconds": 0.11490830000002461,
+      "batch_size": 4,
+      "batch_start": 152
+    },
+    {
+      "source_row": 16044,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.11490830000002461,
+      "batch_size": 4,
+      "batch_start": 152
+    },
+    {
+      "source_row": 23951,
+      "prediction": "Great flavor!",
+      "batch_seconds": 0.17544339999949443,
+      "batch_size": 4,
+      "batch_start": 156
+    },
+    {
+      "source_row": 4797,
+      "prediction": "My dog loves it",
+      "batch_seconds": 0.17544339999949443,
+      "batch_size": 4,
+      "batch_start": 156
+    },
+    {
+      "source_row": 15062,
+      "prediction": "Great for animals, but not for bud damage",
+      "batch_seconds": 0.17544339999949443,
+      "batch_size": 4,
+      "batch_start": 156
+    },
+    {
+      "source_row": 9763,
+      "prediction": "Hot Cocoa",
+      "batch_seconds": 0.17544339999949443,
+      "batch_size": 4,
+      "batch_start": 156
+    },
+    {
+      "source_row": 12411,
+      "prediction": "Great chocolate",
+      "batch_seconds": 0.07904819999930623,
+      "batch_size": 4,
+      "batch_start": 160
+    },
+    {
+      "source_row": 7203,
+      "prediction": "Great tea",
+      "batch_seconds": 0.07904819999930623,
+      "batch_size": 4,
+      "batch_start": 160
+    },
+    {
+      "source_row": 18596,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.07904819999930623,
+      "batch_size": 4,
+      "batch_start": 160
+    },
+    {
+      "source_row": 37209,
+      "prediction": "Best tea ever",
+      "batch_seconds": 0.07904819999930623,
+      "batch_size": 4,
+      "batch_start": 160
+    },
+    {
+      "source_row": 16442,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.12212539999927685,
+      "batch_size": 4,
+      "batch_start": 164
+    },
+    {
+      "source_row": 34682,
+      "prediction": "Great taste!",
+      "batch_seconds": 0.12212539999927685,
+      "batch_size": 4,
+      "batch_start": 164
+    },
+    {
+      "source_row": 5124,
+      "prediction": "Great product",
+      "batch_seconds": 0.12212539999927685,
+      "batch_size": 4,
+      "batch_start": 164
+    },
+    {
+      "source_row": 33576,
+      "prediction": "a sacrificial coffee",
+      "batch_seconds": 0.12212539999927685,
+      "batch_size": 4,
+      "batch_start": 164
+    },
+    {
+      "source_row": 39110,
+      "prediction": "My kids love it",
+      "batch_seconds": 0.07717890000094485,
+      "batch_size": 4,
+      "batch_start": 168
+    },
+    {
+      "source_row": 24533,
+      "prediction": "Great treats",
+      "batch_seconds": 0.07717890000094485,
+      "batch_size": 4,
+      "batch_start": 168
+    },
+    {
+      "source_row": 10015,
+      "prediction": "Good flavor, but not good",
+      "batch_seconds": 0.07717890000094485,
+      "batch_size": 4,
+      "batch_start": 168
+    },
+    {
+      "source_row": 7498,
+      "prediction": "Good bacon",
+      "batch_seconds": 0.07717890000094485,
+      "batch_size": 4,
+      "batch_start": 168
+    },
+    {
+      "source_row": 2440,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.13547400000061316,
+      "batch_size": 4,
+      "batch_start": 172
+    },
+    {
+      "source_row": 16614,
+      "prediction": "Great tasting carbonated drink",
+      "batch_seconds": 0.13547400000061316,
+      "batch_size": 4,
+      "batch_start": 172
+    },
+    {
+      "source_row": 23281,
+      "prediction": "Great for new foods",
+      "batch_seconds": 0.13547400000061316,
+      "batch_size": 4,
+      "batch_start": 172
+    },
+    {
+      "source_row": 6545,
+      "prediction": "Best Ice Tea",
+      "batch_seconds": 0.13547400000061316,
+      "batch_size": 4,
+      "batch_start": 172
+    },
+    {
+      "source_row": 27393,
+      "prediction": "Great snack for your dog",
+      "batch_seconds": 0.15563750000001164,
+      "batch_size": 4,
+      "batch_start": 176
+    },
+    {
+      "source_row": 38880,
+      "prediction": "Great for adults!",
+      "batch_seconds": 0.15563750000001164,
+      "batch_size": 4,
+      "batch_start": 176
+    },
+    {
+      "source_row": 12534,
+      "prediction": "Great snack",
+      "batch_seconds": 0.15563750000001164,
+      "batch_size": 4,
+      "batch_start": 176
+    },
+    {
+      "source_row": 8266,
+      "prediction": "Good food, but not for the price",
+      "batch_seconds": 0.15563750000001164,
+      "batch_size": 4,
+      "batch_start": 176
+    },
+    {
+      "source_row": 16053,
+      "prediction": "My son loves it",
+      "batch_seconds": 0.14681179999934102,
+      "batch_size": 4,
+      "batch_start": 180
+    },
+    {
+      "source_row": 21337,
+      "prediction": "My dog loves it!",
+      "batch_seconds": 0.14681179999934102,
+      "batch_size": 4,
+      "batch_start": 180
+    },
+    {
+      "source_row": 11169,
+      "prediction": "Delicious",
+      "batch_seconds": 0.14681179999934102,
+      "batch_size": 4,
+      "batch_start": 180
+    },
+    {
+      "source_row": 15055,
+      "prediction": "Cardomoms",
+      "batch_seconds": 0.14681179999934102,
+      "batch_size": 4,
+      "batch_start": 180
+    },
+    {
+      "source_row": 12107,
+      "prediction": "Great treats",
+      "batch_seconds": 0.17030829999930575,
+      "batch_size": 4,
+      "batch_start": 184
+    },
+    {
+      "source_row": 17300,
+      "prediction": "Delicious, moist brownies",
+      "batch_seconds": 0.17030829999930575,
+      "batch_size": 4,
+      "batch_start": 184
+    },
+    {
+      "source_row": 21034,
+      "prediction": "Great for your toothbrush",
+      "batch_seconds": 0.17030829999930575,
+      "batch_size": 4,
+      "batch_start": 184
+    },
+    {
+      "source_row": 819,
+      "prediction": "My spaniel loves these!",
+      "batch_seconds": 0.17030829999930575,
+      "batch_size": 4,
+      "batch_start": 184
+    },
+    {
+      "source_row": 21435,
+      "prediction": "Great product",
+      "batch_seconds": 0.1588910999998916,
+      "batch_size": 4,
+      "batch_start": 188
+    },
+    {
+      "source_row": 21935,
+      "prediction": "My dog loves it!",
+      "batch_seconds": 0.1588910999998916,
+      "batch_size": 4,
+      "batch_start": 188
+    },
+    {
+      "source_row": 4018,
+      "prediction": "Not a good substitute for salt!",
+      "batch_seconds": 0.1588910999998916,
+      "batch_size": 4,
+      "batch_start": 188
+    },
+    {
+      "source_row": 18061,
+      "prediction": "Great peanut butter!",
+      "batch_seconds": 0.1588910999998916,
+      "batch_size": 4,
+      "batch_start": 188
+    },
+    {
+      "source_row": 2399,
+      "prediction": "Best coffee keurig ever",
+      "batch_seconds": 0.1619630999994115,
+      "batch_size": 4,
+      "batch_start": 192
+    },
+    {
+      "source_row": 34945,
+      "prediction": "Great product!",
+      "batch_seconds": 0.1619630999994115,
+      "batch_size": 4,
+      "batch_start": 192
+    },
+    {
+      "source_row": 22319,
+      "prediction": "Great product",
+      "batch_seconds": 0.1619630999994115,
+      "batch_size": 4,
+      "batch_start": 192
+    },
+    {
+      "source_row": 5959,
+      "prediction": "Great for the best jars",
+      "batch_seconds": 0.1619630999994115,
+      "batch_size": 4,
+      "batch_start": 192
+    },
+    {
+      "source_row": 5295,
+      "prediction": "Good product, but not the same",
+      "batch_seconds": 0.20582170000125188,
+      "batch_size": 4,
+      "batch_start": 196
+    },
+    {
+      "source_row": 9008,
+      "prediction": "Great Kona!",
+      "batch_seconds": 0.20582170000125188,
+      "batch_size": 4,
+      "batch_start": 196
+    },
+    {
+      "source_row": 37719,
+      "prediction": "Too much popcorn",
+      "batch_seconds": 0.20582170000125188,
+      "batch_size": 4,
+      "batch_start": 196
+    },
+    {
+      "source_row": 36983,
+      "prediction": "Best starburst candies ever!",
+      "batch_seconds": 0.20582170000125188,
+      "batch_size": 4,
+      "batch_start": 196
+    },
+    {
+      "source_row": 3998,
+      "prediction": "Delicious",
+      "batch_seconds": 0.099867599999925,
+      "batch_size": 4,
+      "batch_start": 200
+    },
+    {
+      "source_row": 10824,
+      "prediction": "Great breakfast cereal",
+      "batch_seconds": 0.099867599999925,
+      "batch_size": 4,
+      "batch_start": 200
+    },
+    {
+      "source_row": 36310,
+      "prediction": "I'm angry",
+      "batch_seconds": 0.099867599999925,
+      "batch_size": 4,
+      "batch_start": 200
+    },
+    {
+      "source_row": 112,
+      "prediction": "Best Green Tea",
+      "batch_seconds": 0.099867599999925,
+      "batch_size": 4,
+      "batch_start": 200
+    },
+    {
+      "source_row": 9717,
+      "prediction": "Great product",
+      "batch_seconds": 0.12310960000104387,
+      "batch_size": 4,
+      "batch_start": 204
+    },
+    {
+      "source_row": 9516,
+      "prediction": "Great product",
+      "batch_seconds": 0.12310960000104387,
+      "batch_size": 4,
+      "batch_start": 204
+    },
+    {
+      "source_row": 25905,
+      "prediction": "Delicious",
+      "batch_seconds": 0.12310960000104387,
+      "batch_size": 4,
+      "batch_start": 204
+    },
+    {
+      "source_row": 23939,
+      "prediction": "Great Cheese Popchips",
+      "batch_seconds": 0.12310960000104387,
+      "batch_size": 4,
+      "batch_start": 204
+    },
+    {
+      "source_row": 18163,
+      "prediction": "Great product!",
+      "batch_seconds": 0.1107811000001675,
+      "batch_size": 4,
+      "batch_start": 208
+    },
+    {
+      "source_row": 34031,
+      "prediction": "Delicious tea",
+      "batch_seconds": 0.1107811000001675,
+      "batch_size": 4,
+      "batch_start": 208
+    },
+    {
+      "source_row": 26431,
+      "prediction": "Not a good product",
+      "batch_seconds": 0.1107811000001675,
+      "batch_size": 4,
+      "batch_start": 208
+    },
+    {
+      "source_row": 38123,
+      "prediction": "Great stuff!",
+      "batch_seconds": 0.1107811000001675,
+      "batch_size": 4,
+      "batch_start": 208
+    },
+    {
+      "source_row": 10172,
+      "prediction": "Delicious!",
+      "batch_seconds": 0.2060760999993363,
+      "batch_size": 4,
+      "batch_start": 212
+    },
+    {
+      "source_row": 10547,
+      "prediction": "Great sauce, but not as good as the reviews",
+      "batch_seconds": 0.2060760999993363,
+      "batch_size": 4,
+      "batch_start": 212
+    },
+    {
+      "source_row": 7176,
+      "prediction": "Delicious",
+      "batch_seconds": 0.2060760999993363,
+      "batch_size": 4,
+      "batch_start": 212
+    },
+    {
+      "source_row": 25086,
+      "prediction": "Great challenge",
+      "batch_seconds": 0.2060760999993363,
+      "batch_size": 4,
+      "batch_start": 212
+    },
+    {
+      "source_row": 16045,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.15904300000147487,
+      "batch_size": 4,
+      "batch_start": 216
+    },
+    {
+      "source_row": 18210,
+      "prediction": "Good, but not salty",
+      "batch_seconds": 0.15904300000147487,
+      "batch_size": 4,
+      "batch_start": 216
+    },
+    {
+      "source_row": 9575,
+      "prediction": "Not a problem",
+      "batch_seconds": 0.15904300000147487,
+      "batch_size": 4,
+      "batch_start": 216
+    },
+    {
+      "source_row": 12921,
+      "prediction": "Great taste!",
+      "batch_seconds": 0.15904300000147487,
+      "batch_size": 4,
+      "batch_start": 216
+    },
+    {
+      "source_row": 6717,
+      "prediction": "Not a real fruit juice",
+      "batch_seconds": 0.20610769999984768,
+      "batch_size": 4,
+      "batch_start": 220
+    },
+    {
+      "source_row": 11824,
+      "prediction": "My daughter loves it",
+      "batch_seconds": 0.20610769999984768,
+      "batch_size": 4,
+      "batch_start": 220
+    },
+    {
+      "source_row": 2931,
+      "prediction": "minus creme, minus cookie",
+      "batch_seconds": 0.20610769999984768,
+      "batch_size": 4,
+      "batch_start": 220
+    },
+    {
+      "source_row": 37630,
+      "prediction": "Chocolate",
+      "batch_seconds": 0.20610769999984768,
+      "batch_size": 4,
+      "batch_start": 220
+    },
+    {
+      "source_row": 22179,
+      "prediction": "Great interactive toy!",
+      "batch_seconds": 0.1254331000000093,
+      "batch_size": 4,
+      "batch_start": 224
+    },
+    {
+      "source_row": 32995,
+      "prediction": "Great vet!",
+      "batch_seconds": 0.1254331000000093,
+      "batch_size": 4,
+      "batch_start": 224
+    },
+    {
+      "source_row": 29370,
+      "prediction": "Great popcorn",
+      "batch_seconds": 0.1254331000000093,
+      "batch_size": 4,
+      "batch_start": 224
+    },
+    {
+      "source_row": 19869,
+      "prediction": "Great value for money",
+      "batch_seconds": 0.1254331000000093,
+      "batch_size": 4,
+      "batch_start": 224
+    },
+    {
+      "source_row": 27828,
+      "prediction": "My dog loves it",
+      "batch_seconds": 0.2510430999991513,
+      "batch_size": 4,
+      "batch_start": 228
+    },
+    {
+      "source_row": 36114,
+      "prediction": "Very good, but not as good as the other cookies",
+      "batch_seconds": 0.2510430999991513,
+      "batch_size": 4,
+      "batch_start": 228
+    },
+    {
+      "source_row": 18269,
+      "prediction": "Great tea!",
+      "batch_seconds": 0.2510430999991513,
+      "batch_size": 4,
+      "batch_start": 228
+    },
+    {
+      "source_row": 31442,
+      "prediction": "Great for everyday use",
+      "batch_seconds": 0.2510430999991513,
+      "batch_size": 4,
+      "batch_start": 228
+    },
+    {
+      "source_row": 31248,
+      "prediction": "My Grandkids love them!",
+      "batch_seconds": 0.1318928999990021,
+      "batch_size": 4,
+      "batch_start": 232
+    },
+    {
+      "source_row": 23596,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.1318928999990021,
+      "batch_size": 4,
+      "batch_start": 232
+    },
+    {
+      "source_row": 20519,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.1318928999990021,
+      "batch_size": 4,
+      "batch_start": 232
+    },
+    {
+      "source_row": 6386,
+      "prediction": "Great gift!",
+      "batch_seconds": 0.1318928999990021,
+      "batch_size": 4,
+      "batch_start": 232
+    },
+    {
+      "source_row": 29090,
+      "prediction": "Great flavor!",
+      "batch_seconds": 0.10638699999981327,
+      "batch_size": 4,
+      "batch_start": 236
+    },
+    {
+      "source_row": 1307,
+      "prediction": "Very disappointing",
+      "batch_seconds": 0.10638699999981327,
+      "batch_size": 4,
+      "batch_start": 236
+    },
+    {
+      "source_row": 35061,
+      "prediction": "Too hard to chew",
+      "batch_seconds": 0.10638699999981327,
+      "batch_size": 4,
+      "batch_start": 236
+    },
+    {
+      "source_row": 17550,
+      "prediction": "Delicious",
+      "batch_seconds": 0.10638699999981327,
+      "batch_size": 4,
+      "batch_start": 236
+    },
+    {
+      "source_row": 3042,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.08052180000049702,
+      "batch_size": 4,
+      "batch_start": 240
+    },
+    {
+      "source_row": 12239,
+      "prediction": "My dog was sick",
+      "batch_seconds": 0.08052180000049702,
+      "batch_size": 4,
+      "batch_start": 240
+    },
+    {
+      "source_row": 631,
+      "prediction": "Great snack!",
+      "batch_seconds": 0.08052180000049702,
+      "batch_size": 4,
+      "batch_start": 240
+    },
+    {
+      "source_row": 29864,
+      "prediction": "Delicious",
+      "batch_seconds": 0.08052180000049702,
+      "batch_size": 4,
+      "batch_start": 240
+    },
+    {
+      "source_row": 34356,
+      "prediction": "Great chew",
+      "batch_seconds": 0.09843799999907787,
+      "batch_size": 4,
+      "batch_start": 244
+    },
+    {
+      "source_row": 36485,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.09843799999907787,
+      "batch_size": 4,
+      "batch_start": 244
+    },
+    {
+      "source_row": 12135,
+      "prediction": "Great treat",
+      "batch_seconds": 0.09843799999907787,
+      "batch_size": 4,
+      "batch_start": 244
+    },
+    {
+      "source_row": 2854,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.09843799999907787,
+      "batch_size": 4,
+      "batch_start": 244
+    },
+    {
+      "source_row": 10013,
+      "prediction": "My daughter's harry potter themed get-together",
+      "batch_seconds": 0.2628002999990713,
+      "batch_size": 4,
+      "batch_start": 248
+    },
+    {
+      "source_row": 3768,
+      "prediction": "Great stuff!",
+      "batch_seconds": 0.2628002999990713,
+      "batch_size": 4,
+      "batch_start": 248
+    },
+    {
+      "source_row": 21037,
+      "prediction": "Best price on Greenies",
+      "batch_seconds": 0.2628002999990713,
+      "batch_size": 4,
+      "batch_start": 248
+    },
+    {
+      "source_row": 34314,
+      "prediction": "Great treats",
+      "batch_seconds": 0.2628002999990713,
+      "batch_size": 4,
+      "batch_start": 248
+    },
+    {
+      "source_row": 22801,
+      "prediction": "Great iced coffee",
+      "batch_seconds": 0.09692880000147852,
+      "batch_size": 4,
+      "batch_start": 252
+    },
+    {
+      "source_row": 38377,
+      "prediction": "Great snack!",
+      "batch_seconds": 0.09692880000147852,
+      "batch_size": 4,
+      "batch_start": 252
+    },
+    {
+      "source_row": 19944,
+      "prediction": "Great product",
+      "batch_seconds": 0.09692880000147852,
+      "batch_size": 4,
+      "batch_start": 252
+    },
+    {
+      "source_row": 28804,
+      "prediction": "Great taste",
+      "batch_seconds": 0.09692880000147852,
+      "batch_size": 4,
+      "batch_start": 252
+    },
+    {
+      "source_row": 7042,
+      "prediction": "Easy to use",
+      "batch_seconds": 0.13759869999921648,
+      "batch_size": 4,
+      "batch_start": 256
+    },
+    {
+      "source_row": 37388,
+      "prediction": "Great Decaf Blend",
+      "batch_seconds": 0.13759869999921648,
+      "batch_size": 4,
+      "batch_start": 256
+    },
+    {
+      "source_row": 13664,
+      "prediction": "Delicious, delicious, and delicious",
+      "batch_seconds": 0.13759869999921648,
+      "batch_size": 4,
+      "batch_start": 256
+    },
+    {
+      "source_row": 389,
+      "prediction": "Love these!",
+      "batch_seconds": 0.13759869999921648,
+      "batch_size": 4,
+      "batch_start": 256
+    },
+    {
+      "source_row": 25615,
+      "prediction": "Hives are not the best",
+      "batch_seconds": 0.14336750000074971,
+      "batch_size": 4,
+      "batch_start": 260
+    },
+    {
+      "source_row": 26079,
+      "prediction": "Great taste",
+      "batch_seconds": 0.14336750000074971,
+      "batch_size": 4,
+      "batch_start": 260
+    },
+    {
+      "source_row": 20778,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.14336750000074971,
+      "batch_size": 4,
+      "batch_start": 260
+    },
+    {
+      "source_row": 10170,
+      "prediction": "Great microwave",
+      "batch_seconds": 0.14336750000074971,
+      "batch_size": 4,
+      "batch_start": 260
+    },
+    {
+      "source_row": 34170,
+      "prediction": "Best Chocolate",
+      "batch_seconds": 0.12900360000094224,
+      "batch_size": 4,
+      "batch_start": 264
+    },
+    {
+      "source_row": 6453,
+      "prediction": "Great taste",
+      "batch_seconds": 0.12900360000094224,
+      "batch_size": 4,
+      "batch_start": 264
+    },
+    {
+      "source_row": 31559,
+      "prediction": "Best chai tea ever",
+      "batch_seconds": 0.12900360000094224,
+      "batch_size": 4,
+      "batch_start": 264
+    },
+    {
+      "source_row": 36123,
+      "prediction": "Good cookie",
+      "batch_seconds": 0.12900360000094224,
+      "batch_size": 4,
+      "batch_start": 264
+    },
+    {
+      "source_row": 1951,
+      "prediction": "Great tasting martini",
+      "batch_seconds": 0.12988210000003164,
+      "batch_size": 4,
+      "batch_start": 268
+    },
+    {
+      "source_row": 17227,
+      "prediction": "Dark Chocolate",
+      "batch_seconds": 0.12988210000003164,
+      "batch_size": 4,
+      "batch_start": 268
+    },
+    {
+      "source_row": 39629,
+      "prediction": "Great jerky",
+      "batch_seconds": 0.12988210000003164,
+      "batch_size": 4,
+      "batch_start": 268
+    },
+    {
+      "source_row": 3166,
+      "prediction": "Great water",
+      "batch_seconds": 0.12988210000003164,
+      "batch_size": 4,
+      "batch_start": 268
+    },
+    {
+      "source_row": 17113,
+      "prediction": "My cats love this",
+      "batch_seconds": 0.07784539999920526,
+      "batch_size": 4,
+      "batch_start": 272
+    },
+    {
+      "source_row": 36380,
+      "prediction": "Good product",
+      "batch_seconds": 0.07784539999920526,
+      "batch_size": 4,
+      "batch_start": 272
+    },
+    {
+      "source_row": 22645,
+      "prediction": "Great product",
+      "batch_seconds": 0.07784539999920526,
+      "batch_size": 4,
+      "batch_start": 272
+    },
+    {
+      "source_row": 34227,
+      "prediction": "Dogs love it",
+      "batch_seconds": 0.07784539999920526,
+      "batch_size": 4,
+      "batch_start": 272
+    },
+    {
+      "source_row": 27442,
+      "prediction": "Great shake!",
+      "batch_seconds": 0.12671789999876637,
+      "batch_size": 4,
+      "batch_start": 276
+    },
+    {
+      "source_row": 28209,
+      "prediction": "Very light roast coffee",
+      "batch_seconds": 0.12671789999876637,
+      "batch_size": 4,
+      "batch_start": 276
+    },
+    {
+      "source_row": 4021,
+      "prediction": "Great food, but not too good",
+      "batch_seconds": 0.12671789999876637,
+      "batch_size": 4,
+      "batch_start": 276
+    },
+    {
+      "source_row": 21824,
+      "prediction": "Fun toy",
+      "batch_seconds": 0.12671789999876637,
+      "batch_size": 4,
+      "batch_start": 276
+    },
+    {
+      "source_row": 4292,
+      "prediction": "Great Gluten-Free Mix!",
+      "batch_seconds": 0.16806720000022324,
+      "batch_size": 4,
+      "batch_start": 280
+    },
+    {
+      "source_row": 424,
+      "prediction": "Good price, but not good price",
+      "batch_seconds": 0.16806720000022324,
+      "batch_size": 4,
+      "batch_start": 280
+    },
+    {
+      "source_row": 4836,
+      "prediction": "My dogs love it",
+      "batch_seconds": 0.16806720000022324,
+      "batch_size": 4,
+      "batch_start": 280
+    },
+    {
+      "source_row": 36489,
+      "prediction": "Great product, but not the best",
+      "batch_seconds": 0.16806720000022324,
+      "batch_size": 4,
+      "batch_start": 280
+    },
+    {
+      "source_row": 16771,
+      "prediction": "Very mild flavor",
+      "batch_seconds": 0.09174849999908474,
+      "batch_size": 4,
+      "batch_start": 284
+    },
+    {
+      "source_row": 9620,
+      "prediction": "Great product!",
+      "batch_seconds": 0.09174849999908474,
+      "batch_size": 4,
+      "batch_start": 284
+    },
+    {
+      "source_row": 13350,
+      "prediction": "Great product",
+      "batch_seconds": 0.09174849999908474,
+      "batch_size": 4,
+      "batch_start": 284
+    },
+    {
+      "source_row": 8328,
+      "prediction": "A bland taste",
+      "batch_seconds": 0.09174849999908474,
+      "batch_size": 4,
+      "batch_start": 284
+    },
+    {
+      "source_row": 3972,
+      "prediction": "Good soap",
+      "batch_seconds": 0.16650750000007974,
+      "batch_size": 4,
+      "batch_start": 288
+    },
+    {
+      "source_row": 18443,
+      "prediction": "Good gift",
+      "batch_seconds": 0.16650750000007974,
+      "batch_size": 4,
+      "batch_start": 288
+    },
+    {
+      "source_row": 6110,
+      "prediction": "Great iron",
+      "batch_seconds": 0.16650750000007974,
+      "batch_size": 4,
+      "batch_start": 288
+    },
+    {
+      "source_row": 35120,
+      "prediction": "Great sauce, but not the best!",
+      "batch_seconds": 0.16650750000007974,
+      "batch_size": 4,
+      "batch_start": 288
+    },
+    {
+      "source_row": 28264,
+      "prediction": "Best I've ever tried!",
+      "batch_seconds": 0.1440973999997368,
+      "batch_size": 4,
+      "batch_start": 292
+    },
+    {
+      "source_row": 13878,
+      "prediction": "Great product!",
+      "batch_seconds": 0.1440973999997368,
+      "batch_size": 4,
+      "batch_start": 292
+    },
+    {
+      "source_row": 20075,
+      "prediction": "Great color, but not too good",
+      "batch_seconds": 0.1440973999997368,
+      "batch_size": 4,
+      "batch_start": 292
+    },
+    {
+      "source_row": 20997,
+      "prediction": "Great product",
+      "batch_seconds": 0.1440973999997368,
+      "batch_size": 4,
+      "batch_start": 292
+    },
+    {
+      "source_row": 39676,
+      "prediction": "Great quality",
+      "batch_seconds": 0.09240189999945869,
+      "batch_size": 4,
+      "batch_start": 296
+    },
+    {
+      "source_row": 1097,
+      "prediction": "Good chips!",
+      "batch_seconds": 0.09240189999945869,
+      "batch_size": 4,
+      "batch_start": 296
+    },
+    {
+      "source_row": 17035,
+      "prediction": "Cheezies",
+      "batch_seconds": 0.09240189999945869,
+      "batch_size": 4,
+      "batch_start": 296
+    },
+    {
+      "source_row": 29137,
+      "prediction": "Delicious",
+      "batch_seconds": 0.09240189999945869,
+      "batch_size": 4,
+      "batch_start": 296
+    },
+    {
+      "source_row": 808,
+      "prediction": "Great Chocolate",
+      "batch_seconds": 0.16842299999916577,
+      "batch_size": 4,
+      "batch_start": 300
+    },
+    {
+      "source_row": 36764,
+      "prediction": "guar gum is unnoticed",
+      "batch_seconds": 0.16842299999916577,
+      "batch_size": 4,
+      "batch_start": 300
+    },
+    {
+      "source_row": 9687,
+      "prediction": "Not as sweet as grape",
+      "batch_seconds": 0.16842299999916577,
+      "batch_size": 4,
+      "batch_start": 300
+    },
+    {
+      "source_row": 26567,
+      "prediction": "My baby loved it!",
+      "batch_seconds": 0.16842299999916577,
+      "batch_size": 4,
+      "batch_start": 300
+    },
+    {
+      "source_row": 11027,
+      "prediction": "Good product",
+      "batch_seconds": 0.11841950000052748,
+      "batch_size": 4,
+      "batch_start": 304
+    },
+    {
+      "source_row": 6401,
+      "prediction": "Great jerky",
+      "batch_seconds": 0.11841950000052748,
+      "batch_size": 4,
+      "batch_start": 304
+    },
+    {
+      "source_row": 11400,
+      "prediction": "Great spice",
+      "batch_seconds": 0.11841950000052748,
+      "batch_size": 4,
+      "batch_start": 304
+    },
+    {
+      "source_row": 2060,
+      "prediction": "Great product",
+      "batch_seconds": 0.11841950000052748,
+      "batch_size": 4,
+      "batch_start": 304
+    },
+    {
+      "source_row": 30609,
+      "prediction": "Great coffe",
+      "batch_seconds": 0.1108674000006431,
+      "batch_size": 4,
+      "batch_start": 308
+    },
+    {
+      "source_row": 31233,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.1108674000006431,
+      "batch_size": 4,
+      "batch_start": 308
+    },
+    {
+      "source_row": 18148,
+      "prediction": "Not a good product",
+      "batch_seconds": 0.1108674000006431,
+      "batch_size": 4,
+      "batch_start": 308
+    },
+    {
+      "source_row": 22240,
+      "prediction": "Great toy",
+      "batch_seconds": 0.1108674000006431,
+      "batch_size": 4,
+      "batch_start": 308
+    },
+    {
+      "source_row": 11291,
+      "prediction": "Great snack!",
+      "batch_seconds": 0.10605050000049232,
+      "batch_size": 4,
+      "batch_start": 312
+    },
+    {
+      "source_row": 23266,
+      "prediction": "Great!",
+      "batch_seconds": 0.10605050000049232,
+      "batch_size": 4,
+      "batch_start": 312
+    },
+    {
+      "source_row": 30829,
+      "prediction": "My teenage daughter loves it!",
+      "batch_seconds": 0.10605050000049232,
+      "batch_size": 4,
+      "batch_start": 312
+    },
+    {
+      "source_row": 283,
+      "prediction": "Great product, but not good",
+      "batch_seconds": 0.10605050000049232,
+      "batch_size": 4,
+      "batch_start": 312
+    },
+    {
+      "source_row": 31893,
+      "prediction": "Great product",
+      "batch_seconds": 0.08187709999947401,
+      "batch_size": 4,
+      "batch_start": 316
+    },
+    {
+      "source_row": 38960,
+      "prediction": "My dog loves it",
+      "batch_seconds": 0.08187709999947401,
+      "batch_size": 4,
+      "batch_start": 316
+    },
+    {
+      "source_row": 26224,
+      "prediction": "Great for pot coffee",
+      "batch_seconds": 0.08187709999947401,
+      "batch_size": 4,
+      "batch_start": 316
+    },
+    {
+      "source_row": 12158,
+      "prediction": "Good!",
+      "batch_seconds": 0.08187709999947401,
+      "batch_size": 4,
+      "batch_start": 316
+    },
+    {
+      "source_row": 116,
+      "prediction": "Great",
+      "batch_seconds": 0.19186989999980142,
+      "batch_size": 4,
+      "batch_start": 320
+    },
+    {
+      "source_row": 11407,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.19186989999980142,
+      "batch_size": 4,
+      "batch_start": 320
+    },
+    {
+      "source_row": 10578,
+      "prediction": "Love this!",
+      "batch_seconds": 0.19186989999980142,
+      "batch_size": 4,
+      "batch_start": 320
+    },
+    {
+      "source_row": 23070,
+      "prediction": "Tastes like coffee, but stomach is not good enough",
+      "batch_seconds": 0.19186989999980142,
+      "batch_size": 4,
+      "batch_start": 320
+    },
+    {
+      "source_row": 3259,
+      "prediction": "Not a good product",
+      "batch_seconds": 0.09028989999933401,
+      "batch_size": 4,
+      "batch_start": 324
+    },
+    {
+      "source_row": 23024,
+      "prediction": "Great coffee!",
+      "batch_seconds": 0.09028989999933401,
+      "batch_size": 4,
+      "batch_start": 324
+    },
+    {
+      "source_row": 34732,
+      "prediction": "Not the best",
+      "batch_seconds": 0.09028989999933401,
+      "batch_size": 4,
+      "batch_start": 324
+    },
+    {
+      "source_row": 7673,
+      "prediction": "No refund",
+      "batch_seconds": 0.09028989999933401,
+      "batch_size": 4,
+      "batch_start": 324
+    },
+    {
+      "source_row": 6086,
+      "prediction": "Great product!",
+      "batch_seconds": 0.07190110000010463,
+      "batch_size": 4,
+      "batch_start": 328
+    },
+    {
+      "source_row": 769,
+      "prediction": "Good tea",
+      "batch_seconds": 0.07190110000010463,
+      "batch_size": 4,
+      "batch_start": 328
+    },
+    {
+      "source_row": 9685,
+      "prediction": "Good taste",
+      "batch_seconds": 0.07190110000010463,
+      "batch_size": 4,
+      "batch_start": 328
+    },
+    {
+      "source_row": 12185,
+      "prediction": "Best dog treat ever",
+      "batch_seconds": 0.07190110000010463,
+      "batch_size": 4,
+      "batch_start": 328
+    },
+    {
+      "source_row": 38848,
+      "prediction": "Good coffee, but not good",
+      "batch_seconds": 0.12835380000069563,
+      "batch_size": 4,
+      "batch_start": 332
+    },
+    {
+      "source_row": 37174,
+      "prediction": "Great for kitty",
+      "batch_seconds": 0.12835380000069563,
+      "batch_size": 4,
+      "batch_start": 332
+    },
+    {
+      "source_row": 4304,
+      "prediction": "Great deal",
+      "batch_seconds": 0.12835380000069563,
+      "batch_size": 4,
+      "batch_start": 332
+    },
+    {
+      "source_row": 30519,
+      "prediction": "Great cough",
+      "batch_seconds": 0.12835380000069563,
+      "batch_size": 4,
+      "batch_start": 332
+    },
+    {
+      "source_row": 23355,
+      "prediction": "Great for pigs!",
+      "batch_seconds": 0.1295905999995739,
+      "batch_size": 4,
+      "batch_start": 336
+    },
+    {
+      "source_row": 8168,
+      "prediction": "tazo teas",
+      "batch_seconds": 0.1295905999995739,
+      "batch_size": 4,
+      "batch_start": 336
+    },
+    {
+      "source_row": 38597,
+      "prediction": "Good chili",
+      "batch_seconds": 0.1295905999995739,
+      "batch_size": 4,
+      "batch_start": 336
+    },
+    {
+      "source_row": 28313,
+      "prediction": "Great taste",
+      "batch_seconds": 0.1295905999995739,
+      "batch_size": 4,
+      "batch_start": 336
+    },
+    {
+      "source_row": 39701,
+      "prediction": "My cats love this food",
+      "batch_seconds": 0.17206460000124935,
+      "batch_size": 4,
+      "batch_start": 340
+    },
+    {
+      "source_row": 23860,
+      "prediction": "Love these!",
+      "batch_seconds": 0.17206460000124935,
+      "batch_size": 4,
+      "batch_start": 340
+    },
+    {
+      "source_row": 13337,
+      "prediction": "My dogs love it",
+      "batch_seconds": 0.17206460000124935,
+      "batch_size": 4,
+      "batch_start": 340
+    },
+    {
+      "source_row": 21947,
+      "prediction": "My furbaby loves these!",
+      "batch_seconds": 0.17206460000124935,
+      "batch_size": 4,
+      "batch_start": 340
+    },
+    {
+      "source_row": 7019,
+      "prediction": "Great for the use",
+      "batch_seconds": 0.13703530000020692,
+      "batch_size": 4,
+      "batch_start": 344
+    },
+    {
+      "source_row": 35395,
+      "prediction": "Great for jerky",
+      "batch_seconds": 0.13703530000020692,
+      "batch_size": 4,
+      "batch_start": 344
+    },
+    {
+      "source_row": 36971,
+      "prediction": "Great tea!",
+      "batch_seconds": 0.13703530000020692,
+      "batch_size": 4,
+      "batch_start": 344
+    },
+    {
+      "source_row": 38164,
+      "prediction": "Great for baby food storage",
+      "batch_seconds": 0.13703530000020692,
+      "batch_size": 4,
+      "batch_start": 344
+    },
+    {
+      "source_row": 26481,
+      "prediction": "Delicious",
+      "batch_seconds": 0.15980779999881634,
+      "batch_size": 4,
+      "batch_start": 348
+    },
+    {
+      "source_row": 11551,
+      "prediction": "Great mineral-rich salt",
+      "batch_seconds": 0.15980779999881634,
+      "batch_size": 4,
+      "batch_start": 348
+    },
+    {
+      "source_row": 20394,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.15980779999881634,
+      "batch_size": 4,
+      "batch_start": 348
+    },
+    {
+      "source_row": 14440,
+      "prediction": "Great product",
+      "batch_seconds": 0.15980779999881634,
+      "batch_size": 4,
+      "batch_start": 348
+    },
+    {
+      "source_row": 7351,
+      "prediction": "Best bob's Redmill",
+      "batch_seconds": 0.12611010000000533,
+      "batch_size": 4,
+      "batch_start": 352
+    },
+    {
+      "source_row": 12009,
+      "prediction": "Delicious tea",
+      "batch_seconds": 0.12611010000000533,
+      "batch_size": 4,
+      "batch_start": 352
+    },
+    {
+      "source_row": 16696,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.12611010000000533,
+      "batch_size": 4,
+      "batch_start": 352
+    },
+    {
+      "source_row": 24935,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.12611010000000533,
+      "batch_size": 4,
+      "batch_start": 352
+    },
+    {
+      "source_row": 39862,
+      "prediction": "Great ginger ale!",
+      "batch_seconds": 0.1493356999999378,
+      "batch_size": 4,
+      "batch_start": 356
+    },
+    {
+      "source_row": 33825,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.1493356999999378,
+      "batch_size": 4,
+      "batch_start": 356
+    },
+    {
+      "source_row": 7589,
+      "prediction": "Natural, artificial color, weird ingredients",
+      "batch_seconds": 0.1493356999999378,
+      "batch_size": 4,
+      "batch_start": 356
+    },
+    {
+      "source_row": 3316,
+      "prediction": "Great hot cocoa!",
+      "batch_seconds": 0.1493356999999378,
+      "batch_size": 4,
+      "batch_start": 356
+    },
+    {
+      "source_row": 16650,
+      "prediction": "kiwi berry tastes like a berry",
+      "batch_seconds": 0.6207728000008501,
+      "batch_size": 4,
+      "batch_start": 360
+    },
+    {
+      "source_row": 38346,
+      "prediction": ".............................................................................................",
+      "batch_seconds": 0.6207728000008501,
+      "batch_size": 4,
+      "batch_start": 360
+    },
+    {
+      "source_row": 33243,
+      "prediction": "YUM!",
+      "batch_seconds": 0.6207728000008501,
+      "batch_size": 4,
+      "batch_start": 360
+    },
+    {
+      "source_row": 18304,
+      "prediction": "Great!",
+      "batch_seconds": 0.6207728000008501,
+      "batch_size": 4,
+      "batch_start": 360
+    },
+    {
+      "source_row": 21250,
+      "prediction": "Great chew",
+      "batch_seconds": 0.24443370000153664,
+      "batch_size": 4,
+      "batch_start": 364
+    },
+    {
+      "source_row": 29496,
+      "prediction": "Good for a 4 oz popper",
+      "batch_seconds": 0.24443370000153664,
+      "batch_size": 4,
+      "batch_start": 364
+    },
+    {
+      "source_row": 11525,
+      "prediction": "Great salt",
+      "batch_seconds": 0.24443370000153664,
+      "batch_size": 4,
+      "batch_start": 364
+    },
+    {
+      "source_row": 23409,
+      "prediction": "Great Taste, but not too thick",
+      "batch_seconds": 0.24443370000153664,
+      "batch_size": 4,
+      "batch_start": 364
+    },
+    {
+      "source_row": 28686,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.1998330000005808,
+      "batch_size": 4,
+      "batch_start": 368
+    },
+    {
+      "source_row": 34955,
+      "prediction": "Great product for a good price!",
+      "batch_seconds": 0.1998330000005808,
+      "batch_size": 4,
+      "batch_start": 368
+    },
+    {
+      "source_row": 16757,
+      "prediction": "Great drink",
+      "batch_seconds": 0.1998330000005808,
+      "batch_size": 4,
+      "batch_start": 368
+    },
+    {
+      "source_row": 18678,
+      "prediction": "Love this treat!",
+      "batch_seconds": 0.1998330000005808,
+      "batch_size": 4,
+      "batch_start": 368
+    },
+    {
+      "source_row": 38966,
+      "prediction": "Great for dog owners",
+      "batch_seconds": 0.13757749999967928,
+      "batch_size": 4,
+      "batch_start": 372
+    },
+    {
+      "source_row": 27735,
+      "prediction": "Great Tea",
+      "batch_seconds": 0.13757749999967928,
+      "batch_size": 4,
+      "batch_start": 372
+    },
+    {
+      "source_row": 34767,
+      "prediction": "Great product",
+      "batch_seconds": 0.13757749999967928,
+      "batch_size": 4,
+      "batch_start": 372
+    },
+    {
+      "source_row": 13092,
+      "prediction": "Good coffee, good luck",
+      "batch_seconds": 0.13757749999967928,
+      "batch_size": 4,
+      "batch_start": 372
+    },
+    {
+      "source_row": 5365,
+      "prediction": "Great snack",
+      "batch_seconds": 0.14278969999941182,
+      "batch_size": 4,
+      "batch_start": 376
+    },
+    {
+      "source_row": 35514,
+      "prediction": "Great taco seasoning!",
+      "batch_seconds": 0.14278969999941182,
+      "batch_size": 4,
+      "batch_start": 376
+    },
+    {
+      "source_row": 24708,
+      "prediction": "Good for dogs",
+      "batch_seconds": 0.14278969999941182,
+      "batch_size": 4,
+      "batch_start": 376
+    },
+    {
+      "source_row": 14853,
+      "prediction": "Great product!",
+      "batch_seconds": 0.14278969999941182,
+      "batch_size": 4,
+      "batch_start": 376
+    },
+    {
+      "source_row": 38080,
+      "prediction": "Not the same",
+      "batch_seconds": 0.11035119999905874,
+      "batch_size": 4,
+      "batch_start": 380
+    },
+    {
+      "source_row": 27450,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.11035119999905874,
+      "batch_size": 4,
+      "batch_start": 380
+    },
+    {
+      "source_row": 5303,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.11035119999905874,
+      "batch_size": 4,
+      "batch_start": 380
+    },
+    {
+      "source_row": 18082,
+      "prediction": "YUM!",
+      "batch_seconds": 0.11035119999905874,
+      "batch_size": 4,
+      "batch_start": 380
+    },
+    {
+      "source_row": 18371,
+      "prediction": "Very good price",
+      "batch_seconds": 0.186604399999851,
+      "batch_size": 4,
+      "batch_start": 384
+    },
+    {
+      "source_row": 31585,
+      "prediction": "Great detoxifier for your dog",
+      "batch_seconds": 0.186604399999851,
+      "batch_size": 4,
+      "batch_start": 384
+    },
+    {
+      "source_row": 22542,
+      "prediction": "Not as good as asian noodles",
+      "batch_seconds": 0.186604399999851,
+      "batch_size": 4,
+      "batch_start": 384
+    },
+    {
+      "source_row": 32882,
+      "prediction": "Great product",
+      "batch_seconds": 0.186604399999851,
+      "batch_size": 4,
+      "batch_start": 384
+    },
+    {
+      "source_row": 26590,
+      "prediction": "Great cereal",
+      "batch_seconds": 0.11532919999990554,
+      "batch_size": 4,
+      "batch_start": 388
+    },
+    {
+      "source_row": 22910,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.11532919999990554,
+      "batch_size": 4,
+      "batch_start": 388
+    },
+    {
+      "source_row": 4846,
+      "prediction": "My dogs love it!",
+      "batch_seconds": 0.11532919999990554,
+      "batch_size": 4,
+      "batch_start": 388
+    },
+    {
+      "source_row": 23032,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.11532919999990554,
+      "batch_size": 4,
+      "batch_start": 388
+    },
+    {
+      "source_row": 13793,
+      "prediction": "Vegan Vegan Recipes",
+      "batch_seconds": 0.13402459999997518,
+      "batch_size": 4,
+      "batch_start": 392
+    },
+    {
+      "source_row": 22937,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.13402459999997518,
+      "batch_size": 4,
+      "batch_start": 392
+    },
+    {
+      "source_row": 18814,
+      "prediction": "Great for meats!",
+      "batch_seconds": 0.13402459999997518,
+      "batch_size": 4,
+      "batch_start": 392
+    },
+    {
+      "source_row": 28485,
+      "prediction": "Great flavor, but not sweetener",
+      "batch_seconds": 0.13402459999997518,
+      "batch_size": 4,
+      "batch_start": 392
+    },
+    {
+      "source_row": 26504,
+      "prediction": "Yummy",
+      "batch_seconds": 0.1282284000008076,
+      "batch_size": 4,
+      "batch_start": 396
+    },
+    {
+      "source_row": 38600,
+      "prediction": "Tastes better than the senseo brand",
+      "batch_seconds": 0.1282284000008076,
+      "batch_size": 4,
+      "batch_start": 396
+    },
+    {
+      "source_row": 1293,
+      "prediction": "Great for doggies",
+      "batch_seconds": 0.1282284000008076,
+      "batch_size": 4,
+      "batch_start": 396
+    },
+    {
+      "source_row": 19553,
+      "prediction": "akita puppy",
+      "batch_seconds": 0.1282284000008076,
+      "batch_size": 4,
+      "batch_start": 396
+    },
+    {
+      "source_row": 34512,
+      "prediction": "Great tasting coffee",
+      "batch_seconds": 0.10781450000104087,
+      "batch_size": 4,
+      "batch_start": 400
+    },
+    {
+      "source_row": 19838,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.10781450000104087,
+      "batch_size": 4,
+      "batch_start": 400
+    },
+    {
+      "source_row": 24238,
+      "prediction": "Not the best chili lime flavor",
+      "batch_seconds": 0.10781450000104087,
+      "batch_size": 4,
+      "batch_start": 400
+    },
+    {
+      "source_row": 33097,
+      "prediction": "Great Taste!",
+      "batch_seconds": 0.10781450000104087,
+      "batch_size": 4,
+      "batch_start": 400
+    },
+    {
+      "source_row": 7992,
+      "prediction": "Great for breakfast",
+      "batch_seconds": 0.1688988000005338,
+      "batch_size": 4,
+      "batch_start": 404
+    },
+    {
+      "source_row": 26957,
+      "prediction": "Not a good chili",
+      "batch_seconds": 0.1688988000005338,
+      "batch_size": 4,
+      "batch_start": 404
+    },
+    {
+      "source_row": 5908,
+      "prediction": "Great for a small crock pot",
+      "batch_seconds": 0.1688988000005338,
+      "batch_size": 4,
+      "batch_start": 404
+    },
+    {
+      "source_row": 19431,
+      "prediction": "Great gift!",
+      "batch_seconds": 0.1688988000005338,
+      "batch_size": 4,
+      "batch_start": 404
+    },
+    {
+      "source_row": 11109,
+      "prediction": "rotten potatoes",
+      "batch_seconds": 0.07443849999981467,
+      "batch_size": 4,
+      "batch_start": 408
+    },
+    {
+      "source_row": 19022,
+      "prediction": "Great Sprinkles!",
+      "batch_seconds": 0.07443849999981467,
+      "batch_size": 4,
+      "batch_start": 408
+    },
+    {
+      "source_row": 32057,
+      "prediction": "Awesome",
+      "batch_seconds": 0.07443849999981467,
+      "batch_size": 4,
+      "batch_start": 408
+    },
+    {
+      "source_row": 2328,
+      "prediction": "Sweet Candy",
+      "batch_seconds": 0.07443849999981467,
+      "batch_size": 4,
+      "batch_start": 408
+    },
+    {
+      "source_row": 402,
+      "prediction": "Yummy!",
+      "batch_seconds": 0.17612439999902563,
+      "batch_size": 4,
+      "batch_start": 412
+    },
+    {
+      "source_row": 14106,
+      "prediction": "Great treats for dogs",
+      "batch_seconds": 0.17612439999902563,
+      "batch_size": 4,
+      "batch_start": 412
+    },
+    {
+      "source_row": 27910,
+      "prediction": "jerky is the best!",
+      "batch_seconds": 0.17612439999902563,
+      "batch_size": 4,
+      "batch_start": 412
+    },
+    {
+      "source_row": 17974,
+      "prediction": "Great product!",
+      "batch_seconds": 0.17612439999902563,
+      "batch_size": 4,
+      "batch_start": 412
+    },
+    {
+      "source_row": 14146,
+      "prediction": "Great treat",
+      "batch_seconds": 0.09229149999919173,
+      "batch_size": 4,
+      "batch_start": 416
+    },
+    {
+      "source_row": 32466,
+      "prediction": "My dog loves these!",
+      "batch_seconds": 0.09229149999919173,
+      "batch_size": 4,
+      "batch_start": 416
+    },
+    {
+      "source_row": 5177,
+      "prediction": "Great snack",
+      "batch_seconds": 0.09229149999919173,
+      "batch_size": 4,
+      "batch_start": 416
+    },
+    {
+      "source_row": 24585,
+      "prediction": "My dog loves this!",
+      "batch_seconds": 0.09229149999919173,
+      "batch_size": 4,
+      "batch_start": 416
+    },
+    {
+      "source_row": 5673,
+      "prediction": "Great taste",
+      "batch_seconds": 0.06733239999994112,
+      "batch_size": 4,
+      "batch_start": 420
+    },
+    {
+      "source_row": 8585,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.06733239999994112,
+      "batch_size": 4,
+      "batch_start": 420
+    },
+    {
+      "source_row": 11552,
+      "prediction": "Great service",
+      "batch_seconds": 0.06733239999994112,
+      "batch_size": 4,
+      "batch_start": 420
+    },
+    {
+      "source_row": 21689,
+      "prediction": "Honey Tea",
+      "batch_seconds": 0.06733239999994112,
+      "batch_size": 4,
+      "batch_start": 420
+    },
+    {
+      "source_row": 16145,
+      "prediction": "Great texture!",
+      "batch_seconds": 0.12298489999921003,
+      "batch_size": 4,
+      "batch_start": 424
+    },
+    {
+      "source_row": 15454,
+      "prediction": "Great Taste!",
+      "batch_seconds": 0.12298489999921003,
+      "batch_size": 4,
+      "batch_start": 424
+    },
+    {
+      "source_row": 29732,
+      "prediction": "Delicious",
+      "batch_seconds": 0.12298489999921003,
+      "batch_size": 4,
+      "batch_start": 424
+    },
+    {
+      "source_row": 7167,
+      "prediction": "Great for bugs bites!",
+      "batch_seconds": 0.12298489999921003,
+      "batch_size": 4,
+      "batch_start": 424
+    },
+    {
+      "source_row": 20699,
+      "prediction": "Good product",
+      "batch_seconds": 0.08455510000021604,
+      "batch_size": 4,
+      "batch_start": 428
+    },
+    {
+      "source_row": 31293,
+      "prediction": "Best honey in the world",
+      "batch_seconds": 0.08455510000021604,
+      "batch_size": 4,
+      "batch_start": 428
+    },
+    {
+      "source_row": 38434,
+      "prediction": "Salty",
+      "batch_seconds": 0.08455510000021604,
+      "batch_size": 4,
+      "batch_start": 428
+    },
+    {
+      "source_row": 21347,
+      "prediction": "Very good product",
+      "batch_seconds": 0.08455510000021604,
+      "batch_size": 4,
+      "batch_start": 428
+    },
+    {
+      "source_row": 38876,
+      "prediction": "My wife loves them",
+      "batch_seconds": 0.21876460000021325,
+      "batch_size": 4,
+      "batch_start": 432
+    },
+    {
+      "source_row": 38888,
+      "prediction": "Very tasty, but not as good as the standard",
+      "batch_seconds": 0.21876460000021325,
+      "batch_size": 4,
+      "batch_start": 432
+    },
+    {
+      "source_row": 17316,
+      "prediction": "Gluten Free brownies",
+      "batch_seconds": 0.21876460000021325,
+      "batch_size": 4,
+      "batch_start": 432
+    },
+    {
+      "source_row": 15803,
+      "prediction": "Green Mountain Coffee",
+      "batch_seconds": 0.21876460000021325,
+      "batch_size": 4,
+      "batch_start": 432
+    },
+    {
+      "source_row": 19290,
+      "prediction": "Great gift!",
+      "batch_seconds": 0.23589159999937692,
+      "batch_size": 4,
+      "batch_start": 436
+    },
+    {
+      "source_row": 15828,
+      "prediction": "nantucket blend is a new favorite",
+      "batch_seconds": 0.23589159999937692,
+      "batch_size": 4,
+      "batch_start": 436
+    },
+    {
+      "source_row": 3637,
+      "prediction": "Easy to use",
+      "batch_seconds": 0.23589159999937692,
+      "batch_size": 4,
+      "batch_start": 436
+    },
+    {
+      "source_row": 8285,
+      "prediction": "Great taste",
+      "batch_seconds": 0.23589159999937692,
+      "batch_size": 4,
+      "batch_start": 436
+    },
+    {
+      "source_row": 13613,
+      "prediction": "Great tea",
+      "batch_seconds": 0.11768629999824043,
+      "batch_size": 4,
+      "batch_start": 440
+    },
+    {
+      "source_row": 37382,
+      "prediction": "Love them!",
+      "batch_seconds": 0.11768629999824043,
+      "batch_size": 4,
+      "batch_start": 440
+    },
+    {
+      "source_row": 21439,
+      "prediction": "Great for dogs",
+      "batch_seconds": 0.11768629999824043,
+      "batch_size": 4,
+      "batch_start": 440
+    },
+    {
+      "source_row": 7371,
+      "prediction": "Best gelato ever",
+      "batch_seconds": 0.11768629999824043,
+      "batch_size": 4,
+      "batch_start": 440
+    },
+    {
+      "source_row": 9225,
+      "prediction": "Good coffee",
+      "batch_seconds": 0.09715390000019397,
+      "batch_size": 4,
+      "batch_start": 444
+    },
+    {
+      "source_row": 22788,
+      "prediction": "Great product",
+      "batch_seconds": 0.09715390000019397,
+      "batch_size": 4,
+      "batch_start": 444
+    },
+    {
+      "source_row": 18319,
+      "prediction": "Best pet food",
+      "batch_seconds": 0.09715390000019397,
+      "batch_size": 4,
+      "batch_start": 444
+    },
+    {
+      "source_row": 810,
+      "prediction": "Great product",
+      "batch_seconds": 0.09715390000019397,
+      "batch_size": 4,
+      "batch_start": 444
+    },
+    {
+      "source_row": 14931,
+      "prediction": "Great product",
+      "batch_seconds": 0.17714079999859678,
+      "batch_size": 4,
+      "batch_start": 448
+    },
+    {
+      "source_row": 28205,
+      "prediction": "Great popcorn!",
+      "batch_seconds": 0.17714079999859678,
+      "batch_size": 4,
+      "batch_start": 448
+    },
+    {
+      "source_row": 19342,
+      "prediction": "Good coffee, but not too acidic",
+      "batch_seconds": 0.17714079999859678,
+      "batch_size": 4,
+      "batch_start": 448
+    },
+    {
+      "source_row": 12702,
+      "prediction": "My dogs love these",
+      "batch_seconds": 0.17714079999859678,
+      "batch_size": 4,
+      "batch_start": 448
+    },
+    {
+      "source_row": 33106,
+      "prediction": "Good product, but not good",
+      "batch_seconds": 0.14545990000078746,
+      "batch_size": 4,
+      "batch_start": 452
+    },
+    {
+      "source_row": 23954,
+      "prediction": "Delicious",
+      "batch_seconds": 0.14545990000078746,
+      "batch_size": 4,
+      "batch_start": 452
+    },
+    {
+      "source_row": 32447,
+      "prediction": "Great dog treat",
+      "batch_seconds": 0.14545990000078746,
+      "batch_size": 4,
+      "batch_start": 452
+    },
+    {
+      "source_row": 39435,
+      "prediction": "Great tasting decaf kcup!",
+      "batch_seconds": 0.14545990000078746,
+      "batch_size": 4,
+      "batch_start": 452
+    },
+    {
+      "source_row": 6870,
+      "prediction": "Good taste, good taste",
+      "batch_seconds": 0.11040370000046096,
+      "batch_size": 4,
+      "batch_start": 456
+    },
+    {
+      "source_row": 28574,
+      "prediction": "Great tea!",
+      "batch_seconds": 0.11040370000046096,
+      "batch_size": 4,
+      "batch_start": 456
+    },
+    {
+      "source_row": 4370,
+      "prediction": "Great product, but not too big",
+      "batch_seconds": 0.11040370000046096,
+      "batch_size": 4,
+      "batch_start": 456
+    },
+    {
+      "source_row": 27344,
+      "prediction": "Great pancakes!",
+      "batch_seconds": 0.11040370000046096,
+      "batch_size": 4,
+      "batch_start": 456
+    },
+    {
+      "source_row": 5901,
+      "prediction": "Delicious",
+      "batch_seconds": 0.10211890000027779,
+      "batch_size": 4,
+      "batch_start": 460
+    },
+    {
+      "source_row": 15973,
+      "prediction": "Great product",
+      "batch_seconds": 0.10211890000027779,
+      "batch_size": 4,
+      "batch_start": 460
+    },
+    {
+      "source_row": 39434,
+      "prediction": "Yummy",
+      "batch_seconds": 0.10211890000027779,
+      "batch_size": 4,
+      "batch_start": 460
+    },
+    {
+      "source_row": 5551,
+      "prediction": "Best gummy bears ever",
+      "batch_seconds": 0.10211890000027779,
+      "batch_size": 4,
+      "batch_start": 460
+    },
+    {
+      "source_row": 29712,
+      "prediction": "Good tea",
+      "batch_seconds": 0.09909210000114399,
+      "batch_size": 4,
+      "batch_start": 464
+    },
+    {
+      "source_row": 39913,
+      "prediction": "hun fung",
+      "batch_seconds": 0.09909210000114399,
+      "batch_size": 4,
+      "batch_start": 464
+    },
+    {
+      "source_row": 14215,
+      "prediction": "Not bad",
+      "batch_seconds": 0.09909210000114399,
+      "batch_size": 4,
+      "batch_start": 464
+    },
+    {
+      "source_row": 35197,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.09909210000114399,
+      "batch_size": 4,
+      "batch_start": 464
+    },
+    {
+      "source_row": 21280,
+      "prediction": "Great product",
+      "batch_seconds": 0.09066280000115512,
+      "batch_size": 4,
+      "batch_start": 468
+    },
+    {
+      "source_row": 26494,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.09066280000115512,
+      "batch_size": 4,
+      "batch_start": 468
+    },
+    {
+      "source_row": 29647,
+      "prediction": "Great popcorn!",
+      "batch_seconds": 0.09066280000115512,
+      "batch_size": 4,
+      "batch_start": 468
+    },
+    {
+      "source_row": 5411,
+      "prediction": "Good product",
+      "batch_seconds": 0.09066280000115512,
+      "batch_size": 4,
+      "batch_start": 468
+    },
+    {
+      "source_row": 37153,
+      "prediction": "Great product!",
+      "batch_seconds": 0.10210730000108015,
+      "batch_size": 4,
+      "batch_start": 472
+    },
+    {
+      "source_row": 19165,
+      "prediction": "Great tea!",
+      "batch_seconds": 0.10210730000108015,
+      "batch_size": 4,
+      "batch_start": 472
+    },
+    {
+      "source_row": 6240,
+      "prediction": "Great product",
+      "batch_seconds": 0.10210730000108015,
+      "batch_size": 4,
+      "batch_start": 472
+    },
+    {
+      "source_row": 31937,
+      "prediction": "Pumpkin",
+      "batch_seconds": 0.10210730000108015,
+      "batch_size": 4,
+      "batch_start": 472
+    },
+    {
+      "source_row": 20609,
+      "prediction": "Great product",
+      "batch_seconds": 0.12706640000033076,
+      "batch_size": 4,
+      "batch_start": 476
+    },
+    {
+      "source_row": 13399,
+      "prediction": "Great Sugar-Free Treat!",
+      "batch_seconds": 0.12706640000033076,
+      "batch_size": 4,
+      "batch_start": 476
+    },
+    {
+      "source_row": 31726,
+      "prediction": "Great tea!",
+      "batch_seconds": 0.12706640000033076,
+      "batch_size": 4,
+      "batch_start": 476
+    },
+    {
+      "source_row": 8965,
+      "prediction": "My dog loves these!",
+      "batch_seconds": 0.12706640000033076,
+      "batch_size": 4,
+      "batch_start": 476
+    },
+    {
+      "source_row": 32187,
+      "prediction": "Great Taste",
+      "batch_seconds": 0.21059640000021318,
+      "batch_size": 4,
+      "batch_start": 480
+    },
+    {
+      "source_row": 9695,
+      "prediction": "Not as good as the original",
+      "batch_seconds": 0.21059640000021318,
+      "batch_size": 4,
+      "batch_start": 480
+    },
+    {
+      "source_row": 17177,
+      "prediction": "Great for a healthier alternative to regular white rice",
+      "batch_seconds": 0.21059640000021318,
+      "batch_size": 4,
+      "batch_start": 480
+    },
+    {
+      "source_row": 37627,
+      "prediction": "Great Chocolate!",
+      "batch_seconds": 0.21059640000021318,
+      "batch_size": 4,
+      "batch_start": 480
+    },
+    {
+      "source_row": 36530,
+      "prediction": "Great for fish",
+      "batch_seconds": 0.123740999999427,
+      "batch_size": 4,
+      "batch_start": 484
+    },
+    {
+      "source_row": 11422,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.123740999999427,
+      "batch_size": 4,
+      "batch_start": 484
+    },
+    {
+      "source_row": 30896,
+      "prediction": "Love these chips!",
+      "batch_seconds": 0.123740999999427,
+      "batch_size": 4,
+      "batch_start": 484
+    },
+    {
+      "source_row": 7239,
+      "prediction": "Good for a long time",
+      "batch_seconds": 0.123740999999427,
+      "batch_size": 4,
+      "batch_start": 484
+    },
+    {
+      "source_row": 27403,
+      "prediction": "Not the best",
+      "batch_seconds": 0.291006199999174,
+      "batch_size": 4,
+      "batch_start": 488
+    },
+    {
+      "source_row": 16078,
+      "prediction": "Great for kids",
+      "batch_seconds": 0.291006199999174,
+      "batch_size": 4,
+      "batch_start": 488
+    },
+    {
+      "source_row": 27989,
+      "prediction": "Great coffee",
+      "batch_seconds": 0.291006199999174,
+      "batch_size": 4,
+      "batch_start": 488
+    },
+    {
+      "source_row": 5487,
+      "prediction": "siliskins is a non-toxic bpa free jar",
+      "batch_seconds": 0.291006199999174,
+      "batch_size": 4,
+      "batch_start": 488
+    },
+    {
+      "source_row": 34781,
+      "prediction": "Not the best",
+      "batch_seconds": 0.11540400000012596,
+      "batch_size": 4,
+      "batch_start": 492
+    },
+    {
+      "source_row": 3621,
+      "prediction": "Great gift!",
+      "batch_seconds": 0.11540400000012596,
+      "batch_size": 4,
+      "batch_start": 492
+    },
+    {
+      "source_row": 22185,
+      "prediction": "Great toy",
+      "batch_seconds": 0.11540400000012596,
+      "batch_size": 4,
+      "batch_start": 492
+    },
+    {
+      "source_row": 24603,
+      "prediction": "My dogs love these treats",
+      "batch_seconds": 0.11540400000012596,
+      "batch_size": 4,
+      "batch_start": 492
+    },
+    {
+      "source_row": 20486,
+      "prediction": "Pretty good, but not as good as the meat",
+      "batch_seconds": 0.14160369999990507,
+      "batch_size": 4,
+      "batch_start": 496
+    },
+    {
+      "source_row": 10758,
+      "prediction": "Great for a good seasoning",
+      "batch_seconds": 0.14160369999990507,
+      "batch_size": 4,
+      "batch_start": 496
+    },
+    {
+      "source_row": 23608,
+      "prediction": "Great tasting cup of coffee",
+      "batch_seconds": 0.14160369999990507,
+      "batch_size": 4,
+      "batch_start": 496
+    },
+    {
+      "source_row": 6852,
+      "prediction": "Not a good product",
+      "batch_seconds": 0.14160369999990507,
+      "batch_size": 4,
+      "batch_start": 496
+    },
+    {
+      "source_row": 32947,
+      "prediction": "Great product",
+      "batch_seconds": 0.15147220000108064,
+      "batch_size": 4,
+      "batch_start": 500
+    },
+    {
+      "source_row": 9939,
+      "prediction": "Great for a healthy snack",
+      "batch_seconds": 0.15147220000108064,
+      "batch_size": 4,
+      "batch_start": 500
+    },
+    {
+      "source_row": 27106,
+      "prediction": "Great tea",
+      "batch_seconds": 0.15147220000108064,
+      "batch_size": 4,
+      "batch_start": 500
+    },
+    {
+      "source_row": 37771,
+      "prediction": "Good product",
+      "batch_seconds": 0.15147220000108064,
+      "batch_size": 4,
+      "batch_start": 500
+    },
+    {
+      "source_row": 5507,
+      "prediction": "Great review!",
+      "batch_seconds": 0.13098139999965497,
+      "batch_size": 4,
+      "batch_start": 504
+    },
+    {
+      "source_row": 8595,
+      "prediction": "Not a carmel flavor",
+      "batch_seconds": 0.13098139999965497,
+      "batch_size": 4,
+      "batch_start": 504
+    },
+    {
+      "source_row": 33583,
+      "prediction": "Great flavor",
+      "batch_seconds": 0.13098139999965497,
+      "batch_size": 4,
+      "batch_start": 504
+    },
+    {
+      "source_row": 31642,
+      "prediction": "My dogs love it",
+      "batch_seconds": 0.13098139999965497,
+      "batch_size": 4,
+      "batch_start": 504
+    },
+    {
+      "source_row": 34470,
+      "prediction": "My favorite k-cup flavor",
+      "batch_seconds": 0.11349100000006729,
+      "batch_size": 4,
+      "batch_start": 508
+    },
+    {
+      "source_row": 16492,
+      "prediction": "Great Tea",
+      "batch_seconds": 0.11349100000006729,
+      "batch_size": 4,
+      "batch_start": 508
+    },
+    {
+      "source_row": 28981,
+      "prediction": "Delicious",
+      "batch_seconds": 0.11349100000006729,
+      "batch_size": 4,
+      "batch_start": 508
+    },
+    {
+      "source_row": 12564,
+      "prediction": "Xtra sour goo",
+      "batch_seconds": 0.11349100000006729,
+      "batch_size": 4,
+      "batch_start": 508
+    }
+  ]
+}

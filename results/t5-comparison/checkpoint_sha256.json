@@ -1,0 +1,8 @@
+{
+  "config.json": "f12d4146cc9995a218ec1842a7f64fdaf908dade03eedc48cfd0a9ca4a642dac",
+  "generation_config.json": "b11865270fbffca0ff39067c2546f83ccc7b2d51266a4d3af117b5fa4aed0953",
+  "model.safetensors": "7b70f51e8d219f2e2fa1245ef4d52769c48a158cdaabfea6f071c40f46b8bfa9",
+  "special_tokens_map.json": "65d84a9271d68f1230ab99518c00f0f7eaef95c7b363001595ba6fa662d434b1",
+  "tokenizer.json": "71c33c3bf57bf2e19b4f8ac686ad8d182a79f7cd1a4921889437c453420223f1",
+  "tokenizer_config.json": "536712172825145ed949ec41033d3b91683eca709bf575b3d03d7763ba47f2f9"
+}

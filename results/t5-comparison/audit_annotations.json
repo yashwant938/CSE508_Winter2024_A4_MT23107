@@ -1,0 +1,125 @@
+{
+  "note": "Agent-authored annotations. System keys t, g, l denote T5, GPT-2, lead-16. Each entry is [two fact flags, coverage explanation, atomic claims]; claims are [text, verdict, exact support quote or empty string, reason].",
+  "rows": {
+    "17675": {
+      "t": [[false,false],"Does not identify organic finger food or three liked flavours.",[["Good for a little duck","uncertain","","Ambiguous: Little Duck is a brand; suitability for an animal is not stated."]]],
+      "g": [[false,false],"Child suitability omits the selected product identity and flavour range.",[["Good for children","supported","happy found daughter","The reviewer endorses the finger food for their daughter."]]],
+      "l": [[true,false],"Names organic Little Duck finger food; the three flavours occur later.",[["Little Duck organic products are good finger food","supported","little duck organic products best finger food","Exact source assertion."],["Reviewer is happy to have found it for the daughter","supported","happy found daughter","Source's stated reaction."]]]
+    },
+    "3972": {
+      "t": [[false,false],"Soap quality is not either selected delivery/price fact.",[["Soap is good","unsupported","","Source discusses delivery and price, not soap performance or quality."]]],
+      "g": [[false,false],"Generic approval omits delivery and price.",[["Product is great","unsupported","","Positive delivery experience does not establish product quality."]]],
+      "l": [[false,false],"Describes the order, but ends before actual arrival and comparative price.",[["Soap was needed before the weekend","supported","needed soap b-4 weekend","Explicit need."],["It was ordered Thursday with extra payment for next-day shipping","supported","ordered thurs paid extra next day shipping","Explicit order and shipping payment."]]]
+    },
+    "7371": {
+      "t": [[false,false],"Enthusiasm omits shipment condition and banana flavour.",[["Gelato is the best ever, as subjective praise","supported","girlfriend declared might best gelato ever","Reflects the quoted enthusiasm; not treated as an objective ranking."]]],
+      "g": [[false,false],"Enthusiasm omits shipment condition and banana flavour.",[["Gelato is the best ever, as subjective praise","supported","girlfriend declared might best gelato ever","Reflects the quoted enthusiasm; not treated as an objective ranking."]]],
+      "l": [[false,false],"Gift context precedes both selected shipment details.",[["An ice cream month club gift involved a good friend","supported","gifted ice cream month club good friend","Preserves the gift context without resolving ambiguous direction."],["Reviewer was initially confused about the club","supported","somewhat confused thinking","Explicit reaction."]]]
+    },
+    "34732": {
+      "t": [[false,false],"Negative sentiment omits smell and throat aftertaste.",[["Product is not the best","supported","better choices , sure","Reviewer explicitly prefers other choices."]]],
+      "g": [[false,false],"Expectation wording supplies neither selected attribute.",[["Product was worse than the reviewer expected","uncertain","","Dislike is clear, but the prior expectation is not stated."]]],
+      "l": [[false,false],"Bitter smell is only part of the bitter-and-acidic fact; aftertaste is absent.",[["Geographic origin might explain the difference","supported","maybe 's geographic location ( greece )","Source makes the same tentative suggestion."],["Honey smells bitter","supported","honey actually smells quite bitter","Explicit smell description."]]]
+    },
+    "13617": {
+      "t": [[true,false],"Positive sentiment preserves liking, but not regular use; product identity remains unclear.",[["Reviewer likes the product","supported","like well","Explicit positive sentiment."],["Product is coffee","uncertain","","Preprocessed source may describe a coffee replacement; product identity is ambiguous."]]],
+      "g": [[false,false],"Only an ambiguous product category is emitted.",[["Product is coffee","uncertain","","Preprocessed source may describe a coffee replacement; product identity is ambiguous."]]],
+      "l": [[true,true],"The entire short source is retained, including liking and use.",[["Reviewer bought the product","supported","bought product","Explicit purchase."],["Reviewer likes it","supported","like well","Explicit sentiment."],["Reviewer now uses it regularly","supported","use time nowmitchell880","Same interpretation as the prespecified fact; wording is degraded by preprocessing."]]]
+    },
+    "16078": {
+      "t": [[false,false],"No convenience or price comparison.",[["Food is great for children","unsupported","","The source mentions parents and college students, not children."]]],
+      "g": [[false,false],"General food approval does not express either specific fact.",[["Food is great","supported","perfect combination flavor price","Explicit overall approval."]]],
+      "l": [[true,false],"Preserves quick/convenient preparation; cheaper grocery alternative appears later.",[["Parents love the product","supported","parents love stuff","Explicit reaction."],["Parents are Asian","supported","'re actually asians","Copied demographic description, not an inferred preference."],["Product is easy, quick and convenient","supported","easy quick convenient food","Explicit convenience description."]]]
+    },
+    "30896": {
+      "t": [[false,false],"Liking chips omits BBQ as favourite and individual bags.",[["Reviewer loves the chips","supported","absolutely love popchips bbq potato chips","Explicit liking."]]],
+      "g": [[false,false],"Broad superlative omits the flavour preference and packaging.",[["Popchips are the best chips","unsupported","","Source loves them and ranks BBQ among their flavours; it does not rank Popchips above all chips."]]],
+      "l": [[false,false],"Names and likes BBQ, but does not preserve favourite-among-flavours or individual bags.",[["Reviewer discovered the product by accident months ago","supported","accident , stumbled product months ago","Explicit discovery."],["Reviewer loves Popchips BBQ potato chips","supported","absolutely love popchips bbq potato chips","Explicit product and liking."]]]
+    },
+    "38600": {
+      "t": [[true,false],"The implicit reviewed product is ranked above Senseo; synthetic Southern Pecan taste is missing.",[["Reviewed pods taste better than Senseo","supported","aloha island coffee pods better senseo brand coffee pods","Correct comparison; reviewed product is the implicit subject."]]],
+      "g": [[false,false],"Comparison target is unclear and neither specific fact is recoverable.",[["Product is not as good as unspecified pods","uncertain","","No identifiable comparator; source says Aloha Island pods are better than Senseo."]]],
+      "l": [[true,false],"Preference is complete; Southern Pecan criticism is cut before its attributes.",[["Aloha Island pods are better than Senseo pods","supported","aloha island coffee pods better senseo brand coffee pods","Exact comparison."],["Southern Pecan is a flavour discussed","supported","southern pecan tastes","Source identifies the flavour before the clipped description."]]]
+    },
+    "20629": {
+      "t": [[false,false],"Generic approval omits trainer endorsement and Amazon home delivery.",[["Dog food is good","supported","highly recommended dog trainer","Trainer recommendation supports general favourable appraisal."]]],
+      "g": [[false,false],"Only the product category is supplied.",[["Product is dog food","supported","source dog food","Explicit category."]]],
+      "l": [[true,false],"Trainer recommendation survives; Amazon delivery does not.",[["Review concerns dog food and its former source","supported","source dog food went business","Same source context, without reconstructing missing words."],["Dog trainer highly recommended the food","supported","highly recommended dog trainer","Explicit endorsement."]]]
+    },
+    "1097": {
+      "t": [[false,false],"No flavour or comparative salt detail.",[["Chips are good","supported","chips really good","Explicit appraisal."]]],
+      "g": [[false,false],"Taste and price praise omit named flavour and lower salt.",[["Taste is good","supported","taste better name brands","Explicit taste preference."],["Price is good","supported","'re cheaper","Explicit price advantage."]]],
+      "l": [[false,false],"Salt comparison ends at 'like'; named flavour appears later.",[["Chips are good","supported","chips really good","Explicit appraisal."],["Taste is better than name brands","supported","taste better name brands","Explicit comparison."],["Chips are cheaper","supported","'re cheaper","Explicit price comparison."],["Chips are not very salty","supported","n't salty like brands","Source supports low salt; summary clips the comparator."]]]
+    },
+    "13735": {
+      "t": [[false,false],"Generic OK assessment omits breakage and texture.",[["Cookies are OK","supported","cookies ok , ok.","Explicit initial appraisal, although later criticism is omitted."]]],
+      "g": [[false,false],"Negative sentiment does not state the defects.",[["Cookies are unsatisfactory overall","supported","every last cookies broken","Complaint supports dissatisfaction despite initial 'OK'."]]],
+      "l": [[false,false],"Ends before the word 'broken'; texture is absent.",[["Cookies are only OK","supported","cookies ok , ok.","Explicit assessment."],["Reviewer might give three stars if cookies had arrived whole","supported","may inclined give three stars arrived whole cookies","Preserves conditional evaluation, not an assertion they arrived whole."]]]
+    },
+    "18678": {
+      "t": [[false,false],"Love is expressed without identifying the dog as the experiencer; age/breed absent.",[["Positive reaction to the treat","supported","loves . like wonder treat","Matches general praise; no attribution to a new person assumed."]]],
+      "g": [[false,false],"Product praise omits age/breed and the dog's reaction.",[["Product is great","supported","like wonder treat","Explicit praise."]]],
+      "l": [[true,true],"Retains the dog's age/breed and love of the treat.",[["The dog is an 11-year-old Labrador","supported","11 year old lab","Explicit age/breed."],["The dog runs and plays ball","supported","run play ball freinds","Explicit activity; no treatment causality inferred."],["The dog loves the treat","supported","loves . like wonder treat","Explicit reaction in dog context."]]]
+    },
+    "8328": {
+      "t": [[false,true],"Preserves bland taste; roast level absent.",[["Taste is bland","supported","'s bland taste","Explicit taste description."]]],
+      "g": [[false,false],"Disappointment omits roast and the specific bland attribute.",[["Coffee fell below expectations","supported","perhaps expectations high","Source explicitly discusses high expectations and average/bland taste."]]],
+      "l": [[false,false],"Expectation context appears before roast and taste verdict.",[["Reviewer had high expectations of Wolfgang Puck","supported","see name `` wolfgang puck '' , expect impressed","Explicit brand expectation."]]]
+    },
+    "39434": {
+      "t": [[false,false],"Tasty alone does not preserve the full regular-coffee comparison or decaf format.",[["Product tastes good","supported","one tasty","Explicit taste appraisal."]]],
+      "g": [[false,false],"Coffee praise omits decaf K-cup format and regular-coffee comparison.",[["Coffee is good","supported","one tasty . like regular coffee","Explicit positive taste appraisal."]]],
+      "l": [[true,true],"Both decaf K-cup format and regular-coffee taste comparison survive.",[["Product is decaf K-cup coffee","supported","k cup decaf want coffee without caffeine","Explicit format and caffeine description."],["Product tastes like regular coffee and is tasty","supported","one tasty . like regular coffee","Explicit comparison."],["Reviewer seeks affordable coffee","supported","looking affordable k cup decaf","Explicit price preference."]]]
+    },
+    "36764": {
+      "t": [[false,false],"Neither BPA-free packaging nor objection to gum survives.",[["Guar gum is unnoticed","contradicted","","Reviewer explicitly notices and objects to the guar gum addition."]]],
+      "g": [[false,false],"Generic praise omits the packaging/additive distinction.",[["Product is great overall","contradicted","","Source calls the product inferior and objects to its additive; only the can choice is praised."]]],
+      "l": [[true,false],"BPA-free cans remain; the gum objection is clipped before 'unnecessary'.",[["Reviewer has received inferior product","supported","problems receiving inferior product","Explicit quality complaint."],["Company uses BPA-free cans and reviewer approves","supported","applaud company 's use bpa-free cans","Explicit packaging appraisal."],["The product uses guar gum","supported","use guar gum","Explicit additive mention; incomplete appraisal is not expanded."]]]
+    },
+    "25121": {
+      "t": [[false,false],"No speed/interest or narrow-opening detail.",[["Product is great for dogs","uncertain","","Source has complaints and the preprocessed phrase 'would recommend'; overall recommendation is ambiguous."]]],
+      "g": [[false,false],"Qualified suitability omits the observed failure modes.",[["Product does not suit everyone","supported","dog figured 20 secs quickly lost interest","One dog's poor engagement supports a limited suitability caveat."]]],
+      "l": [[true,false],"Preserves 20-second solution and lost interest, not narrow opening.",[["Dog solved it in about 20 seconds","supported","dog figured 20 secs","Explicit timing."],["Dog quickly lost interest","supported","quickly lost interest","Explicit engagement result."],["Spinning opens food compartments","supported","spinnning little opens food compartments","Explicit mechanism."]]]
+    },
+    "27989": {
+      "t": [[false,false],"General coffee praise omits mother's preference and store price.",[["Coffee is good","supported","smell taste ca n't beat","Explicit praise."]]],
+      "g": [[false,false],"Subjective superlative lacks attribution to mother; store comparison absent.",[["Coffee is a subjective favourite","supported","says favorite far , smell taste ca n't beat","Mirrors mother's strong praise as a review title, not a universal quality ranking."]]],
+      "l": [[true,false],"Identifies mother's favourite but stops before store price.",[["Reviewer bought coffee for mother","supported","bought coffee mom","Explicit recipient."],["Coffee is becoming harder to find locally","supported","getting harder find live","Explicit availability issue."],["Mother says it is her favourite","supported","says favorite far","Mother is the preceding subject."]]]
+    },
+    "12239": {
+      "t": [[false,false],"Illness alone omits attribution to treats; recovery after stopping is absent.",[["The dog was sick","supported","dog extremely ill","Explicit illness."]]],
+      "g": [[false,false],"No illness or recovery information.",[["Dog loves the treats","unsupported","","Source does not describe enjoyment. Illness does not logically prove dislike, so this is unsupported rather than contradicted."]]],
+      "l": [[true,false],"Preserves the reported treat-related illness, not subsequent recovery.",[["Others reported a similar issue","supported","many others noted","Explicit reference to others, not independently verified."],["Treats reportedly made the dog very ill","supported","treats made dog extremely ill","Explicit source attribution of illness."],["Reviewer initially could not identify the problem","supported","could figure wrong first","Same degraded source context; no medical cause independently established."]]]
+    },
+    "15241": {
+      "t": [[true,false],"Dietary suitability paraphrases the gluten-free fact; moist/chewy texture absent.",[["Reviewer finds the product good for gluten intolerance","supported","gluten intolerant really nice see pamela 's put gf type clif bar","Source explicitly endorses the GF option; not independent dietary safety verification."]]],
+      "g": [[false,false],"General praise omits gluten-free status and texture.",[["Product is good","supported","really nice see pamela 's put gf type clif bar","Explicit favourable appraisal."]]],
+      "l": [[true,false],"Names Pamela's GF bar, with texture outside the prefix.",[["Reviewer is gluten intolerant","supported","gluten intolerant","Explicit dietary context."],["Pamela's offers a gluten-free bar","supported","pamela 's put gf type clif bar","Explicit GF description."],["Reviewer compares it with a Clif bar","supported","clif bar ( best analogy )","Explicit analogy."]]]
+    },
+    "35120": {
+      "t": [[false,false],"No Korma spice level or milk substitution.",[["Sauce is great","supported","sukhi 's sauces amazingly good","Explicit praise."],["Sauce is not the best","contradicted","","Source calls this the best quick Indian food they have had and offers no such downgrade."]]],
+      "g": [[false,false],"General Indian sauce praise omits the selected cooking details.",[["Indian sauce is great","supported","sukhi 's sauces amazingly good . seriously , best quick indian food","Explicit category and positive evaluation."]]],
+      "l": [[false,false],"General praise precedes Korma and recipe details.",[["Sukhi's sauces are very good","supported","sukhi 's sauces amazingly good","Explicit appraisal."],["Reviewer calls this their best quick Indian food","supported","best quick indian food 've ever","Explicit subjective ranking."]]]
+    },
+    "7810": {
+      "t": [[false,false],"Vegetarian suitability omits stuffed peppers and their taste.",[["Vegetarian reviewer enjoyed the mix","supported","loved . vegetarian","Source links favourable experience with vegetarian reviewer; ingredients not independently verified."]]],
+      "g": [[false,false],"Liking is broader than the selected dish-specific taste fact.",[["Reviewer loves the product","supported","loved","Explicit liking."]]],
+      "l": [[false,false],"Gift and dietary context precede the stuffed-pepper preparation and taste.",[["Hamburger mix was a gift from a close friend","supported","received package hamburger mix one dearest friends gift","Explicit gift."],["Reviewer loved it","supported","loved","Explicit reaction."],["Reviewer is vegetarian and husband eats meat","supported","vegetarian husband meat eater","Explicit dietary context."]]]
+    },
+    "38556": {
+      "t": [[false,false],"Confuses syrup with the pump and drops dispensing function.",[["Syrup is great","unsupported","","The reviewed product is a pump; syrup quality is not evaluated."]]],
+      "g": [[false,false],"Confuses syrup with the pump and drops dispensing function.",[["Syrup is great","unsupported","","The reviewed product is a pump; syrup quality is not evaluated."]]],
+      "l": [[true,true],"Retains Torani pump identity and coffee-cup dose control.",[["Torani syrup pump is good","supported","torani syrup pump great","Explicit identity and appraisal."],["Pump dispenses the right amount for a coffee cup","supported","get right amount syrup coffee cup","Explicit function."]]]
+    },
+    "29732": {
+      "t": [[false,false],"Taste praise omits brand/flavour and aroma.",[["Product is delicious","supported","tea delicious","Explicit taste appraisal."]]],
+      "g": [[false,false],"General tea liking omits brand/flavour and aroma.",[["Reviewer enjoys the tea","supported","tea delicious smells heavenly","Explicit enjoyment."]]],
+      "l": [[true,true],"Both brand/flavour and favourable aroma remain.",[["Tea is Bigelow vanilla caramel","supported","bigelow 's vanilla caramel tea","Explicit identity."],["Tea is delicious","supported","tea delicious","Explicit taste appraisal."],["Tea smells wonderful","supported","smells heavenly","Explicit aroma appraisal."]]]
+    },
+    "26431": {
+      "t": [[false,false],"Negative sentiment omits plastic/orgeat and glass recommendation.",[["Product is not good","supported","taste plastic overwhelming , ca n't taste orgeat","Specific complaint supports negative evaluation."]]],
+      "g": [[false,false],"Dramatic suitability claim supplies neither selected fact.",[["Product is not for the faint of heart","unsupported","","No stated intensity, danger or tolerance issue; only packaging-related plastic taste."]]],
+      "l": [[true,false],"Preserves masking plastic flavour; glass recommendation lies later.",[["Syrup was used in a Samoan Fog Cutter","supported","used syrup mix samoan fog cutter","Explicit use."],["Plastic taste overwhelms the orgeat flavour","supported","taste plastic overwhelming , ca n't taste orgeat","Explicit flavour defect."]]]
+    }
+  }
+}
