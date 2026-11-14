@@ -1,0 +1,7 @@
+{
+  "filename": "Yashwant_T5_Comparison_Checkpoint_2026-11-14.zip",
+  "bytes": 230209648,
+  "sha256": "d91211288b49a4407b871d3ac56e0cd21f32ea5d6aa8e8e5a8901039fcf3a814",
+  "contains": "T5 selected weights, tokenizer, training and evaluation source, frozen protocol, predictions, review labels and exact source dataset; GPT-2 weights remain in the separate original archive",
+  "publicly_hosted": false
+}

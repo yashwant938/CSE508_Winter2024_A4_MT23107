@@ -1,0 +1,28 @@
+{
+  "config_sha256": "bd094e3ee29a368e5d013bf9d4771c71622430deb4e6bceb0d3ef44d004f28fa",
+  "manifest_sha256": "e5eedddb0e24618903b65dd87ff1a03a9142ef0be0b11358d15f684d472a3432",
+  "gpt2_checkpoint_sha256": {
+    "config.json": "aa4121d7b6d4f6686c836b61fd73ca0a960da6a2ea7972f5acb3233b2277e40b",
+    "generation_config.json": "50bc1b33d76f6e75cebe2baec5f2c86d77a95062413f5be409e3dbb5555072c6",
+    "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "model.safetensors": "93b2f77bbc74748ea4d1abeec25df312baf50be97c7c9e79a4907b37abdac65b",
+    "special_tokens_map.json": "27b2f8d519a2a06d346ac97e373ab0baca69205ab9c2026aafffa9c70fbea5d5",
+    "tokenizer.json": "1fe93b6152957cf9cfd6d89002467f789ce8b3f3e000b3a2edf27c808ddd0b9e",
+    "tokenizer_config.json": "b80f0b3058dcbeee90cefb5dc40445cd4e74f97738bd278c2278a1dc9ad7d816",
+    "vocab.json": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"
+  },
+  "preparation_source_sha256": {
+    "comparison_data.py": "153d9de30d5dd148e9b49b7c68fe885a12eddaddb975caf177d3887370746840",
+    "evaluate.py": "d4da59d5034fe87e32bbdf7c5bae5d9c9553263cbb0c6b57d7f976f73d35c9ca",
+    "training_data.py": "e35dd762c6537bce42b3917a485fcd3f929fdf7c5464bf9fd89032608b893022"
+  },
+  "selection": "T5 epoch: lowest validation target-token NLL; decoding: highest validation ROUGE-L, tie -> fewer beams. GPT-2 unchanged.",
+  "fresh_test": "512 new corrected-experiment rows; exclude all prior train/validation/test and legacy pilot; exact and 5-word Jaccard >=0.8 exclusions on visible text",
+  "detail_review": "24 hash-selected fresh-test rows, two source-supported product facts each labeled before predictions; agent-authored, not independent human evaluation",
+  "limitations": [
+    "Only Text/Summary retained: no product IDs or product-disjoint guarantee.",
+    "Original coursework data use and base-model pretraining contamination cannot be ruled out.",
+    "Lexical near-duplicate filter does not guarantee semantic independence.",
+    "Same input text and training examples/epochs, not identical tokenizers or compute."
+  ]
+}

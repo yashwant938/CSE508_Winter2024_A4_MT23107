@@ -1,0 +1,23 @@
+{
+  "initial_validation_target_token_nll": 6.474890347041476,
+  "epochs": [
+    {
+      "epoch": 1,
+      "optimizer_steps": 375,
+      "train_target_token_nll": 3.9833494251202537,
+      "validation_target_token_nll": 3.394360253902457,
+      "selected": true,
+      "elapsed_seconds": 199.341
+    },
+    {
+      "epoch": 2,
+      "optimizer_steps": 750,
+      "train_target_token_nll": 3.5324167398572808,
+      "validation_target_token_nll": 3.3496693144439513,
+      "selected": true,
+      "elapsed_seconds": 386.119
+    }
+  ],
+  "selected_epoch": 2,
+  "selected_validation_target_token_nll": 3.3496693144439513
+}

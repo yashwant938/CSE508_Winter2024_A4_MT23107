@@ -1,0 +1,14 @@
+{
+  "train": {
+    "examples": 6000,
+    "max_source_tokens": 284,
+    "target_tokens": 43724,
+    "truncated_targets": 5
+  },
+  "validation": {
+    "examples": 512,
+    "max_source_tokens": 277,
+    "target_tokens": 3671,
+    "truncated_targets": 0
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "seed": 20261114,
+  "model": "google-t5/t5-small",
+  "revision": "df1b051c49625cf57a3d0d8d3863ed4d13564fe4",
+  "gpt2_input_tokens": 192,
+  "t5_input_tokens": 512,
+  "target_tokens": 32,
+  "epochs": 2,
+  "batch_size": 4,
+  "gradient_accumulation": 4,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.05,
+  "max_grad_norm": 1.0,
+  "evaluation_batch_size": 4,
+  "decoding_candidates": [
+    1,
+    4
+  ],
+  "fresh_test_examples": 512,
+  "detail_audit_examples": 24,
+  "bootstrap_samples": 2000,
+  "near_duplicate_jaccard": 0.8
+}

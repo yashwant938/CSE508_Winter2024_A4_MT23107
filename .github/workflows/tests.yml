@@ -22,4 +22,4 @@ jobs:
         run: python -m unittest discover -s tests -v
         env:
           HF_HUB_OFFLINE: '1'
-      - run: python -m compileall -q train.py training_data.py evaluate.py evaluate_checkpoint.py
+      - run: python -m compileall -q train.py training_data.py evaluate.py evaluate_checkpoint.py comparison_data.py train_t5.py compare_summarizers.py score_detail_audit.py

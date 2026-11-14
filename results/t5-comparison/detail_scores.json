@@ -1,0 +1,64 @@
+{
+  "reviewer": "agent-authored; no independent human review",
+  "sample_size": 24,
+  "input_sha256": {
+    "results": "6f223375c20148d7376f93cb9936f359b73017e65edf8acef11f0e8c7b7e2794",
+    "facts": "b7bbfdc3327fcd57e348d3482c7d9432d18e91230192bc72b87da6ff5777f017",
+    "audit": "761ce1ac2b269b04dc6809e067e32625c46d15879d282e06b42c5e4ce96bd526"
+  },
+  "scores": {
+    "gpt2": {
+      "summaries": 24,
+      "selected_facts": 48,
+      "facts_preserved": 0,
+      "both_facts_preserved": 0,
+      "at_least_one_fact_preserved": 0,
+      "fully_supported_summaries": 15,
+      "summaries_with_unsupported_or_contradicted_claim": 6,
+      "supported_claims": 16,
+      "unsupported_claims": 5,
+      "contradicted_claims": 1,
+      "uncertain_claims": 3,
+      "claims": 25,
+      "fact_preservation_rate": 0.0,
+      "fully_supported_summary_rate": 0.625
+    },
+    "lead_16_words": {
+      "summaries": 24,
+      "selected_facts": 48,
+      "facts_preserved": 20,
+      "both_facts_preserved": 5,
+      "at_least_one_fact_preserved": 15,
+      "fully_supported_summaries": 24,
+      "summaries_with_unsupported_or_contradicted_claim": 0,
+      "supported_claims": 60,
+      "unsupported_claims": 0,
+      "contradicted_claims": 0,
+      "uncertain_claims": 0,
+      "claims": 60,
+      "fact_preservation_rate": 0.4166666666666667,
+      "fully_supported_summary_rate": 1.0
+    },
+    "t5_beam1": {
+      "summaries": 24,
+      "selected_facts": 48,
+      "facts_preserved": 4,
+      "both_facts_preserved": 0,
+      "at_least_one_fact_preserved": 4,
+      "fully_supported_summaries": 16,
+      "summaries_with_unsupported_or_contradicted_claim": 5,
+      "supported_claims": 18,
+      "unsupported_claims": 3,
+      "contradicted_claims": 2,
+      "uncertain_claims": 3,
+      "claims": 26,
+      "fact_preservation_rate": 0.08333333333333333,
+      "fully_supported_summary_rate": 0.6666666666666666
+    }
+  },
+  "limitations": [
+    "Single agent, non-independent and non-blind; small descriptive sample.",
+    "Source support is not independently verified product truth.",
+    "Generic supported statements can still omit the selected details."
+  ]
+}

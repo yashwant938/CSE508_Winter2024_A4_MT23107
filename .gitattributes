@@ -1,2 +1,6 @@
 # Keep recorded hashes portable: these artifacts are checksummed as raw bytes.
 results/reproducible-pilot/*.json -text
+# Some frozen artifacts were written on Windows. Preserve their bytes while
+# treating CRLF as a line ending, not trailing whitespace, during diff checks.
+results/t5-comparison/**/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+results/t5-comparison/*.json -text whitespace=trailing-space,space-before-tab,cr-at-eol

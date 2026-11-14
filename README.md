@@ -3,6 +3,22 @@
 A reproducible fine-tuning and evaluation experiment for short summaries of
 Amazon Fine Food Reviews, extending the original CSE508 assignment.
 
+## New: T5 comparison and product-detail audit
+
+Compared the saved GPT-2 checkpoint with **fine-tuned T5-small**, using the same
+6,000 training reviews, validation-only selection and **512 new test reviews**.
+ROUGE-L F1 was **0.1275 GPT-2**, **0.1255 T5**, and **0.0974 lead-16**. The paired
+T5/GPT-2 interval includes zero; neither establishes a clear advantage.
+
+A prespecified 24-review, agent-authored audit found that the generated titles
+usually omitted selected product facts and sometimes introduced unsupported claims.
+Higher title overlap does not establish factual or detailed summarization.
+
+[Full comparison and limitations](results/t5-comparison/REPORT.md) ·
+[Reproduce the comparison](COMPARISON.md) · [22 offline tests](tests/)
+
+## Original GPT-2 reproducibility work
+
 The supported workflow trains a fresh, pinned GPT-2 model with summary-only
 loss, saves a reloadable checkpoint and tokenizer, and compares it with
 pretrained GPT-2 and a 16-word extractive baseline on the same untouched test

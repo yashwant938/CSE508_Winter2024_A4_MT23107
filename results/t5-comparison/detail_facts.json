@@ -1,0 +1,84 @@
+{
+  "reviewer": "agent-authored; no independent human review",
+  "scope": "Facts are relative to the exact preprocessed review prefix visible to both models, not independently verified product facts. Labels were prepared before final predictions. Sparse reviews may supply only use or sentiment details.",
+  "rubric": {
+    "coverage": "For each of two preselected facts, preserved means the summary explicitly states the complete fact or an equivalent paraphrase. A broader positive/negative sentiment alone does not preserve a specific attribute. Missing, partial, contradicted, or unclear facts score zero.",
+    "claims": "Split each summary into atomic claims. Label supported, unsupported, contradicted, or uncertain against visible source only. Supported must quote an exact evidence span. Unsupported means no source support; contradicted means explicit source conflict. Ambiguous wording is uncertain. Reviewer sentiment can support equivalent sentiment, but cannot establish a specific property or universal claim.",
+    "denominators": "48 selected facts per system; 24 summaries per system. Fully supported requires at least one claim and every claim supported. Empty output cannot be fully supported. Report both coverage and support separately; generic but supported outputs can have zero detail coverage.",
+    "review_design": "Single agent-authored, non-independent, non-blind review. No model or decoding changes after the final-test lock. No external factuality accuracy claim."
+  },
+  "examples": [
+    {"source_row":17675,"facts":[
+      {"fact":"The product is organic Little Duck finger food.","evidence":"little duck organic products best finger food"},
+      {"fact":"The reviewer likes all three Little Duck flavours.","evidence":"3 little duck flavors good"}]},
+    {"source_row":3972,"facts":[
+      {"fact":"The soap arrived on Friday as promised.","evidence":"stuff came promised friday good package"},
+      {"fact":"The soap costs more on Amazon than in local stores.","evidence":"price soap , like lots stuff nowadays amazon , higher local stores"}]},
+    {"source_row":7371,"facts":[
+      {"fact":"Four frozen desserts arrived still frozen, packed with dry ice.","evidence":"4 boutique frozen deserts arrived packaged dry ice completely frozen"},
+      {"fact":"The shipment included Berto's roasted banana gelato.","evidence":"berto 's gelato - roasted banana true italian artisan gelato"}]},
+    {"source_row":34732,"facts":[
+      {"fact":"The honey smells bitter and acidic.","evidence":"honey actually smells quite bitter acidic"},
+      {"fact":"Its aftertaste burns the back of the reviewer's throat.","evidence":"aftertaste burns back throat"}]},
+    {"source_row":13617,"facts":[
+      {"fact":"The reviewer likes the product.","evidence":"like well"},
+      {"fact":"The reviewer now uses the product regularly.","evidence":"use time nowmitchell880"}]},
+    {"source_row":16078,"facts":[
+      {"fact":"The food is quick and convenient to prepare.","evidence":"easy quick convenient food"},
+      {"fact":"Buying it at an Asian grocery is more affordable than Amazon.","evidence":"far affordable buy asian grocery"}]},
+    {"source_row":30896,"facts":[
+      {"fact":"BBQ is the reviewer's favourite Popchips flavour.","evidence":"'ve tried flavors , bbq favorite"},
+      {"fact":"The reviewer buys a case of individually sized bags.","evidence":"get individual sized bags case"}]},
+    {"source_row":38600,"facts":[
+      {"fact":"The reviewer prefers Aloha Island pods to Senseo pods.","evidence":"aloha island coffee pods better senseo brand coffee pods"},
+      {"fact":"The Southern Pecan flavour tastes sweet and synthetic.","evidence":"southern pecan tastes bit almost sweet synthetic tasting"}]},
+    {"source_row":20629,"facts":[
+      {"fact":"A dog trainer highly recommended the dog food.","evidence":"highly recommended dog trainer"},
+      {"fact":"The food can be ordered on Amazon and delivered to the home.","evidence":"check amazon . shock , , price delivered right front door"}]},
+    {"source_row":1097,"facts":[
+      {"fact":"The chips have sour cream and onion flavour.","evidence":"right amount sour cream onion flavor"},
+      {"fact":"They are less salty than other brands.","evidence":"n't salty like brands"}]},
+    {"source_row":13735,"facts":[
+      {"fact":"Every cookie arrived broken.","evidence":"every last cookies broken"},
+      {"fact":"The cookies have a grainy, dry texture.","evidence":"consistency bit grainy dry though"}]},
+    {"source_row":18678,"facts":[
+      {"fact":"The treat is used for an 11-year-old Labrador.","evidence":"11 year old lab"},
+      {"fact":"The dog loves the treat.","evidence":"loves . like wonder treat"}]},
+    {"source_row":8328,"facts":[
+      {"fact":"The Wolfgang Puck coffee is a medium roast.","evidence":"billed medium roast , 's"},
+      {"fact":"The reviewer finds its taste bland.","evidence":"'s bland taste"}]},
+    {"source_row":39434,"facts":[
+      {"fact":"This is decaffeinated K-cup coffee.","evidence":"affordable k cup decaf want coffee without caffeine"},
+      {"fact":"The reviewer finds it tasty, like regular coffee.","evidence":"one tasty . like regular coffee"}]},
+    {"source_row":36764,"facts":[
+      {"fact":"The coconut milk comes in BPA-free cans.","evidence":"company 's use bpa-free cans"},
+      {"fact":"The reviewer objects to the added guar gum.","evidence":"use guar gum seems unecessary"}]},
+    {"source_row":25121,"facts":[
+      {"fact":"The dog figured out the food puzzle in about 20 seconds and lost interest.","evidence":"dog figured 20 secs quickly lost interest"},
+      {"fact":"The narrow opening makes the food hard to get out.","evidence":"hard get food given narrow opening"}]},
+    {"source_row":27989,"facts":[
+      {"fact":"The reviewer's mother says this is her favourite coffee.","evidence":"bought coffee mom , getting harder find live . says favorite far"},
+      {"fact":"The reviewer says it is cheaper to buy in a store.","evidence":"cheaper buy store"}]},
+    {"source_row":12239,"facts":[
+      {"fact":"The reviewer reports that Happy Hips treats made the dog ill.","evidence":"treats made dog extremely ill"},
+      {"fact":"The dog improved soon after the reviewer stopped feeding the treats.","evidence":"stopped feeding happy hips almost immediately got better"}]},
+    {"source_row":15241,"facts":[
+      {"fact":"The Pamela's bar is gluten-free.","evidence":"gluten intolerant really nice see pamela 's put gf type clif bar"},
+      {"fact":"The bar has a moist and chewy texture.","evidence":"moist chewy like soft cookie"}]},
+    {"source_row":35120,"facts":[
+      {"fact":"The Korma sauce has a spicy kick.","evidence":"husband tried korma , might favorite . 's got bit kick"},
+      {"fact":"The reviewer successfully substituted skim milk for cream.","evidence":"added skim milk instead cream , still came great"}]},
+    {"source_row":7810,"facts":[
+      {"fact":"The reviewer used the hamburger mix to make stuffed bell peppers.","evidence":"whipped stuffed bell peppers using mix"},
+      {"fact":"The reviewer found the finished dish delicious.","evidence":"using mix delicious"}]},
+    {"source_row":38556,"facts":[
+      {"fact":"The product is a Torani syrup pump.","evidence":"torani syrup pump"},
+      {"fact":"The pump dispenses the right amount for a coffee cup.","evidence":"get right amount syrup coffee cup"}]},
+    {"source_row":29732,"facts":[
+      {"fact":"The tea is Bigelow vanilla caramel.","evidence":"bigelow 's vanilla caramel tea"},
+      {"fact":"The reviewer enjoys the tea's aroma.","evidence":"smells heavenly"}]},
+    {"source_row":26431,"facts":[
+      {"fact":"An overwhelming plastic taste hides the orgeat flavour.","evidence":"taste plastic overwhelming , ca n't taste orgeat"},
+      {"fact":"The reviewer recommends glass packaging to preserve taste.","evidence":"needs contained glass preserve delicate taste"}]}
+  ]
+}

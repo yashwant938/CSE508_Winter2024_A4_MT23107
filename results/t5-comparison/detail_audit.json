@@ -1,0 +1,1535 @@
+{
+  "reviewer": "agent-authored; no independent human review",
+  "reviews": [
+    {
+      "source_row": 17675,
+      "system": "t5_beam1",
+      "prediction_sha256": "fb5fdc37c2ea11480c9d0854581179435b6e9051be385e579a336c6161b49ab8",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Does not identify organic finger food or three liked flavours.",
+      "claims": [
+        {
+          "claim": "Good for a little duck",
+          "verdict": "uncertain",
+          "evidence": "",
+          "reason": "Ambiguous: Little Duck is a brand; suitability for an animal is not stated."
+        }
+      ]
+    },
+    {
+      "source_row": 17675,
+      "system": "gpt2",
+      "prediction_sha256": "2d6b9838e56c5150a2f3c244dc5b2bcb36080fbb89b82d718c261da5f238e1fc",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Child suitability omits the selected product identity and flavour range.",
+      "claims": [
+        {
+          "claim": "Good for children",
+          "verdict": "supported",
+          "evidence": "happy found daughter",
+          "reason": "The reviewer endorses the finger food for their daughter."
+        }
+      ]
+    },
+    {
+      "source_row": 17675,
+      "system": "lead_16_words",
+      "prediction_sha256": "d5aa20bb980dcb0f9c845cf35befc577f0b1e6ded367b64d61f9e35a45647c27",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Names organic Little Duck finger food; the three flavours occur later.",
+      "claims": [
+        {
+          "claim": "Little Duck organic products are good finger food",
+          "verdict": "supported",
+          "evidence": "little duck organic products best finger food",
+          "reason": "Exact source assertion."
+        },
+        {
+          "claim": "Reviewer is happy to have found it for the daughter",
+          "verdict": "supported",
+          "evidence": "happy found daughter",
+          "reason": "Source's stated reaction."
+        }
+      ]
+    },
+    {
+      "source_row": 3972,
+      "system": "t5_beam1",
+      "prediction_sha256": "80f6c2f7da3d1f1bd423078c41629c69be87e34a371abfb8dffad30271a7eff4",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Soap quality is not either selected delivery/price fact.",
+      "claims": [
+        {
+          "claim": "Soap is good",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "Source discusses delivery and price, not soap performance or quality."
+        }
+      ]
+    },
+    {
+      "source_row": 3972,
+      "system": "gpt2",
+      "prediction_sha256": "21311174826bbf451f6a90cb8f151eddc55463dd4e294e0b0ef59e2b495b8388",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Generic approval omits delivery and price.",
+      "claims": [
+        {
+          "claim": "Product is great",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "Positive delivery experience does not establish product quality."
+        }
+      ]
+    },
+    {
+      "source_row": 3972,
+      "system": "lead_16_words",
+      "prediction_sha256": "e02d929b0d973d32864591215ff3bd21824b73504c3b538d5cb197a6beb8559b",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Describes the order, but ends before actual arrival and comparative price.",
+      "claims": [
+        {
+          "claim": "Soap was needed before the weekend",
+          "verdict": "supported",
+          "evidence": "needed soap b-4 weekend",
+          "reason": "Explicit need."
+        },
+        {
+          "claim": "It was ordered Thursday with extra payment for next-day shipping",
+          "verdict": "supported",
+          "evidence": "ordered thurs paid extra next day shipping",
+          "reason": "Explicit order and shipping payment."
+        }
+      ]
+    },
+    {
+      "source_row": 7371,
+      "system": "t5_beam1",
+      "prediction_sha256": "5004685da90a133aa36d0de12d0da07f0b3f6e2d96fbef2e11ab5f4f7d7ccef1",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Enthusiasm omits shipment condition and banana flavour.",
+      "claims": [
+        {
+          "claim": "Gelato is the best ever, as subjective praise",
+          "verdict": "supported",
+          "evidence": "girlfriend declared might best gelato ever",
+          "reason": "Reflects the quoted enthusiasm; not treated as an objective ranking."
+        }
+      ]
+    },
+    {
+      "source_row": 7371,
+      "system": "gpt2",
+      "prediction_sha256": "21609c82c367542593fd6b5d8ce08354c3f80722fac1303f2637b67b1a74b1f1",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Enthusiasm omits shipment condition and banana flavour.",
+      "claims": [
+        {
+          "claim": "Gelato is the best ever, as subjective praise",
+          "verdict": "supported",
+          "evidence": "girlfriend declared might best gelato ever",
+          "reason": "Reflects the quoted enthusiasm; not treated as an objective ranking."
+        }
+      ]
+    },
+    {
+      "source_row": 7371,
+      "system": "lead_16_words",
+      "prediction_sha256": "41355890db6a19715488f098dd7d4982a47764f061ae25c7c6263d80ceac5c7e",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Gift context precedes both selected shipment details.",
+      "claims": [
+        {
+          "claim": "An ice cream month club gift involved a good friend",
+          "verdict": "supported",
+          "evidence": "gifted ice cream month club good friend",
+          "reason": "Preserves the gift context without resolving ambiguous direction."
+        },
+        {
+          "claim": "Reviewer was initially confused about the club",
+          "verdict": "supported",
+          "evidence": "somewhat confused thinking",
+          "reason": "Explicit reaction."
+        }
+      ]
+    },
+    {
+      "source_row": 34732,
+      "system": "t5_beam1",
+      "prediction_sha256": "6ad620534454b753d708765896eb287b2456da01cbd90158d0c3b16570cc91eb",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Negative sentiment omits smell and throat aftertaste.",
+      "claims": [
+        {
+          "claim": "Product is not the best",
+          "verdict": "supported",
+          "evidence": "better choices , sure",
+          "reason": "Reviewer explicitly prefers other choices."
+        }
+      ]
+    },
+    {
+      "source_row": 34732,
+      "system": "gpt2",
+      "prediction_sha256": "b966b883e716014f2e6771d8de50f24cd75cd1f0d8e2681451f29f9908f91979",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Expectation wording supplies neither selected attribute.",
+      "claims": [
+        {
+          "claim": "Product was worse than the reviewer expected",
+          "verdict": "uncertain",
+          "evidence": "",
+          "reason": "Dislike is clear, but the prior expectation is not stated."
+        }
+      ]
+    },
+    {
+      "source_row": 34732,
+      "system": "lead_16_words",
+      "prediction_sha256": "60194e5b6c827029d64f51b0d66bf4eb442436945cd6872a52eb2f0addac37b3",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Bitter smell is only part of the bitter-and-acidic fact; aftertaste is absent.",
+      "claims": [
+        {
+          "claim": "Geographic origin might explain the difference",
+          "verdict": "supported",
+          "evidence": "maybe 's geographic location ( greece )",
+          "reason": "Source makes the same tentative suggestion."
+        },
+        {
+          "claim": "Honey smells bitter",
+          "verdict": "supported",
+          "evidence": "honey actually smells quite bitter",
+          "reason": "Explicit smell description."
+        }
+      ]
+    },
+    {
+      "source_row": 13617,
+      "system": "t5_beam1",
+      "prediction_sha256": "709c6330e4966097eb922cfe3eda759a9095b80ed9696ff871b0e2875f0b3193",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Positive sentiment preserves liking, but not regular use; product identity remains unclear.",
+      "claims": [
+        {
+          "claim": "Reviewer likes the product",
+          "verdict": "supported",
+          "evidence": "like well",
+          "reason": "Explicit positive sentiment."
+        },
+        {
+          "claim": "Product is coffee",
+          "verdict": "uncertain",
+          "evidence": "",
+          "reason": "Preprocessed source may describe a coffee replacement; product identity is ambiguous."
+        }
+      ]
+    },
+    {
+      "source_row": 13617,
+      "system": "gpt2",
+      "prediction_sha256": "b0e1f06cf1e7d466ee3048ebef45d85b2d1d31d6164a9b92a6fd0887ba8ffe89",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Only an ambiguous product category is emitted.",
+      "claims": [
+        {
+          "claim": "Product is coffee",
+          "verdict": "uncertain",
+          "evidence": "",
+          "reason": "Preprocessed source may describe a coffee replacement; product identity is ambiguous."
+        }
+      ]
+    },
+    {
+      "source_row": 13617,
+      "system": "lead_16_words",
+      "prediction_sha256": "d2d81da34ac984c8912fc8312cbc429f58f699a829b398301049f508dd7b5d28",
+      "facts_preserved": [
+        true,
+        true
+      ],
+      "coverage_rationale": "The entire short source is retained, including liking and use.",
+      "claims": [
+        {
+          "claim": "Reviewer bought the product",
+          "verdict": "supported",
+          "evidence": "bought product",
+          "reason": "Explicit purchase."
+        },
+        {
+          "claim": "Reviewer likes it",
+          "verdict": "supported",
+          "evidence": "like well",
+          "reason": "Explicit sentiment."
+        },
+        {
+          "claim": "Reviewer now uses it regularly",
+          "verdict": "supported",
+          "evidence": "use time nowmitchell880",
+          "reason": "Same interpretation as the prespecified fact; wording is degraded by preprocessing."
+        }
+      ]
+    },
+    {
+      "source_row": 16078,
+      "system": "t5_beam1",
+      "prediction_sha256": "09b4b63e1078b34ca429042c897728f37e5697d559d91be75abf1b9bfc29ffdc",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "No convenience or price comparison.",
+      "claims": [
+        {
+          "claim": "Food is great for children",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "The source mentions parents and college students, not children."
+        }
+      ]
+    },
+    {
+      "source_row": 16078,
+      "system": "gpt2",
+      "prediction_sha256": "e0bf18b4b64ee3ab5f51e6312ef333be5d620891884d6a19c2d1f42521ea5ad3",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "General food approval does not express either specific fact.",
+      "claims": [
+        {
+          "claim": "Food is great",
+          "verdict": "supported",
+          "evidence": "perfect combination flavor price",
+          "reason": "Explicit overall approval."
+        }
+      ]
+    },
+    {
+      "source_row": 16078,
+      "system": "lead_16_words",
+      "prediction_sha256": "2faadf73165b7d7a4366ee7505dd4a4656fba0c0cf8b5c9b41d6c27a89aa7776",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Preserves quick/convenient preparation; cheaper grocery alternative appears later.",
+      "claims": [
+        {
+          "claim": "Parents love the product",
+          "verdict": "supported",
+          "evidence": "parents love stuff",
+          "reason": "Explicit reaction."
+        },
+        {
+          "claim": "Parents are Asian",
+          "verdict": "supported",
+          "evidence": "'re actually asians",
+          "reason": "Copied demographic description, not an inferred preference."
+        },
+        {
+          "claim": "Product is easy, quick and convenient",
+          "verdict": "supported",
+          "evidence": "easy quick convenient food",
+          "reason": "Explicit convenience description."
+        }
+      ]
+    },
+    {
+      "source_row": 30896,
+      "system": "t5_beam1",
+      "prediction_sha256": "0bd4ee7c2b6dc7c9ddd542fe580604768b7bc606345b81ceb233f49386cec37f",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Liking chips omits BBQ as favourite and individual bags.",
+      "claims": [
+        {
+          "claim": "Reviewer loves the chips",
+          "verdict": "supported",
+          "evidence": "absolutely love popchips bbq potato chips",
+          "reason": "Explicit liking."
+        }
+      ]
+    },
+    {
+      "source_row": 30896,
+      "system": "gpt2",
+      "prediction_sha256": "2884b32a6c0446f487f1e2a150a1f2109807426255fdd214aa57df85e161a44f",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Broad superlative omits the flavour preference and packaging.",
+      "claims": [
+        {
+          "claim": "Popchips are the best chips",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "Source loves them and ranks BBQ among their flavours; it does not rank Popchips above all chips."
+        }
+      ]
+    },
+    {
+      "source_row": 30896,
+      "system": "lead_16_words",
+      "prediction_sha256": "45ee6cee5753e8648369bdd3ea77782649edd5c11a2bf02d02257308b6dda79d",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Names and likes BBQ, but does not preserve favourite-among-flavours or individual bags.",
+      "claims": [
+        {
+          "claim": "Reviewer discovered the product by accident months ago",
+          "verdict": "supported",
+          "evidence": "accident , stumbled product months ago",
+          "reason": "Explicit discovery."
+        },
+        {
+          "claim": "Reviewer loves Popchips BBQ potato chips",
+          "verdict": "supported",
+          "evidence": "absolutely love popchips bbq potato chips",
+          "reason": "Explicit product and liking."
+        }
+      ]
+    },
+    {
+      "source_row": 38600,
+      "system": "t5_beam1",
+      "prediction_sha256": "14cc28420eab9e81936d6a1b35543fd352ba09a1af066a7777bad3ea6ddff602",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "The implicit reviewed product is ranked above Senseo; synthetic Southern Pecan taste is missing.",
+      "claims": [
+        {
+          "claim": "Reviewed pods taste better than Senseo",
+          "verdict": "supported",
+          "evidence": "aloha island coffee pods better senseo brand coffee pods",
+          "reason": "Correct comparison; reviewed product is the implicit subject."
+        }
+      ]
+    },
+    {
+      "source_row": 38600,
+      "system": "gpt2",
+      "prediction_sha256": "3a4ec25f36351fc905f9e275cb5d136797d47af2db4e2e47518d23da7910e5a1",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Comparison target is unclear and neither specific fact is recoverable.",
+      "claims": [
+        {
+          "claim": "Product is not as good as unspecified pods",
+          "verdict": "uncertain",
+          "evidence": "",
+          "reason": "No identifiable comparator; source says Aloha Island pods are better than Senseo."
+        }
+      ]
+    },
+    {
+      "source_row": 38600,
+      "system": "lead_16_words",
+      "prediction_sha256": "089cd3fc0cfda1dbbef11819e791565d26285a7207cf8c7dae161c4d2019ef34",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Preference is complete; Southern Pecan criticism is cut before its attributes.",
+      "claims": [
+        {
+          "claim": "Aloha Island pods are better than Senseo pods",
+          "verdict": "supported",
+          "evidence": "aloha island coffee pods better senseo brand coffee pods",
+          "reason": "Exact comparison."
+        },
+        {
+          "claim": "Southern Pecan is a flavour discussed",
+          "verdict": "supported",
+          "evidence": "southern pecan tastes",
+          "reason": "Source identifies the flavour before the clipped description."
+        }
+      ]
+    },
+    {
+      "source_row": 20629,
+      "system": "t5_beam1",
+      "prediction_sha256": "e8d9c8c9ad69fab8f6ea83dbbec62790a8c8f4c26168ba1f584c7256ea0b62c0",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Generic approval omits trainer endorsement and Amazon home delivery.",
+      "claims": [
+        {
+          "claim": "Dog food is good",
+          "verdict": "supported",
+          "evidence": "highly recommended dog trainer",
+          "reason": "Trainer recommendation supports general favourable appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 20629,
+      "system": "gpt2",
+      "prediction_sha256": "43188542d968bf9b318e804eeff89c566c527bf76c5d936626a3a82a8c1fb189",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Only the product category is supplied.",
+      "claims": [
+        {
+          "claim": "Product is dog food",
+          "verdict": "supported",
+          "evidence": "source dog food",
+          "reason": "Explicit category."
+        }
+      ]
+    },
+    {
+      "source_row": 20629,
+      "system": "lead_16_words",
+      "prediction_sha256": "0d4d992192c77a49c521d26198caddc3a9dfe2a7e60527c41bd7c1b430c383ee",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Trainer recommendation survives; Amazon delivery does not.",
+      "claims": [
+        {
+          "claim": "Review concerns dog food and its former source",
+          "verdict": "supported",
+          "evidence": "source dog food went business",
+          "reason": "Same source context, without reconstructing missing words."
+        },
+        {
+          "claim": "Dog trainer highly recommended the food",
+          "verdict": "supported",
+          "evidence": "highly recommended dog trainer",
+          "reason": "Explicit endorsement."
+        }
+      ]
+    },
+    {
+      "source_row": 1097,
+      "system": "t5_beam1",
+      "prediction_sha256": "9e2aa79ee3f42b153fc9a816514b6f1ad5eceeb072db93cc18960372e64882cb",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "No flavour or comparative salt detail.",
+      "claims": [
+        {
+          "claim": "Chips are good",
+          "verdict": "supported",
+          "evidence": "chips really good",
+          "reason": "Explicit appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 1097,
+      "system": "gpt2",
+      "prediction_sha256": "467a86a2645fc1194c6fb1ab086ced63abec076810853b475193054bc2a3944a",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Taste and price praise omit named flavour and lower salt.",
+      "claims": [
+        {
+          "claim": "Taste is good",
+          "verdict": "supported",
+          "evidence": "taste better name brands",
+          "reason": "Explicit taste preference."
+        },
+        {
+          "claim": "Price is good",
+          "verdict": "supported",
+          "evidence": "'re cheaper",
+          "reason": "Explicit price advantage."
+        }
+      ]
+    },
+    {
+      "source_row": 1097,
+      "system": "lead_16_words",
+      "prediction_sha256": "f4f97edf0445b6b46b1aae75163bec9bfee6d3be98da5022a3ab011e68f3ce3a",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Salt comparison ends at 'like'; named flavour appears later.",
+      "claims": [
+        {
+          "claim": "Chips are good",
+          "verdict": "supported",
+          "evidence": "chips really good",
+          "reason": "Explicit appraisal."
+        },
+        {
+          "claim": "Taste is better than name brands",
+          "verdict": "supported",
+          "evidence": "taste better name brands",
+          "reason": "Explicit comparison."
+        },
+        {
+          "claim": "Chips are cheaper",
+          "verdict": "supported",
+          "evidence": "'re cheaper",
+          "reason": "Explicit price comparison."
+        },
+        {
+          "claim": "Chips are not very salty",
+          "verdict": "supported",
+          "evidence": "n't salty like brands",
+          "reason": "Source supports low salt; summary clips the comparator."
+        }
+      ]
+    },
+    {
+      "source_row": 13735,
+      "system": "t5_beam1",
+      "prediction_sha256": "565339bc4d33d72817b583024112eb7f5cdf3e5eef0252d6ec1b9c9a94e12bb3",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Generic OK assessment omits breakage and texture.",
+      "claims": [
+        {
+          "claim": "Cookies are OK",
+          "verdict": "supported",
+          "evidence": "cookies ok , ok.",
+          "reason": "Explicit initial appraisal, although later criticism is omitted."
+        }
+      ]
+    },
+    {
+      "source_row": 13735,
+      "system": "gpt2",
+      "prediction_sha256": "8329273650ed60c0ac567e2e8e74d1ac85943d6b84eea677e2c9d66f9d5c2873",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Negative sentiment does not state the defects.",
+      "claims": [
+        {
+          "claim": "Cookies are unsatisfactory overall",
+          "verdict": "supported",
+          "evidence": "every last cookies broken",
+          "reason": "Complaint supports dissatisfaction despite initial 'OK'."
+        }
+      ]
+    },
+    {
+      "source_row": 13735,
+      "system": "lead_16_words",
+      "prediction_sha256": "c4a01fccd32ff91a78050469a0d79733b29b96f2fc89d0fa15734f150d3004e0",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Ends before the word 'broken'; texture is absent.",
+      "claims": [
+        {
+          "claim": "Cookies are only OK",
+          "verdict": "supported",
+          "evidence": "cookies ok , ok.",
+          "reason": "Explicit assessment."
+        },
+        {
+          "claim": "Reviewer might give three stars if cookies had arrived whole",
+          "verdict": "supported",
+          "evidence": "may inclined give three stars arrived whole cookies",
+          "reason": "Preserves conditional evaluation, not an assertion they arrived whole."
+        }
+      ]
+    },
+    {
+      "source_row": 18678,
+      "system": "t5_beam1",
+      "prediction_sha256": "0348a605ae54dc20ab66cc3c489bbbd94c1f4d6fcdbc926d7490d4787d25eb6f",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Love is expressed without identifying the dog as the experiencer; age/breed absent.",
+      "claims": [
+        {
+          "claim": "Positive reaction to the treat",
+          "verdict": "supported",
+          "evidence": "loves . like wonder treat",
+          "reason": "Matches general praise; no attribution to a new person assumed."
+        }
+      ]
+    },
+    {
+      "source_row": 18678,
+      "system": "gpt2",
+      "prediction_sha256": "5400384a0ddbeeb8d574ad0572e8728a4aed8fd038395087810dce8e69aa67b2",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Product praise omits age/breed and the dog's reaction.",
+      "claims": [
+        {
+          "claim": "Product is great",
+          "verdict": "supported",
+          "evidence": "like wonder treat",
+          "reason": "Explicit praise."
+        }
+      ]
+    },
+    {
+      "source_row": 18678,
+      "system": "lead_16_words",
+      "prediction_sha256": "1a87617ec5730a5c0a1b197fa94d083674d4de61298db0c0ba2bc2f79b913c84",
+      "facts_preserved": [
+        true,
+        true
+      ],
+      "coverage_rationale": "Retains the dog's age/breed and love of the treat.",
+      "claims": [
+        {
+          "claim": "The dog is an 11-year-old Labrador",
+          "verdict": "supported",
+          "evidence": "11 year old lab",
+          "reason": "Explicit age/breed."
+        },
+        {
+          "claim": "The dog runs and plays ball",
+          "verdict": "supported",
+          "evidence": "run play ball freinds",
+          "reason": "Explicit activity; no treatment causality inferred."
+        },
+        {
+          "claim": "The dog loves the treat",
+          "verdict": "supported",
+          "evidence": "loves . like wonder treat",
+          "reason": "Explicit reaction in dog context."
+        }
+      ]
+    },
+    {
+      "source_row": 8328,
+      "system": "t5_beam1",
+      "prediction_sha256": "d258d4353efa875f278c4d5ced1fc35cb77f36b9ae09fe1227333f25ec8719c0",
+      "facts_preserved": [
+        false,
+        true
+      ],
+      "coverage_rationale": "Preserves bland taste; roast level absent.",
+      "claims": [
+        {
+          "claim": "Taste is bland",
+          "verdict": "supported",
+          "evidence": "'s bland taste",
+          "reason": "Explicit taste description."
+        }
+      ]
+    },
+    {
+      "source_row": 8328,
+      "system": "gpt2",
+      "prediction_sha256": "91706c4aa0f03ec74671d897f5d01500edceac055921234da6ee39f93ff4a784",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Disappointment omits roast and the specific bland attribute.",
+      "claims": [
+        {
+          "claim": "Coffee fell below expectations",
+          "verdict": "supported",
+          "evidence": "perhaps expectations high",
+          "reason": "Source explicitly discusses high expectations and average/bland taste."
+        }
+      ]
+    },
+    {
+      "source_row": 8328,
+      "system": "lead_16_words",
+      "prediction_sha256": "c6977141c0856c4276295c20691aa97681b3bfea19eecebc3b116b9bc43fa37a",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Expectation context appears before roast and taste verdict.",
+      "claims": [
+        {
+          "claim": "Reviewer had high expectations of Wolfgang Puck",
+          "verdict": "supported",
+          "evidence": "see name `` wolfgang puck '' , expect impressed",
+          "reason": "Explicit brand expectation."
+        }
+      ]
+    },
+    {
+      "source_row": 39434,
+      "system": "t5_beam1",
+      "prediction_sha256": "7c712562375a3433adf4b6c44ccf22c304ce1a5b88f38ce4d63cceea594f6b54",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Tasty alone does not preserve the full regular-coffee comparison or decaf format.",
+      "claims": [
+        {
+          "claim": "Product tastes good",
+          "verdict": "supported",
+          "evidence": "one tasty",
+          "reason": "Explicit taste appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 39434,
+      "system": "gpt2",
+      "prediction_sha256": "4b3c4dea03f56b211e3a5e719d01845c8797433a78aca3083894f9dd21eb7930",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Coffee praise omits decaf K-cup format and regular-coffee comparison.",
+      "claims": [
+        {
+          "claim": "Coffee is good",
+          "verdict": "supported",
+          "evidence": "one tasty . like regular coffee",
+          "reason": "Explicit positive taste appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 39434,
+      "system": "lead_16_words",
+      "prediction_sha256": "c052fa949b823f720c77374a87ccf31e8829dafcdea50603e8b18668fe8ab6c4",
+      "facts_preserved": [
+        true,
+        true
+      ],
+      "coverage_rationale": "Both decaf K-cup format and regular-coffee taste comparison survive.",
+      "claims": [
+        {
+          "claim": "Product is decaf K-cup coffee",
+          "verdict": "supported",
+          "evidence": "k cup decaf want coffee without caffeine",
+          "reason": "Explicit format and caffeine description."
+        },
+        {
+          "claim": "Product tastes like regular coffee and is tasty",
+          "verdict": "supported",
+          "evidence": "one tasty . like regular coffee",
+          "reason": "Explicit comparison."
+        },
+        {
+          "claim": "Reviewer seeks affordable coffee",
+          "verdict": "supported",
+          "evidence": "looking affordable k cup decaf",
+          "reason": "Explicit price preference."
+        }
+      ]
+    },
+    {
+      "source_row": 36764,
+      "system": "t5_beam1",
+      "prediction_sha256": "65b49c2f4c6db725b8516ba6ea7587d415e649f6a1385fb4bca06dcf5fe703d0",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Neither BPA-free packaging nor objection to gum survives.",
+      "claims": [
+        {
+          "claim": "Guar gum is unnoticed",
+          "verdict": "contradicted",
+          "evidence": "",
+          "reason": "Reviewer explicitly notices and objects to the guar gum addition."
+        }
+      ]
+    },
+    {
+      "source_row": 36764,
+      "system": "gpt2",
+      "prediction_sha256": "5400384a0ddbeeb8d574ad0572e8728a4aed8fd038395087810dce8e69aa67b2",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Generic praise omits the packaging/additive distinction.",
+      "claims": [
+        {
+          "claim": "Product is great overall",
+          "verdict": "contradicted",
+          "evidence": "",
+          "reason": "Source calls the product inferior and objects to its additive; only the can choice is praised."
+        }
+      ]
+    },
+    {
+      "source_row": 36764,
+      "system": "lead_16_words",
+      "prediction_sha256": "c20985643b45da5a74d2d866bcd58865cd015e3fba891e5f269997f2aee1e03b",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "BPA-free cans remain; the gum objection is clipped before 'unnecessary'.",
+      "claims": [
+        {
+          "claim": "Reviewer has received inferior product",
+          "verdict": "supported",
+          "evidence": "problems receiving inferior product",
+          "reason": "Explicit quality complaint."
+        },
+        {
+          "claim": "Company uses BPA-free cans and reviewer approves",
+          "verdict": "supported",
+          "evidence": "applaud company 's use bpa-free cans",
+          "reason": "Explicit packaging appraisal."
+        },
+        {
+          "claim": "The product uses guar gum",
+          "verdict": "supported",
+          "evidence": "use guar gum",
+          "reason": "Explicit additive mention; incomplete appraisal is not expanded."
+        }
+      ]
+    },
+    {
+      "source_row": 25121,
+      "system": "t5_beam1",
+      "prediction_sha256": "4ad6761dde6fab50f6e666d0b6b5032ae35b04009a6124639b72732b86e18e14",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "No speed/interest or narrow-opening detail.",
+      "claims": [
+        {
+          "claim": "Product is great for dogs",
+          "verdict": "uncertain",
+          "evidence": "",
+          "reason": "Source has complaints and the preprocessed phrase 'would recommend'; overall recommendation is ambiguous."
+        }
+      ]
+    },
+    {
+      "source_row": 25121,
+      "system": "gpt2",
+      "prediction_sha256": "47e70d26fa38ce6994414ebaea3b421d2693fe7e8d90db0c9ffb0e8e6d7c8f5b",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Qualified suitability omits the observed failure modes.",
+      "claims": [
+        {
+          "claim": "Product does not suit everyone",
+          "verdict": "supported",
+          "evidence": "dog figured 20 secs quickly lost interest",
+          "reason": "One dog's poor engagement supports a limited suitability caveat."
+        }
+      ]
+    },
+    {
+      "source_row": 25121,
+      "system": "lead_16_words",
+      "prediction_sha256": "409366fe98ef3138343526874af58475c49198b0c35080512314eeadf5f6f193",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Preserves 20-second solution and lost interest, not narrow opening.",
+      "claims": [
+        {
+          "claim": "Dog solved it in about 20 seconds",
+          "verdict": "supported",
+          "evidence": "dog figured 20 secs",
+          "reason": "Explicit timing."
+        },
+        {
+          "claim": "Dog quickly lost interest",
+          "verdict": "supported",
+          "evidence": "quickly lost interest",
+          "reason": "Explicit engagement result."
+        },
+        {
+          "claim": "Spinning opens food compartments",
+          "verdict": "supported",
+          "evidence": "spinnning little opens food compartments",
+          "reason": "Explicit mechanism."
+        }
+      ]
+    },
+    {
+      "source_row": 27989,
+      "system": "t5_beam1",
+      "prediction_sha256": "4b3c4dea03f56b211e3a5e719d01845c8797433a78aca3083894f9dd21eb7930",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "General coffee praise omits mother's preference and store price.",
+      "claims": [
+        {
+          "claim": "Coffee is good",
+          "verdict": "supported",
+          "evidence": "smell taste ca n't beat",
+          "reason": "Explicit praise."
+        }
+      ]
+    },
+    {
+      "source_row": 27989,
+      "system": "gpt2",
+      "prediction_sha256": "d2545721d42aaa449e0eae13022e5cc8ae0a0488c008b8f171fcb9df304230d7",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Subjective superlative lacks attribution to mother; store comparison absent.",
+      "claims": [
+        {
+          "claim": "Coffee is a subjective favourite",
+          "verdict": "supported",
+          "evidence": "says favorite far , smell taste ca n't beat",
+          "reason": "Mirrors mother's strong praise as a review title, not a universal quality ranking."
+        }
+      ]
+    },
+    {
+      "source_row": 27989,
+      "system": "lead_16_words",
+      "prediction_sha256": "5f41d98655f82a9585594f789d3f15962a02dbd3ea453a4b8ba4474487e3707c",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Identifies mother's favourite but stops before store price.",
+      "claims": [
+        {
+          "claim": "Reviewer bought coffee for mother",
+          "verdict": "supported",
+          "evidence": "bought coffee mom",
+          "reason": "Explicit recipient."
+        },
+        {
+          "claim": "Coffee is becoming harder to find locally",
+          "verdict": "supported",
+          "evidence": "getting harder find live",
+          "reason": "Explicit availability issue."
+        },
+        {
+          "claim": "Mother says it is her favourite",
+          "verdict": "supported",
+          "evidence": "says favorite far",
+          "reason": "Mother is the preceding subject."
+        }
+      ]
+    },
+    {
+      "source_row": 12239,
+      "system": "t5_beam1",
+      "prediction_sha256": "bd5e122e95ed1d00592e74d96f816bc1e1bd8dd97b98883551d21a41c919e56f",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Illness alone omits attribution to treats; recovery after stopping is absent.",
+      "claims": [
+        {
+          "claim": "The dog was sick",
+          "verdict": "supported",
+          "evidence": "dog extremely ill",
+          "reason": "Explicit illness."
+        }
+      ]
+    },
+    {
+      "source_row": 12239,
+      "system": "gpt2",
+      "prediction_sha256": "2c5dfdb8ee417de16767fd219070a3b31e5f59d941c394a017cba213d3046401",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "No illness or recovery information.",
+      "claims": [
+        {
+          "claim": "Dog loves the treats",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "Source does not describe enjoyment. Illness does not logically prove dislike, so this is unsupported rather than contradicted."
+        }
+      ]
+    },
+    {
+      "source_row": 12239,
+      "system": "lead_16_words",
+      "prediction_sha256": "bf4e8a896f9713eb20f84db4d2bf23f772c3195ce8496968c851e7a008cb6d70",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Preserves the reported treat-related illness, not subsequent recovery.",
+      "claims": [
+        {
+          "claim": "Others reported a similar issue",
+          "verdict": "supported",
+          "evidence": "many others noted",
+          "reason": "Explicit reference to others, not independently verified."
+        },
+        {
+          "claim": "Treats reportedly made the dog very ill",
+          "verdict": "supported",
+          "evidence": "treats made dog extremely ill",
+          "reason": "Explicit source attribution of illness."
+        },
+        {
+          "claim": "Reviewer initially could not identify the problem",
+          "verdict": "supported",
+          "evidence": "could figure wrong first",
+          "reason": "Same degraded source context; no medical cause independently established."
+        }
+      ]
+    },
+    {
+      "source_row": 15241,
+      "system": "t5_beam1",
+      "prediction_sha256": "82998d56d147a1181f1421c68fc5a2fecdfe74f24b5b63de8fa7ba2129780d78",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Dietary suitability paraphrases the gluten-free fact; moist/chewy texture absent.",
+      "claims": [
+        {
+          "claim": "Reviewer finds the product good for gluten intolerance",
+          "verdict": "supported",
+          "evidence": "gluten intolerant really nice see pamela 's put gf type clif bar",
+          "reason": "Source explicitly endorses the GF option; not independent dietary safety verification."
+        }
+      ]
+    },
+    {
+      "source_row": 15241,
+      "system": "gpt2",
+      "prediction_sha256": "473f0eea1d39f15d59258bf2c3bcf425bca20e6ca821f86b2a1b5b23cb1ce66f",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "General praise omits gluten-free status and texture.",
+      "claims": [
+        {
+          "claim": "Product is good",
+          "verdict": "supported",
+          "evidence": "really nice see pamela 's put gf type clif bar",
+          "reason": "Explicit favourable appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 15241,
+      "system": "lead_16_words",
+      "prediction_sha256": "b6e735753007dc8dc156c6c91cf455a30b131a839b76d18bd9e559e97b7172ba",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Names Pamela's GF bar, with texture outside the prefix.",
+      "claims": [
+        {
+          "claim": "Reviewer is gluten intolerant",
+          "verdict": "supported",
+          "evidence": "gluten intolerant",
+          "reason": "Explicit dietary context."
+        },
+        {
+          "claim": "Pamela's offers a gluten-free bar",
+          "verdict": "supported",
+          "evidence": "pamela 's put gf type clif bar",
+          "reason": "Explicit GF description."
+        },
+        {
+          "claim": "Reviewer compares it with a Clif bar",
+          "verdict": "supported",
+          "evidence": "clif bar ( best analogy )",
+          "reason": "Explicit analogy."
+        }
+      ]
+    },
+    {
+      "source_row": 35120,
+      "system": "t5_beam1",
+      "prediction_sha256": "6a529d7d54c7bf81b76c354853a142a141702749167ba4d685f35fc09161bcc0",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "No Korma spice level or milk substitution.",
+      "claims": [
+        {
+          "claim": "Sauce is great",
+          "verdict": "supported",
+          "evidence": "sukhi 's sauces amazingly good",
+          "reason": "Explicit praise."
+        },
+        {
+          "claim": "Sauce is not the best",
+          "verdict": "contradicted",
+          "evidence": "",
+          "reason": "Source calls this the best quick Indian food they have had and offers no such downgrade."
+        }
+      ]
+    },
+    {
+      "source_row": 35120,
+      "system": "gpt2",
+      "prediction_sha256": "a4a1001d59673d1c4f256eb72691acf294f8b482ef6c5603f59e7f0ec8760aaa",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "General Indian sauce praise omits the selected cooking details.",
+      "claims": [
+        {
+          "claim": "Indian sauce is great",
+          "verdict": "supported",
+          "evidence": "sukhi 's sauces amazingly good . seriously , best quick indian food",
+          "reason": "Explicit category and positive evaluation."
+        }
+      ]
+    },
+    {
+      "source_row": 35120,
+      "system": "lead_16_words",
+      "prediction_sha256": "6bfe6421067a1edb3eff8972935be469d8afb774d966b61b5cbe90d9c63de01b",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "General praise precedes Korma and recipe details.",
+      "claims": [
+        {
+          "claim": "Sukhi's sauces are very good",
+          "verdict": "supported",
+          "evidence": "sukhi 's sauces amazingly good",
+          "reason": "Explicit appraisal."
+        },
+        {
+          "claim": "Reviewer calls this their best quick Indian food",
+          "verdict": "supported",
+          "evidence": "best quick indian food 've ever",
+          "reason": "Explicit subjective ranking."
+        }
+      ]
+    },
+    {
+      "source_row": 7810,
+      "system": "t5_beam1",
+      "prediction_sha256": "0f1b349b890643963e2cf55b483fbda6f9bc9a39e065e5200e50614c7400579b",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Vegetarian suitability omits stuffed peppers and their taste.",
+      "claims": [
+        {
+          "claim": "Vegetarian reviewer enjoyed the mix",
+          "verdict": "supported",
+          "evidence": "loved . vegetarian",
+          "reason": "Source links favourable experience with vegetarian reviewer; ingredients not independently verified."
+        }
+      ]
+    },
+    {
+      "source_row": 7810,
+      "system": "gpt2",
+      "prediction_sha256": "e6074c59003bf86d6a1eac9a6a15d30e80548f9116a2b1005895a30b7adcb6a5",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Liking is broader than the selected dish-specific taste fact.",
+      "claims": [
+        {
+          "claim": "Reviewer loves the product",
+          "verdict": "supported",
+          "evidence": "loved",
+          "reason": "Explicit liking."
+        }
+      ]
+    },
+    {
+      "source_row": 7810,
+      "system": "lead_16_words",
+      "prediction_sha256": "9ad7ab329c52eaf89a31f7a9dc9f731441362dbdacbc9ac4f5c8063d081e767e",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Gift and dietary context precede the stuffed-pepper preparation and taste.",
+      "claims": [
+        {
+          "claim": "Hamburger mix was a gift from a close friend",
+          "verdict": "supported",
+          "evidence": "received package hamburger mix one dearest friends gift",
+          "reason": "Explicit gift."
+        },
+        {
+          "claim": "Reviewer loved it",
+          "verdict": "supported",
+          "evidence": "loved",
+          "reason": "Explicit reaction."
+        },
+        {
+          "claim": "Reviewer is vegetarian and husband eats meat",
+          "verdict": "supported",
+          "evidence": "vegetarian husband meat eater",
+          "reason": "Explicit dietary context."
+        }
+      ]
+    },
+    {
+      "source_row": 38556,
+      "system": "t5_beam1",
+      "prediction_sha256": "6a7b0929192fd341d5e73a2f7edd3587797b52f17230aca89121fbe477f1bb47",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Confuses syrup with the pump and drops dispensing function.",
+      "claims": [
+        {
+          "claim": "Syrup is great",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "The reviewed product is a pump; syrup quality is not evaluated."
+        }
+      ]
+    },
+    {
+      "source_row": 38556,
+      "system": "gpt2",
+      "prediction_sha256": "6a7b0929192fd341d5e73a2f7edd3587797b52f17230aca89121fbe477f1bb47",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Confuses syrup with the pump and drops dispensing function.",
+      "claims": [
+        {
+          "claim": "Syrup is great",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "The reviewed product is a pump; syrup quality is not evaluated."
+        }
+      ]
+    },
+    {
+      "source_row": 38556,
+      "system": "lead_16_words",
+      "prediction_sha256": "8e6d4da20b71903930381d5be3748d461aac2012aaf318d53b7ec475fcbbd483",
+      "facts_preserved": [
+        true,
+        true
+      ],
+      "coverage_rationale": "Retains Torani pump identity and coffee-cup dose control.",
+      "claims": [
+        {
+          "claim": "Torani syrup pump is good",
+          "verdict": "supported",
+          "evidence": "torani syrup pump great",
+          "reason": "Explicit identity and appraisal."
+        },
+        {
+          "claim": "Pump dispenses the right amount for a coffee cup",
+          "verdict": "supported",
+          "evidence": "get right amount syrup coffee cup",
+          "reason": "Explicit function."
+        }
+      ]
+    },
+    {
+      "source_row": 29732,
+      "system": "t5_beam1",
+      "prediction_sha256": "61f75e9bb9714f07057ed809f5065fbe2c9551f59f5b24bf05e2e5af043fc5dc",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Taste praise omits brand/flavour and aroma.",
+      "claims": [
+        {
+          "claim": "Product is delicious",
+          "verdict": "supported",
+          "evidence": "tea delicious",
+          "reason": "Explicit taste appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 29732,
+      "system": "gpt2",
+      "prediction_sha256": "a758c6f4deb8eff753c0e9b88283a185479b37d345ba624ecb145832cbeef1dd",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "General tea liking omits brand/flavour and aroma.",
+      "claims": [
+        {
+          "claim": "Reviewer enjoys the tea",
+          "verdict": "supported",
+          "evidence": "tea delicious smells heavenly",
+          "reason": "Explicit enjoyment."
+        }
+      ]
+    },
+    {
+      "source_row": 29732,
+      "system": "lead_16_words",
+      "prediction_sha256": "49363e6af9d795b975d7989544d5eddc3dafc2fd06c8791a16bb69a8a18f074f",
+      "facts_preserved": [
+        true,
+        true
+      ],
+      "coverage_rationale": "Both brand/flavour and favourable aroma remain.",
+      "claims": [
+        {
+          "claim": "Tea is Bigelow vanilla caramel",
+          "verdict": "supported",
+          "evidence": "bigelow 's vanilla caramel tea",
+          "reason": "Explicit identity."
+        },
+        {
+          "claim": "Tea is delicious",
+          "verdict": "supported",
+          "evidence": "tea delicious",
+          "reason": "Explicit taste appraisal."
+        },
+        {
+          "claim": "Tea smells wonderful",
+          "verdict": "supported",
+          "evidence": "smells heavenly",
+          "reason": "Explicit aroma appraisal."
+        }
+      ]
+    },
+    {
+      "source_row": 26431,
+      "system": "t5_beam1",
+      "prediction_sha256": "dcb762a222c453253b498d27f4a485d71df2d23b3261bceceb1991f16fefb5b4",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Negative sentiment omits plastic/orgeat and glass recommendation.",
+      "claims": [
+        {
+          "claim": "Product is not good",
+          "verdict": "supported",
+          "evidence": "taste plastic overwhelming , ca n't taste orgeat",
+          "reason": "Specific complaint supports negative evaluation."
+        }
+      ]
+    },
+    {
+      "source_row": 26431,
+      "system": "gpt2",
+      "prediction_sha256": "4581912cc2d84edf3c9acbd6d5c0eedd3bc08e97f1ff8ff36b8c10bd470f19c3",
+      "facts_preserved": [
+        false,
+        false
+      ],
+      "coverage_rationale": "Dramatic suitability claim supplies neither selected fact.",
+      "claims": [
+        {
+          "claim": "Product is not for the faint of heart",
+          "verdict": "unsupported",
+          "evidence": "",
+          "reason": "No stated intensity, danger or tolerance issue; only packaging-related plastic taste."
+        }
+      ]
+    },
+    {
+      "source_row": 26431,
+      "system": "lead_16_words",
+      "prediction_sha256": "0c9c934358aec169585f0074232849d7c9b2403dfc026e7abf724383266f31b3",
+      "facts_preserved": [
+        true,
+        false
+      ],
+      "coverage_rationale": "Preserves masking plastic flavour; glass recommendation lies later.",
+      "claims": [
+        {
+          "claim": "Syrup was used in a Samoan Fog Cutter",
+          "verdict": "supported",
+          "evidence": "used syrup mix samoan fog cutter",
+          "reason": "Explicit use."
+        },
+        {
+          "claim": "Plastic taste overwhelms the orgeat flavour",
+          "verdict": "supported",
+          "evidence": "taste plastic overwhelming , ca n't taste orgeat",
+          "reason": "Explicit flavour defect."
+        }
+      ]
+    }
+  ]
+}
